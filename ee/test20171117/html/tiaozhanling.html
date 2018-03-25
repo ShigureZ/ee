@@ -1,0 +1,371 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+	    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+	    <title>tiaozhanling</title>
+	    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css">
+
+		<style type="text/css">
+
+		.main_box{
+			height: 75px;
+			background: #fff;
+			border-top: 10px solid #fff;
+			position: relative;
+		}
+
+		.main_box .image{
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			left: 16px;
+			top: 9px;
+			position: absolute;
+		}
+
+		.main_box .username{
+			left: 70px;
+			top: 14px;
+			font-size: 14px;
+			color: #333;
+			position: absolute;
+		}
+
+		.main_box .sex{
+			width: 0.7rem;
+			height: 0.7rem;
+			left: 100px;
+			top: 17px;
+			position: absolute;
+		}
+
+		.main_box .shijian{
+			position: absolute;
+			font-size: 13px;
+			left: 70px;
+			top: 38px;
+		}
+
+		.main_box .shengchangcishu{
+			position: absolute;
+			font-size: 13px;
+			left: 105px;
+			top: 38px;
+		}
+
+		.main_box .attention{
+			font-size: 0.7rem;
+			color: #333;
+			right: 130px;
+			top: 14px;
+			position: absolute;
+		}
+
+		.main_box .heart{
+			width: 16px;
+			height: 16px;
+			right: 110px;
+			top: 16px;
+			position: absolute;			
+		}
+
+		.main_box .main_box_right_up{
+			width: 71px;
+			height: 20px;
+			position: absolute;
+			right: 15px;
+			top: 14px;
+			font-size: 14px;
+			background-color: #48b9fd;
+			color: #fff;
+			border-radius: 4px;
+			padding-left: 7px;
+		}
+		
+		.main_box .dian{
+			width: 20px;
+			height: 20px;
+			right: 92px;
+			top: 43px;
+			position: absolute;
+		}
+
+		.main_box .main_box_right_down{
+			position: absolute;
+			right: 15px;
+			top: 41px;
+			font-size: 14px;
+			color: #333;
+			padding-left: 7px;
+		}
+
+		.main_center{
+			width: 100%;
+			height: 265px;
+			background: #fff;
+			border-bottom: 10px solid #f2f2f2;
+			position: relative;
+		}
+
+		.main_center .main_center_word_left{
+			color: #48b9fd;
+			font-size: 16px;
+			position: absolute;
+			left: 40px;
+			top: 20px;
+		}
+
+		.main_center .main_center_word_right{
+			color: #333;
+			font-size: 16px;
+			position: absolute;
+			left: 125px;
+			top: 20px;
+		}
+
+		.main_center img{
+			width: 80.8%;
+			height: 192px;
+			position: absolute;
+			left: 40px;
+			top: 50px;
+		}
+
+		.main_down {
+			width: 100%;
+			height: 46px;
+			background: #fff;
+			border-bottom: 1px solid #f2f2f2;
+			position: relative;
+		}
+
+		.main_down_left{
+			width: 40px;
+			height: 24px;
+			font-size: 14px;
+			color: #48b9fd;
+			border-bottom: 2px solid #48b9fd;
+			position: absolute;
+			left: 15px;
+			top: 13px;
+		}
+
+		.main_down_center{
+			width: 50px;
+			height: 24px;
+			font-size: 14px;
+			color: #333;
+			/*border-bottom: 2px solid #48b9fd;*/
+			position: absolute;
+			left: 91px;
+			top: 13px;
+		}
+
+		.main_down_right{
+			width: 50px;
+			height: 24px;
+			font-size: 14px;
+			color: #333;
+			/*border-bottom: 2px solid #48b9fd;*/
+			position: absolute;
+			right: 15px;
+			top: 13px;
+		}
+
+		.main_down_box{
+			height: 61px;
+			background: #fff;
+			position: relative;
+			border-bottom: 1px solid #f2f2f2;
+		}
+
+		.main_down_box .image{
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			left: 16px;
+			top: 9px;
+			position: absolute;
+		}
+
+		.main_down_box .username{
+			left: 60px;
+			top: 10px;
+			font-size: 14px;
+			color: #333;
+			position: absolute;
+		}
+
+		.main_down_box .sex{
+			width: 0.7rem;
+			height: 0.7rem;
+			left: 89px;
+			top: 13px;
+			position: absolute;
+		}
+
+		.main_down_box .shijian{
+			position: absolute;
+			font-size: 13px;
+			left: 60px;
+			top: 31px;
+		}
+
+		.main_down_box .main_box_right_up{
+			width: 70px;
+			height: 20px;
+			position: absolute;
+			right: 15px;
+			top: 20px;
+			font-size: 14px;
+			background-color: #48b9fd;
+			color: #fff;
+			border-radius: 4px;
+			padding-left: 13px;
+		}
+
+		footer{
+			border-top: 1px solid #f2f2f2;
+		}
+
+		footer .image1{
+			width: 25px;
+			height: 25px;
+			position: absolute;
+			left: 35px;
+			top: 12px;
+		}
+
+		footer .aui-bar-tab-label{
+			font-size: 18px;
+			position: absolute;
+			top: 1px;
+			left: 14px;
+			color: #838591;
+		}
+
+		footer .image2{
+			width: 23px;
+			height: 23px;
+			top: 13px;
+			position: absolute;
+			left: 35px;
+		}
+
+		footer .image3{
+			width: 22px;
+			height: 22px;
+			position: absolute;
+			left: 35px;
+			top: 14px;
+		}
+
+		footer .string{
+			width: 1px;
+			height: 21px;
+			position: absolute;
+			top: 14px;
+			z-index: 100;
+			color: #c8c8c8;
+		}
+  
+		.aui-bar-tab-item{
+			background-color: #f2f2f2;
+		}
+
+
+	
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<header class="aui-bar aui-bar-nav" style="padding-top:25px;">
+			    <a class="aui-pull-left">
+			        <span class="aui-iconfont aui-icon-left"></span>
+			    </a>
+			    <div class="aui-title">挑战令</div>
+			</header>
+			<div class="main">
+				<div class="main_box">
+					<img class="image" src="../image/snow1.jpg">
+					<div class="username">小东</div>
+					<img class="sex" src="../image/man.png">
+					<div class="shijian">1 min</div>
+					<div class="attention">关注</div>
+					<img class="heart" src="../image/heart.png">
+					<div class="main_box_right_up">照片验证</div>
+					<img class="dian" src="../image/dian.png" alt="">
+					<div class="main_box_right_down">已有6人挑战</div>
+				</div>
+				<div class="main_center">
+					<div class="main_center_word_left">#四级分数#</div>
+					<div class="main_center_word_right">让我们比一比谁考的高</div>
+					<img src="../image/sakura.png">
+				</div>
+				<div class="main_down">
+					<div class="main_down_left">挑战  4</div>
+					<div class="main_down_center">评论  35</div>
+					<div class="main_down_right">分享  35</div>
+				</div>
+				<div class="main_down_box">
+					<div class="main_down_box main_down_box1">
+						<img class="image" src="../image/snow1.jpg">
+						<div class="username">小东</div>
+						<img class="sex" src="../image/man.png">
+						<div class="shijian">1 min</div>
+						<div class="main_box_right_up">已完成</div>
+					</div>
+					<div class="main_down_box main_down_box2">
+						<img class="image" src="../image/snow2.jpg">
+						<div class="username">小南</div>
+						<img class="sex" src="../image/man.png">
+						<div class="shijian">10 min</div>
+						<div class="main_box_right_up">未完成</div>
+					</div>
+					<div class="main_down_box main_down_box3">
+						<img class="image" src="../image/snow3.jpg">
+						<div class="username">小水</div>
+						<img class="sex" src="../image/man.png">
+						<div class="shijian">1 h</div>
+						<div class="main_box_right_up">已完成</div>
+					</div>
+					<div class="main_down_box main_down_box4">
+						<img class="image" src="../image/snow3.jpg">
+						<div class="username">小水</div>
+						<img class="sex" src="../image/man.png">
+						<div class="shijian">1 h 1min</div>
+						<div class="main_box_right_up">已完成</div>
+					</div>
+				</div>
+			</div>
+			<footer class="aui-bar aui-bar-tab" id="footer">
+			    <div class="aui-bar-tab-item aui-active" tapmode>
+			        <img class="image1" src="../image/share.png">
+			        <div class="aui-bar-tab-label">分享</div>
+			    </div>
+			    <!-- <div class="string"></div> -->
+			    <div class="aui-bar-tab-item" tapmode>
+			        <img class="image2" src="../image/comment.png" alt="">
+			        <div class="aui-bar-tab-label">评论</div>
+			    </div>
+			    <!-- <div class="string"></div> -->
+			    <div class="aui-bar-tab-item" tapmode>
+			        <img class="image3" src="../image/challenge.png">
+			        <div class="aui-bar-tab-label">挑战</div>
+			    </div>
+			    
+			</footer>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+	    apiready = function(){
+
+	    };
+	</script>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>EeApp</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+</head>
+<style type="text/css">
+    .aui-margin-l-5 {
+        margin-left:0.45rem !important;
+    }
+
+    .guanzhu_sex {
+        width:1rem;
+        height:1rem;
+        margin-right:0.2rem;
+    }
+
+    .aui-margin-t-10 {
+        margin-top:0rem !important;
+    }
+
+    .list_bg {
+        background-color:white;
+    }
+    
+    .guanzhu_btn {
+        width:3rem;
+        height:1rem;
+        border:1px solid;
+        border-radius:4px;
+        border-color:#48B9FD;
+        color:#48B9FD;
+        font-size:12px;
+        text-align:center;
+    }
+
+    .guanzhu_btn i {
+        width:3rem;
+        height:1rem;
+        display: block;
+        text-align:center;
+        line-height:20px;
+    }
+</style>
+<body>
+    <header class="aui-bar aui-bar-nav" id="aui-header">
+        <a class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">我关注的人</div>
+    </header>
+    <div class="list_bg aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10 aui-border-b">
+        <div class="aui-info-item">
+            <img src="../image/usertx.jpg" style="width:1.5rem;height:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小一</span>
+        </div>
+        <div class="aui-list-item-right">
+            <img src="../image/woman.png" class="guanzhu_sex">
+            <div class="aui-info-item guanzhu_btn">
+                <i>取消关注</i>
+            </div>
+        </div> 
+    </div>
+    <div class="list_bg aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10 aui-border-b">
+        <div class="aui-info-item">
+            <img src="../image/usertx2.jpg" style="width:1.5rem;height:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小二</span>
+        </div>
+        <div class="aui-list-item-right">
+            <img src="../image/woman.png" class="guanzhu_sex">
+            <div class="aui-info-item guanzhu_btn">
+                <i>取消关注</i>
+            </div>
+        </div> 
+    </div>
+    <div class="list_bg aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10 aui-border-b">
+        <div class="aui-info-item">
+            <img src="../image/usertx3.jpg" style="width:1.5rem;height:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">三三</span>
+        </div>
+        <div class="aui-list-item-right">
+            <img src="../image/man.png" class="guanzhu_sex">
+            <div class="aui-info-item guanzhu_btn">
+                <i>取消关注</i>
+            </div>
+        </div> 
+    </div>
+    <div class="list_bg aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10 aui-border-b">
+        <div class="aui-info-item">
+            <img src="../image/usertx4.jpg" style="width:1.5rem;height:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">四儿</span>
+        </div>
+        <div class="aui-list-item-right">
+            <img src="../image/man.png" class="guanzhu_sex">
+            <div class="aui-info-item guanzhu_btn">
+                <i>取消关注</i>
+            </div>
+        </div> 
+    </div>
+    
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        api.openFrame({
+            name: 'dialog_frm',
+            url: 'dialog_frm.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: 'auto',
+                h: 'auto'
+            }
+        })
+
+
+    };
+    function closeWin(){
+        api.closeWin({
+        });
+    }
+</script>
+</html>

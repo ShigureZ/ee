@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+</head>
+<style type="text/css">
+    .jiaoyi_tx {
+        width:1.5rem;
+        height:1.5rem;
+        margin-right:0.2rem;
+        border-radius:50%;
+    }
+
+    .bj_color {
+        background-color:white;
+    }
+
+    .num_blue {
+        color:#03a9f4;
+        font-size:0.9rem;
+    }
+</style>
+<body>
+    <header class="aui-bar aui-bar-nav" id="aui-header">
+        <a class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">积分明细</div>
+    </header>
+    <!-- 做不出来大大的1 居中 在右 -->
+    <!-- <div class="top aui-border-b">
+        <div class="jifen_num">1</div>
+        <div class="jifen_all">入账积分</div>
+    </div> -->
+    <div class="list_bg aui-info aui-padded-l-10 aui-padded-r-10 aui-border-b bj_color">
+        <div class="aui-info-item">
+            <span class="aui-margin-l-5">入账积分</span>
+        </div>
+        <div class="aui-list-item-right">
+            <div class="aui-info-item">
+                <span class="num_blue">1</span>
+            </div>
+        </div> 
+    </div>
+    <div class="list_bg aui-info aui-padded-l-10 aui-padded-r-10 aui-border-b bj_color">
+        <div class="aui-info-item">
+            <span class="aui-margin-l-5">类型</span>
+        </div>
+        <div class="aui-list-item-right">
+            <div class="aui-info-item">
+                <span style="color:black;">跑腿代劳</span>
+            </div>
+        </div> 
+    </div>
+    <div class="list_bg aui-info aui-padded-l-10 aui-padded-r-10 aui-border-b bj_color">
+        <div class="aui-info-item">
+            <span class="aui-margin-l-5">时间</span>
+        </div>
+        <div class="aui-list-item-right">
+            <div class="aui-info-item">
+                <span style="color:black;">2017-12-12  08:00</span>
+            </div>
+        </div> 
+    </div>
+    <div class="list_bg aui-info aui-padded-l-10 aui-padded-r-10 aui-border-b bj_color">
+        <div class="aui-info-item">
+            <span class="aui-margin-l-5">交易用户</span>
+        </div>
+        <div class="aui-list-item-right">
+            <img src="../image/usertx3.jpg" class="jiaoyi_tx">
+            <div class="aui-info-item">
+                <span style="color:black;">鱼小鱼</span>
+            </div>
+        </div> 
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        api.openFrame({
+            name: 'dialog_frm',
+            url: 'dialog_frm.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: 'auto',
+                h: 'auto'
+            }
+        })
+
+
+    };
+    function closeWin(){
+        api.closeWin({
+        });
+    }
+</script>
+</html>
