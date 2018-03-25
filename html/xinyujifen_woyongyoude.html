@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+</head>
+<style type="text/css">
+    .aui-card-list-header, .aui-card-list-footer {
+        min-height:0;
+        margin:0.2rem 1.9rem 0.2rem 1.1rem;
+        padding:0rem;
+    }
+
+    .shangcheng_img {
+        width:5rem;
+        height:5rem;
+    }
+
+    .aui-card-list {
+        width:5rem;
+        height:7rem;
+        background-color:#f5f5f5;
+    }
+
+    .aui-card-list-header {
+        height:0.6rem;
+        width:100%;
+        font-size:0.6rem;
+        margin:0.2rem 1.9rem 0.2rem 1.9rem;
+        padding:0rem;
+    }
+
+    .aui-card-list-footer {
+        height:1rem;
+        width:100%;
+        color:#039be5;
+    }
+
+    .aui-card-list {
+        margin-bottom:0rem;
+    }
+
+    .shiyong_btn {
+        width:3rem;
+        height:1rem;
+        border:1px solid;
+        border-radius:4px;
+        border-color:#48B9FD;
+        color:#48B9FD;
+        font-size:12px;
+        text-align:center;
+    }
+
+    .shiyong_btn i {
+        width:3rem;
+        height:1rem;
+        display: block;
+        text-align:center;
+        line-height:20px;
+        font-style:normal;
+    }
+
+    .aui-card-list-content-padded {
+        padding:0.5rem 0.65rem 0.5rem 1.1rem;
+    }
+</style>
+<body>
+    <header class="aui-bar aui-bar-nav" id="aui-header">
+        <a class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">我拥有的</div>
+    </header>
+    <div class="aui-tab" id="tab">
+        <div class="aui-tab-item aui-active">主题</div>
+        <div class="aui-tab-item"><div></div>壁纸</div>
+        <div class="aui-tab-item">字体</div>
+        <div class="aui-tab-item">挂件</div>
+        <div class="aui-tab-item">特权</div>
+    </div>
+    <div class="aui-card-list-content-padded">
+            <div class="aui-row aui-row-padded">
+                <div class="aui-col-xs-4 jifen_height">
+                    <div class="aui-card-list">
+                        <div class="aui-card-list-content shangcheng_img">
+                            <img src="../image/bj_child.jpg" />
+                        </div>
+                        <div class="aui-card-list-header skin_name">
+                            小孩
+                        </div>
+                        <div class="aui-card-list-footer shiyong_btn">
+                            <i>正在使用</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="aui-col-xs-4">
+                    <div class="aui-card-list">
+                        <div class="aui-card-list-content shangcheng_img">
+                            <img src="../image/bj_child.jpg" />
+                        </div>
+                        <div class="aui-card-list-header skin_name">
+                            小孩
+                        </div>
+                        <div class="aui-card-list-footer shiyong_btn">
+                            <i>点击设置</i>
+                        </div>
+                    </div>                
+                </div>
+                <div class="aui-col-xs-4">
+                    <div class="aui-card-list">
+                        <div class="aui-card-list-content shangcheng_img">
+                            <img src="../image/bj_dog.jpg" />
+                        </div>
+                        <div class="aui-card-list-header skin_name">
+                            小狗
+                        </div>
+                        <div class="aui-card-list-footer shiyong_btn">
+                            <i>点击设置</i>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+    </div>
+    <div class="aui-card-list-content-padded">
+            <div class="aui-row aui-row-padded">
+                <div class="aui-col-xs-4 jifen_height">
+                    <div class="aui-card-list">
+                        <div class="aui-card-list-content shangcheng_img">
+                            <img src="../image/bj_child.jpg" />
+                        </div>
+                        <div class="aui-card-list-header skin_name">
+                            小孩
+                        </div>
+                        <div class="aui-card-list-footer shiyong_btn">
+                            <i>点击设置</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="aui-col-xs-4">
+                    <div class="aui-card-list">
+                        <div class="aui-card-list-content shangcheng_img">
+                            <img src="../image/bj_child.jpg" />
+                        </div>
+                        <div class="aui-card-list-header skin_name">
+                            小孩
+                        </div>
+                        <div class="aui-card-list-footer shiyong_btn">
+                            <i>点击设置</i>
+                        </div>
+                    </div>                
+                </div>
+                <div class="aui-col-xs-4">
+                    <div class="aui-card-list">
+                        <div class="aui-card-list-content shangcheng_img">
+                            <img src="../image/bj_child.jpg" />
+                        </div>
+                        <div class="aui-card-list-header skin_name">
+                            小孩
+                        </div>
+                        <div class="aui-card-list-footer shiyong_btn">
+                            <i>点击设置</i>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        api.openFrame({
+            name: 'dialog_frm',
+            url: 'dialog_frm.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: 'auto',
+                h: 'auto'
+            }
+        })
+
+
+    };
+    function closeWin(){
+        api.closeWin({
+        });
+    }
+</script>
+</html>

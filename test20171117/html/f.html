@@ -1,0 +1,404 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+	    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+	    <title>chushi</title>
+	    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css">
+
+		<style type="text/css">
+
+		.aui-icon-home1 {
+			background:url(../image/shouye1.png) no-repeat center center;
+			background-size:100%;
+			display:inline-block;
+			width:1.2rem;
+			height:1.1rem;
+		}
+
+		.aui-icon-search1 {
+			background:url(../image/diqiu.png) no-repeat center center;
+			background-size:100%;
+			display:inline-block;
+			width:1.5rem;
+			height:1.6rem;
+		}
+
+		.aui-icon-publish1 {
+			background:url(../image/jiahao1.png) no-repeat center center;
+			background-size:100%;
+			display:inline-block;
+			width:2.9rem;
+			height:2.9rem;
+			margin-left:-1.45rem;
+			position:absolute;
+			left:50%;
+			top:-0.5rem;
+		}
+
+		.aui-icon-cart1 {
+			background:url(../image/xiaoxi.png) no-repeat center center;
+			background-size:100%;
+			display:inline-block;
+			width:1.3rem;
+			height:1.3rem;
+		}
+
+		.aui-icon-my1 {
+			background:url(../image/wode3.png) no-repeat center center;
+			background-size:100%;
+			display:inline-block;
+			width:1.3rem;
+			height:1.3rem;
+		}
+
+		.aui-bar {
+			border-top:0.05rem solid #f2f2f2;
+		}
+
+
+		.aui-tab{
+			background-color: #48b9fd;
+			position: relative;
+		}
+
+		.aui-tab-item.aui-active{
+			color: #fff;
+			border-bottom: 0rem;
+			font-size: 0.7rem;
+/*			position: relative;*/
+		}
+
+		.aui-tab-underline{
+			width: 15.666667%;
+			height: 0.15rem;
+			background-color: #fff;
+		/*	position: absolute;*/
+			margin-top: 2.2rem;
+			margin-left: -38%;
+
+		}
+
+		.aui-tab-item{
+			color: #fff;
+		}
+
+		.aui-tab-img{
+			margin-left: 89.866667%;
+			top: 0.55rem;
+			width: 5.866667%;
+			height: 1.1rem;
+			position: absolute;
+			float: left;
+		}
+
+		.main_first{
+			height: 6rem;
+			background:url(../image/lunbotu1.png);
+			background-size: 100% 100%;
+		}
+
+		.main_second{
+			height: 9.05rem;
+			background-color: #f2f2f2;
+		}
+
+		.main_second_left_img1{			
+			width:73.066667%;
+			height: 8.8rem;
+			margin-left: -22.933333%;
+			/*background: url(../image/e.jpg);*/
+			float: left;
+			border-radius: 35%;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.main_second_left_img2{			
+			width: 37.66667%;
+			height: 6.5rem;
+			margin-left: 5.933333%;
+			margin-top: 2rem;
+			float: left;
+			overflow: hidden;
+			position: absolute;
+		}	
+
+
+		.main_daka .left{
+			font-size: 1rem;
+			color: #fff;
+			float: left;
+			position: absolute;
+/*			rotate:(90deg);*/
+			transform: rotate(-30deg);
+		}
+
+		.main_daka .right{
+			font-size: 1rem;
+			color: #fff;
+			float: left;
+			margin-left: 80%;
+			position: absolute;
+			transform: rotate(30deg);
+		}
+
+		.main_second_right {			
+			width:73.066667%;
+			height: 8.8rem;
+			margin-left: 50.400001%;
+			background-color: #000000;
+			float: left;
+			border-radius: 35%;
+			position: absolute;
+			overflow: hidden;
+		}
+
+		.main_second_right_img1{
+			width: 70.6%;
+			height: 8.8rem;
+			border-radius: 50%;
+			float: left;
+			position: absolute;
+		}
+
+		.main_second_right_img2{
+			width: 35%;
+			height: 50%;
+			margin-left: 20%;
+			margin-top: 2.2rem;
+			float: left;
+			position: absolute;
+		}
+
+		.main_third{
+			height: 1.75rem;
+			background: #fff;
+			border-bottom: 1px solid #f2f2f2;
+			position: relative;
+		}
+
+		.main_third_left_box{
+			float: left;
+			margin-top: 0.25rem;
+			margin-left: 22%;
+			position: absolute;
+			width: 2.5rem;
+			border-bottom: 0.1rem solid #48b9fd;
+		}
+
+		.main_third_left ul li{
+			padding-left: 0.45rem;
+			font-size: 0.8rem;
+			color: #48b9fd;
+		}
+
+		.main_third_right_box{
+			float: left;
+			margin-top: 0.25rem;
+			margin-left: 69%;
+			position: absolute;
+			float: left;
+			border-bottom: 0.1rem solid #fff;
+		}
+
+		.main_third_right ul li{
+			padding-left: 0.45rem;
+			font-size: 0.8rem;
+			color: #333;
+		}
+
+		.main_third_center{
+			width: 1.7rem;
+			height: 1.7rem;
+			margin-left: 47%;
+			float: left;
+			position: absolute;
+		}
+
+		.main_forth_box{
+			height: 2.45rem;
+			background: #fff;
+			border-bottom: 0.05rem solid #f2f2f2;
+			position: relative;
+		}
+
+		.main_forth .img1{
+			width: 2rem;
+			height: 2rem;
+			float: left;
+			margin-left: 4%;
+			margin-top: 0.15rem;
+			position: relative;
+			transform: rotate(-30deg);
+		}
+
+		.main_forth .img2{
+			width: 2rem;
+			height: 2rem;
+			border-radius: 50%;
+			float: left;
+			margin-left: 0.5%;
+			margin-top: 0.2rem;
+			position: relative;
+		}
+
+		.main_forth .username{
+			margin-left: 0.5%;
+			margin-top: 0.7rem;
+			font-size: 0.65rem;
+			color: #333;
+			position: relative;
+			float: left;
+		}
+
+		.main_forth .sex{
+			width: 0.7rem;
+			height: 0.7rem;
+			margin-left: 0.2%;
+			margin-top: 0.8rem;
+			position: relative;
+			float: left;
+		}
+
+		.main_forth .shengchang{
+			font-size: 0.7rem;
+			color: #333;
+			margin-left:75%;
+			float: left;
+			margin-top: 0.75rem; 
+			position: absolute;
+		}
+
+		.main_forth .shengchangcishu{
+			font-size: 0.7rem;
+			color: #333;
+			margin-left: 85%;
+			margin-top: 0.75rem;
+			position: absolute;
+			float: left;
+		}
+
+
+
+
+
+
+		</style>
+	</head>
+
+	<body>
+		<div class="aui-tab" id="tab">
+		    <div class="aui-tab-item aui-active ">悬赏</div>
+		    <div class="aui-tab-underline"></div>
+		    <div class="aui-tab-item">擂台</div>
+		    <div class="aui-tab-img">
+		    	<img src="../image/magnifier.png">
+		    </div>
+		</div>
+		<div class="main_box">
+			<div class="main_first">
+				
+			</div>
+			<div class="main_second">
+				<div class="main_second_left">
+					<img class="main_second_left_img1" src="../image/daka1.png" alt="">
+					
+				</div>
+				<div class="main_second_right">
+					<img class="main_second_right_img1" src="../image/pk.jpg" alt="">
+					<img class="main_second_right_img2" src="../image/pk4.png">
+				</div>
+			</div>
+			<div class="main_third">
+				<div class="main_third_left">
+					<div class="main_third_left_box">
+						<ul>
+							<li class="color">月榜</li>
+						</ul>
+					</div>
+				</div>
+				<div class="main_third_center">
+					<img src="../image/rankinglist.png">
+				</div>
+				<div class="main_third_right">
+					<div class="main_third_right_box">
+						<ul>
+							<li class="color">总榜</li>
+						</ul>
+					</div>
+				</div>					
+				</div>	
+			</div>
+			<div class="main_forth">
+				<div class="main_forth_box">
+					<img class="img1" src="../image/crown1.png">
+					<img class="img2" src="../image/snow1.jpg">
+					<div class="username">小东</div>
+					<img class="sex" src="../image/man.png">
+					<div class="shengchang">胜场</div>
+					<div class="shengchangcishu">100</div>
+
+				</div>
+				<div class="main_forth_box">
+					<img class="img1" src="../image/crown2.png">
+					<img class="img2" src="../image/snow2.jpg">
+					<div class="username">小西</div>
+					<img class="sex" src="../image/woman.png">
+					<div class="shengchang">胜场</div>
+					<div class="shengchangcishu">98</div>
+										
+				</div>
+				<div class="main_forth_box">
+					<img class="img1" src="../image/crown3.png">
+					<img class="img2" src="../image/snow3.jpg">
+					<div class="username">小南</div>
+					<img class="sex" src="../image/man.png">
+					<div class="shengchang">胜场</div>
+					<div class="shengchangcishu">32</div>
+						
+				</div>
+				<div class="main_forth_box"></div>
+				<div class="main_forth_box"></div>
+				<div class="main_forth_box"></div>
+			</div>
+
+		</div>
+
+
+
+
+
+		<footer class="aui-bar aui-bar-tab" id="footer">
+	    	<div class="aui-bar-tab-item aui-active" tapmode>
+	        	<i class="aui-iconfont aui-icon-home1"></i>
+	        	<div class="aui-bar-tab-label">首页</div>
+	    	</div>
+		    <div class="aui-bar-tab-item" tapmode>
+		        <i class="aui-iconfont aui-icon-search1"></i>
+		        <div class="aui-bar-tab-label">发现</div>
+		    </div>
+		    <div class="aui-bar-tab-item" tapmode>
+		    	<i class="aui-iconfont3 aui-icon-publish1"></i>
+		    </div>
+		    
+		    <div class="aui-bar-tab-item" tapmode>
+		        <i class="aui-iconfont aui-icon-cart1"></i>
+		        <div class="aui-bar-tab-label">消息</div>
+		    </div>
+		    <div class="aui-bar-tab-item" tapmode>
+		        <i class="aui-iconfont aui-icon-my1"></i>
+		        <div class="aui-bar-tab-label">我的</div>
+		    </div>
+		</footer>
+
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+	    apiready = function(){
+
+	    };
+	</script>
+</html>

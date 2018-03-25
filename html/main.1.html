@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+	    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+	    <title>gaoshu</title>
+	    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css">
+
+		<style type="text/css">
+			.wrap{
+				height: 700px;
+				width: 100%;
+				background: url(../image/gaoshuback.png) ;
+				background-size: 100% 100%;
+				position: relative;
+				float: left;
+			}
+
+			.header{
+				width: 100%;
+				height: 64px;
+
+			}
+
+
+			.return{
+				width: 22px;
+				height: 22px;
+				margin-left: 10px;
+				margin-top: 35px;
+				position: absolute;
+			}
+
+			.yibaoming{
+				width: 50px;
+				right: 110px;
+				top:36px;
+				position: absolute;
+				text-align: 0 auto;
+				font-size: 14px;
+				color: #fff;
+			}
+
+			.renshu{
+				width: 50px;
+				right: 60px;
+				top: 36px;
+				position: absolute;
+				text-align: 0px auto;
+				font-size: 14px;
+				color: #fff;
+			}
+
+			.heart{
+				width: 20px;
+				height: 20px;
+				float: left;
+				position: absolute;
+				margin-top: 37px;
+				right: 40px;
+
+			}
+
+			.box1{
+				width: 63px;
+				height: 63px;
+				position: absolute;
+				left: 14.933333%;
+				top: 127px;
+				border-radius: 50%;
+			}
+
+			.box2{
+				width: 80px;
+				height: 80px;
+				left: 44.533333%;
+				top: 84px;
+				position: absolute;
+				border-radius: 50%;
+			}
+
+			.box3{
+				width: 80px;
+				height: 80px;
+				right: 15px;
+				top: 120px;
+				position: absolute;
+				border-radius: 50%;
+			}
+
+			.box4{
+				width: 63px;
+				height: 63px;
+				right: 1px;
+				top: 231px;
+				position: absolute;
+				border-radius: 50%;
+			}
+
+			.box5{
+				width: 62px;
+				height: 62px;
+				right: 40px;
+				top: 325px;
+				position: absolute;
+				border-radius: 50%;
+			}
+
+			.box6{
+				width: 80px;
+				height: 80px;
+				left: 40.266667%;
+				top: 400px;
+				position: absolute;
+				border-radius: 50%;
+			}
+
+			.box7{
+				width: 54px;
+				height: 54px;
+				left: 11.2%;
+				top: 414px;
+				position: absolute;
+				background: #333;
+				opacity: 0.4;
+				border-radius: 50%;
+			}
+
+			.plus{
+				width: 42px;
+				height: 42px;
+				padding-left: 11px;
+				padding-top: 11px;
+				position: absolute;
+				float: left;
+			}		
+
+			.box8{
+				width: 68px;
+				height: 26px;
+				right: 15px;
+				top: 506px;
+				position: absolute;
+				background: #333;
+				opacity: 0.4;
+				border-radius: 34px;
+			}	
+
+			.box8_img{
+				width: 22px;
+				height: 22px;
+				right: 58px;
+				top: 508px;
+				position: absolute;
+			}
+
+			.dianzanrenshu{
+				right: 25px;
+				top: 509px;
+				position: absolute;
+				font-size: 14px;
+				color: #fff;
+			}
+
+			.box_1{
+				width: 180px;
+				height: 180px;
+				border-radius: 50%;
+				/*position: absolute;*/
+				margin: 0px auto;
+				margin-top: 132px;		
+				opacity: 0.15;
+				background: #fff;
+				padding-top: 10px;
+			}
+
+			.box_2{
+				width: 160px;
+				height: 160px;
+				border-radius: 50%;
+				margin: 0px auto;
+				opacity: 0.8;
+				background: #2a6d20;
+				padding-top: 10px;
+
+			}
+
+			.box_3{
+				width: 140px;
+				height: 140px;
+				border-radius: 50%;
+				margin: 0px 10px;
+				opacity: 1;
+				background: #fff;
+				position: relative;
+
+			}
+
+            .math{
+				font-size: 14px;
+				text-align: 0 auto;
+				top: 210px;
+				left: 100px;
+				position: absolute;
+				color:#fff;
+			}			
+
+			.gao{
+				font-size: 20px;
+				text-align: 0 auto;
+				top: 0px;
+				left: 0px;
+				position: absolute;
+				color:#fff;
+			}			
+
+			.shu{
+				font-size: 20px;
+				text-align: 0 auto;
+				top: 0px;
+				left: 0px;
+				position: absolute;
+				color:#fff;
+			}
+			
+			.hai{
+				font-size: 16px;
+				text-align: 0 auto;
+				top: 0px;
+				left: 0px;
+				position: absolute;
+				color:#fff;
+			}
+
+			.aui-bar-tab{
+				height: 49px;
+				background-color: #f2f2f2;
+			}
+
+			.footer_left{
+				width: 45.333333%;
+				height: 38px;
+				left: 15px;
+				top: 6px;
+				background-color: #fff;
+				border-radius: 4px;
+				position: absolute;
+			}
+
+			.footer_left_box{
+				padding-top: 6px;
+				text-align: 0 auto;
+				color: #333;
+				font-size: 16px;
+			}
+
+			.footer_right{
+				width: 45.333333%;
+				height: 38px;
+				right: 15px;
+				margin-top: 6px;
+				background-color: #48b9fd;
+				border-radius: 4px;
+				position: absolute;
+			}
+
+			.footer_right_box{
+				padding-top: 6px;
+				text-align: 0 auto;
+				color: #fff;
+				font-size: 16px;
+			}
+
+
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="header">
+				<img class="return" src="../image/return.png">
+				<div class="yibaoming">已报名</div>
+				<div class="renshu">1200人</div>
+				<div class="heart">
+					<img src="../image/heart.png" alt="">
+				</div>
+			</div>
+
+			
+			<div class="circle_sculpture">
+				<img class="box1" src="../image/snow1.jpg" alt="">
+				<img class="box2" src="../image/snow2.jpg" alt="">
+				<img class="box3" src="../image/snow3.jpg" alt="">
+				<img class="box4" src="../image/snow4.jpg" alt="">
+				<img class="box5" src="../image/snow1.jpg" alt="">
+				<img class="box6" src="../image/snow2.jpg" alt="">
+				<div class="box7">
+					<img class="plus" src="../image/plus.png">
+				</div>
+				<div class="box8"></div>
+				<img class="box8_img" src="../image/dianzan.png">
+				<div class="dianzanrenshu">1728</div>
+			</div>
+			<footer class="aui-bar aui-bar-tab bottom" id="footer">
+				<div class="footer_left">
+					<div class="footer_left_box">点我分享</div>
+				</div>
+				<div class="footer_right">
+					<div class="footer_right_box">开始打卡</div>
+				</div>
+			</footer>
+		</div>		
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+	    apiready = function(){
+
+	    };
+	</script>
+</html>

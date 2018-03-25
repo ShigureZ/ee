@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>EeApp</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        .rname_border {
+            border:1px solid #F2F2F2;
+            margin-top:2rem;
+            margin-left:2rem;
+            background-color:white;
+            width:80%;
+            margin-bottom:2.5rem;
+        }
+
+        .sign {
+            height:1rem;
+            width:5.4rem;
+            font-size:0.6rem;
+            margin-bottom:3rem;
+            margin-left:0.2rem;
+            color:#666666;
+        }
+
+        .nicheng_btn {
+            width:14.2rem;
+            height:2rem;
+            background-color:#03a9f4;
+            border-radius:0.2rem;
+            margin:0 auto;
+        }
+
+        .fns_color {
+            color:white;
+            font-size:0.8rem;
+            padding:10px 130px;
+        }
+
+        .fns_color span {
+            width:1.6rem;
+            height:0.8rem;
+            text-align:center;
+        }
+    </style>
+</head>
+<body style="background-color:white;">
+    <header class="aui-bar aui-bar-nav" id="aui-header">
+        <a class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">个人签名</div>
+    </header>
+    <div class="rname_border">
+        <div class="sign">
+            这个人是电竞吴彦祖
+        </div>
+    </div>
+    <div class="nicheng_btn">
+        <div class="fns_color"><span>完成</span></div>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        api.openFrame({
+            name: 'dialog_frm',
+            url: 'dialog_frm.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: 'auto',
+                h: 'auto'
+            }
+        })
+
+
+    };
+    function closeWin(){
+        api.closeWin({
+        });
+    };
+</script>
+</html>

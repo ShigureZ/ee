@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>EeApp</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        .user-info {
+            background-color: #ffffff;
+            padding: 0.75rem 0;
+        }
+        img.avatar {
+            display: block;
+            margin: 0 auto;
+            width: 20%;
+        }
+        .aui-list .aui-list-header {
+            background-color: #ffffff;
+            line-height: 1.2rem;
+        }
+        .aui-list .aui-list-item {
+            background-color: #ffffff;
+        }
+    
+        img.aui-img-round {
+            width:4rem;
+            height:4rem;
+            border-radius:2rem;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header class="aui-bar aui-bar-nav" id="aui-header">
+        <a class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">个人信息</div>
+    </header>
+    <section class="aui-content user-info aui-text-center aui-margin-b-15">
+        <img src="../image/usertx.jpg" class="avatar aui-img-round">
+        <h3 class="aui-margin-t-15">点击修改头像</h3>
+    </section>
+    <section class="aui-content">
+        <ul class="aui-list aui-list-noborder">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">昵称</div>
+                    <div class="aui-list-item-right">鱼小鱼></div>
+                    <div class="aui-list-item-right"></div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">性别</div>
+                    <div class="aui-list-item-right">
+                        <input type="radio" id="male" name="sex" class="sex">
+                        <label for="male" class="sex_margin">男</label>
+                        <input type="radio" id="female" name="sex" class="sex" style="margin-left:40px;">
+                        <label for="female" class="sex_margin">女</label>
+                    </div>
+                    <div class="aui-list-item-right"></div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">个人签名</div>
+                    <div class="aui-list-item-right">这个人是电竞吴彦祖</div>
+                    <div class="aui-list-item-right"></div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">生日</div>
+                    <div class="aui-list-item-right">1999年3月23日</div>
+                    <div class="aui-list-item-right"></div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">星座</div>
+                    <div class="aui-list-item-right">白羊座</div>
+                    <div class="aui-list-item-right"></div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">家乡</div>
+                    <div class="aui-list-item-right">长春</div>
+                    <div class="aui-list-item-right"></div>
+                </div>
+            </li>
+        </ul>
+    </section>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        api.openFrame({
+            name: 'dialog_frm',
+            url: 'dialog_frm.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: 'auto',
+                h: 'auto'
+            }
+        })
+
+
+    };
+    function closeWin(){
+        api.closeWin({
+        });
+    };
+</script>
+</html>
