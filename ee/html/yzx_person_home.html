@@ -31,37 +31,6 @@
         </a>
         <div class="aui-title">选择家乡</div>
     </header>
-    <div>
-        <div class="aui-searchbar" id="search">
-        <div class="aui-searchbar-input aui-border-radius" tapmode onclick="doSearch()">
-            <i class="aui-iconfont aui-icon-search"></i>
-            <form action="javascript:search();">
-                <input type="search" placeholder="请输入搜索内容" id="search-input">
-            </form>
-        </div>
-        <div class="aui-searchbar-cancel" tapmod>取消</div>
-    </div>
-    <div class="homelist"><i>澳门</i></div>
-    <div class="homelist"><i>安徽</i></div>
-    <div class="homelist"><i>北京</i></div>
-    <div class="homelist"><i>辽宁</i></div>
-    <div class="homelist"><i>江苏</i></div>
-    <div class="homelist"><i>广东</i></div>
-    <div class="homelist"><i>广西</i></div>
-    <div class="homelist"><i>宁夏</i></div>
-    <div class="homelist"><i>浙江</i></div>
-    <div class="homelist"><i>湖北</i></div>
-    <div class="homelist"><i>香港</i></div>
-    <div class="homelist"><i>天津</i></div>
-    <div class="homelist"><i>河北</i></div>
-    <div class="homelist"><i>江苏</i></div>
-    <div class="homelist"><i>山西</i></div>
-    <div class="homelist"><i>内蒙古</i></div>
-    <div class="homelist"><i>吉林</i></div>
-    <div class="homelist"><i>黑龙江</i></div>
-    <div class="homelist"><i>上海</i></div>
-
-</div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
@@ -72,8 +41,8 @@
         var headerPos = $api.offset(header);
         var body_h = $api.offset($api.dom('body')).h;
         api.openFrame({
-            name: 'dialog_frm',
-            url: 'dialog_frm.html',
+            name: 'yzx_person_home_frame',
+            url: 'yzx_person_home_frame.html',
             bounces: true,
             rect: {
                 x: 0,

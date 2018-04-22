@@ -30,12 +30,6 @@
     }
 </style>
 <body>
-    <header class="aui-bar aui-bar-nav" id="aui-header">
-        <a class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
-            <span class="aui-iconfont aui-icon-left"></span>
-        </a>
-        <div class="aui-title">信誉积分</div>
-    </header>
     <div class="top">
         <div class="jifen_num">7</div>
         <div class="jifen_all">总积分</div>
@@ -61,31 +55,4 @@
         </li>
     </ul>
 </body>
-<script type="text/javascript" src="../script/api.js"></script>
-<script type="text/javascript">
-    apiready = function(){
-        api.parseTapmode();
-        var header = $api.byId('aui-header');
-        $api.fixStatusBar(header);
-        var headerPos = $api.offset(header);
-        var body_h = $api.offset($api.dom('body')).h;
-        api.openFrame({
-            name: 'dialog_frm',
-            url: 'dialog_frm.html',
-            bounces: true,
-            rect: {
-                x: 0,
-                y: headerPos.h,
-                w: 'auto',
-                h: 'auto'
-            }
-        })
-
-
-    };
-    function closeWin(){
-        api.closeWin({
-        });
-    }
-</script>
 </html>
