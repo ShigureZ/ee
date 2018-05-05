@@ -98,48 +98,33 @@
     </style>
 </head>
 <body>
-    <header class="aui-bar aui-bar-nav">
+    <header class="aui-bar aui-bar-nav" id="header">
         <div class="aui-title">充值成功</div>
     </header>
-    <div class="czcg">
-        <img src="../image/gou.png">
-        <p>充值成功</p>
-    </div>
-    <div class="yinhangka">
-        <span class="sp1">银行卡</span>
-        <span class="sp2">建设银行</span>
-    </div>
-    <div class="jinel">
-        <span class="sp1">金额</span>
-        <span class="sp2">1.00元</span>
-    </div>
-    <div class="finish">
-        <p>完成</p>
-    </div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
-    apiready = function(){
-        var header = $api.byId('header');
-        $api.fixStatusBar(header);
-        var headerH = $api.offset(header).h;
-      api.openFrame({
-          name: 'lyx.chongzhichenggong.html',
-          url: 'lyx.chongzhichenggong_frame.html',
-          rect: {
-              x: 0,
-              y: headerH,
-              w: 'auto',
-              h: 'auto'
-          },
-          pageParam: {
-              name: 'test'
-          },
-          bounces: true,
-          bgColor: 'rgba(0,0,0,0)',
-          vScrollBarEnabled: true,
-          hScrollBarEnabled: true
-      });
-    };
+apiready = function(){
+    var header = $api.byId('header');
+    $api.fixStatusBar(header);
+    var headerH = $api.offset(header).h;
+  api.openFrame({
+      name: 'lyx.chongzhichenggong.html',
+      url: 'lyx.chongzhichenggong_frame.html',
+      rect: {
+          x: 0,
+          y: headerH,
+          w: 'auto',
+          h: 'auto'
+      },
+      pageParam: {
+          name: 'test'
+      },
+      bounces: true,
+      bgColor: 'rgba(0,0,0,0)',
+      vScrollBarEnabled: true,
+      hScrollBarEnabled: true
+  });
+};
 </script>
 </html>

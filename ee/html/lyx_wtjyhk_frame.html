@@ -117,29 +117,4 @@
         </div>
     </div>
 </body>
-<script type="text/javascript" src="../script/api.js"></script>
-<script type="text/javascript">
-    apiready = function(){
-        var header = $api.byId('header');
-        $api.fixStatusBar(header);
-        var headerH = $api.offset(header).h;
-      api.openFrame({
-          name: 'lyx.qianbao_frame',
-          url: 'lyx.qianbao_frame.html',
-          rect: {
-              x: 0,
-              y: headerH,
-              w: 'auto',
-              h: 'auto'
-          },
-          pageParam: {
-              name: 'test'
-          },
-          bounces: true,
-          bgColor: 'rgba(0,0,0,0)',
-          vScrollBarEnabled: true,
-          hScrollBarEnabled: true
-      });
-    };
-</script>
 </html>

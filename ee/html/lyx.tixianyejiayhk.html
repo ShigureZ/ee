@@ -129,63 +129,23 @@
             margin-top:0.45rem;
             margin-right:0.75rem;
         }
-
-        .n-tcdl {
-            height:2rem;
-            width:100%;
-            text-align:center;
-            position:relative;
-            top:60%;
-        }
-
-        .blue-box {
-            background:#48b9fd;
-            height:2rem;
-            width:14.2rem;
-            text-align:center;
-            line-height:2rem;
-            margin:0 auto;
-            border-radius:0.2rem;
-        }
-
-        .blue-box .text {
-            color:#fff;
-        }
     </style>
 </head>
 <body>
-    <header class="aui-bar aui-bar-nav">
-        <a class="aui-pull-left aui-btn">
-            <span class="aui-iconfont aui-icon-left"></span>
-        </a>
-        <div class="aui-title">充值</div>
-    </header>
+
     <div class="zong">
         <div class="chongzhijine">
             <span class="jin-e">
-                金额
+                银行卡
             </span>
             <span class="srjine">
-                请输入充值金额
+                添加储蓄卡提现
             </span>
         </div>
         <div class="zhifu">
-            <span>支付方式</span>
         </div>
         <div class="zhifubao">
-            <img class="tubiao" src="../image/zhifubao.png">
-            <span>支付宝</span>
-            <img class="duihao" src="../image/duihao.png">
-        </div>
-        <div class="weixin">
-            <img class="tubiao" src="../image/wechat.png">
-            <span>微信</span>
-            <img class="duihao" src="../image/yuanquan.png">
-        </div>
-        <div class="n-tcdl">
-            <div class="blue-box">
-                <span class="text">下一步</span>
-            </div>
+            <span>提现金额</span>
         </div>
     </div>
 </body>
@@ -196,8 +156,8 @@
         $api.fixStatusBar(header);
         var headerH = $api.offset(header).h;
       api.openFrame({
-          name: 'lyx.chongzhi.html',
-          url: 'lyx.chongzhi_frame.html',
+          name: 'lyx.tianjiayinhangka.html',
+          url: 'lyx.tianjiayinhangka_frame.html',
           rect: {
               x: 0,
               y: headerH,

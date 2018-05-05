@@ -189,43 +189,35 @@
     </style>
 </head>
 <body>
-    <div class="zong">
-        <div class="yu-e">
-            <div class="zhanghu">
-                <span>余额账户(元)</span>
-            </div>
-            <div class="jine">
-                <span>999.99</span>
-            </div>
-        </div>
-        <div class="chongzhi">
-            <img src="../image/chongzhi.png">
-            <span>充值</span>
-        </div>
-        <div class="tixian">
-            <img src="../image/tixian.png">
-            <span>提现</span>
-        </div>
-        <div class="jiaoyi">
-            <img src="../image/renminbi.png">
-            <span>收支明细</span>
-        </div>
-    </div>
-    <div class="txwsm">
-        <div class="t-z">
-            <img src="../image/gantanhao.png">
-            <p class="p1">实名认证后才可以提现哦</p>
-            <p class="p2">是否去认证</p>
-        </div>
-        <span class="quxiao">
-            <p>取消</p>
-        </span>
-        <span class="queren">
-            <p>确认</p>
-        </span>
-    </div>
-</body>
+    <header class="aui-bar aui-bar-nav">
+        <a class="aui-pull-left aui-btn">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">我的钱包</div>
+    </header>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
+apiready = function(){
+    var header = $api.byId('header');
+    $api.fixStatusBar(header);
+    var headerH = $api.offset(header).h;
+  api.openFrame({
+      name: 'lyx.tianjiayinhangka.html',
+      url: 'lyx.tianjiayinhangka_frame.html',
+      rect: {
+          x: 0,
+          y: headerH,
+          w: 'auto',
+          h: 'auto'
+      },
+      pageParam: {
+          name: 'test'
+      },
+      bounces: true,
+      bgColor: 'rgba(0,0,0,0)',
+      vScrollBarEnabled: true,
+      hScrollBarEnabled: true
+  });
+};
 </script>
 </html>

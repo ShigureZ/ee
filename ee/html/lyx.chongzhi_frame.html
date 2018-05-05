@@ -185,33 +185,14 @@
         <div class="n-tcdl">
             <div class="blue-box">
                 <span class="text">下一步</span>
-            </div>
+            </div>          
         </div>
     </div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
     apiready = function(){
-        var header = $api.byId('header');
-        $api.fixStatusBar(header);
-        var headerH = $api.offset(header).h;
-      api.openFrame({
-          name: 'lyx.chongzhi.html',
-          url: 'lyx.chongzhi_frame.html',
-          rect: {
-              x: 0,
-              y: headerH,
-              w: 'auto',
-              h: 'auto'
-          },
-          pageParam: {
-              name: 'test'
-          },
-          bounces: true,
-          bgColor: 'rgba(0,0,0,0)',
-          vScrollBarEnabled: true,
-          hScrollBarEnabled: true
-      });
+
     };
 </script>
 </html>

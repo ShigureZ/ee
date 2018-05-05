@@ -69,13 +69,6 @@
     </style>
 </head>
 <body>
-    <header class="aui-bar aui-bar-nav">
-        <a class="aui-pull-left aui-btn">
-            <span class="aui-iconfont aui-icon-left"></span>
-        </a>
-        <div class="aui-title">我的收藏</div>
-        <div class="bianji">编辑</div>
-    </header>
     <div class="sousuo">
         <div class="sousuokuang">
             <img src="../image/sousuo.png">
@@ -109,26 +102,7 @@
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
     apiready = function(){
-      var header = $api.byId('header');
-      $api.fixStatusBar(header);
-      var headerH = $api.offset(header).h;
-    api.openFrame({
-        name: 'lyx.collect.html',
-        url: 'lyx.collect_frame.html',
-        rect: {
-            x: 0,
-            y: headerH,
-            w: 'auto',
-            h: 'auto'
-        },
-        pageParam: {
-            name: 'test'
-        },
-        bounces: true,
-        bgColor: 'rgba(0,0,0,0)',
-        vScrollBarEnabled: true,
-        hScrollBarEnabled: true
-    });
+
     };
 </script>
 </html>
