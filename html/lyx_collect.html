@@ -76,59 +76,30 @@
         <div class="aui-title">我的收藏</div>
         <div class="bianji">编辑</div>
     </header>
-    <div class="sousuo">
-        <div class="sousuokuang">
-            <img src="../image/sousuo.png">
-            <span>搜索</span>
-        </div>
-    </div>
-    <div class="aui-content ">
-        <ul class="aui-list aui-media-list">
-            <li class="aui-list-item">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-media">
-                        <img src="../image/qq.png">
-                    </div>
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title">9420 麦小兜</div>
-                            <div class="aui-list-item-right">2015-07-14</div>
-                        </div>
-                        <div class="aui-info aui-margin-t-5" style="padding:0">
-                            <div class="aui-info-item">
-                                <img src="../image/scenery1.jpg" style="width:2rem" >
-                                <span class="aui-margin-l-5">手牵手一起走在幸福的大街 微风缓缓的吹来你我相依偎 爱的目光如此的热烈 这份爱就像是在燃烧的火堆 炽热的火焰如同盛开的玫瑰 不管白天黑夜继续的沉醉</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
-    apiready = function(){
-      var header = $api.byId('header');
-      $api.fixStatusBar(header);
-      var headerH = $api.offset(header).h;
-    api.openFrame({
-        name: 'lyx.collect.html',
-        url: 'lyx.collect_frame.html',
-        rect: {
-            x: 0,
-            y: headerH,
-            w: 'auto',
-            h: 'auto'
-        },
-        pageParam: {
-            name: 'test'
-        },
-        bounces: true,
-        bgColor: 'rgba(0,0,0,0)',
-        vScrollBarEnabled: true,
-        hScrollBarEnabled: true
-    });
-    };
+apiready = function(){
+    var header = $api.byId('header');
+    $api.fixStatusBar(header);
+    var headerH = $api.offset(header).h;
+  api.openFrame({
+      name: 'lyx.tianjiayinhangka.html',
+      url: 'lyx.tianjiayinhangka_frame.html',
+      rect: {
+          x: 0,
+          y: headerH,
+          w: 'auto',
+          h: 'auto'
+      },
+      pageParam: {
+          name: 'test'
+      },
+      bounces: true,
+      bgColor: 'rgba(0,0,0,0)',
+      vScrollBarEnabled: true,
+      hScrollBarEnabled: true
+  });
+};
 </script>
 </html>

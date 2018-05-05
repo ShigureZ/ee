@@ -92,54 +92,18 @@
     </style>
 </head>
 <body>
-    <div class="zong">
-        <div class="yinhk">
-            <span class="jin-e">
-                银行卡
-            </span>
-            <img class="tianjia" src="../image/jiahao">
-            <span class="srjine">
-                添加储蓄卡提现
-            </span>
-        </div>
-        <div class="tixianjine">
-            <span class="jin-e">
-                提现金额
-            </span>
-            <span class="srjine">
-
-            </span>
-        </div>
-        <div class="n-tcdl">
-            <div class="blue-box">
-                <span class="text">下一步</span>
-            </div>
-        </div>
-    </div>
+    <header class="aui-bar aui-bar-nav">
+        <a class="aui-pull-left aui-btn">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">提现</div>
+    </header>
+    
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
     apiready = function(){
-        var header = $api.byId('header');
-        $api.fixStatusBar(header);
-        var headerH = $api.offset(header).h;
-      api.openFrame({
-          name: 'lyx.qianbao_frame',
-          url: 'lyx.qianbao_frame.html',
-          rect: {
-              x: 0,
-              y: headerH,
-              w: 'auto',
-              h: 'auto'
-          },
-          pageParam: {
-              name: 'test'
-          },
-          bounces: true,
-          bgColor: 'rgba(0,0,0,0)',
-          vScrollBarEnabled: true,
-          hScrollBarEnabled: true
-      });
+
     };
 </script>
 </html>

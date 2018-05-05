@@ -92,7 +92,7 @@
             font-size:0.8rem;
             color:#ffffff;
             margin:0.5rem auto;
-
+            
         }
 
     </style>
@@ -120,26 +120,7 @@
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
     apiready = function(){
-        var header = $api.byId('header');
-        $api.fixStatusBar(header);
-        var headerH = $api.offset(header).h;
-      api.openFrame({
-          name: 'lyx.chongzhichenggong.html',
-          url: 'lyx.chongzhichenggong_frame.html',
-          rect: {
-              x: 0,
-              y: headerH,
-              w: 'auto',
-              h: 'auto'
-          },
-          pageParam: {
-              name: 'test'
-          },
-          bounces: true,
-          bgColor: 'rgba(0,0,0,0)',
-          vScrollBarEnabled: true,
-          hScrollBarEnabled: true
-      });
+
     };
 </script>
 </html>
