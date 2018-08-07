@@ -291,39 +291,116 @@
 </head>
 
 <body>
-    <header class="aui-bar aui-bar-nav" id="aui-header">
-        <a class="aui-pull-left aui-btn">
-            <span class="aui-iconfont aui-icon-left"></span>
-        </a>
-        <div class="aui-title">内容详情</div>
-    </header>
+    <div class="aui-card-list">
+        <div class="list-header">
+            <div class="head-pic">
+                <img src="../image/jiexin.jpg">
+            </div>
+            <div class="head-user">
+                <div class="head-name">鹿小彤</div>
+                <div class="user-label">
+                    <div class="label1">可爱</div>
+                    <div class="label2">漂亮</div>
+                </div>
+            </div>
+            <div class="guanzhu">
+                关注</div>
+        </div>
+
+        <div class="aui-card-list-content-padded aui-border-b aui-border-t">
+            <div class="headline">
+                <div class="headline-title">
+                    你是一个大傻瓜!!!
+                </div>
+                <div class="headline-date">
+                    2017.00.00
+                </div>
+            </div>
+            <p class="content">我原本以为，所谓的缘份就是：冥冥之中，注定相遇、相识，仅此而已.....我原本以为，所有的缘份在遇见之后,都能通过彼此的心，让它坚强的走下去.....终于，某天的某一刻，我觉得自己似乎错了......所谓的缘份，言不楚、道不清.....
+            </p>
+            <div class="aui-row aui-row-padded">
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery1.jpg" />
+                </div>
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery2.jpg" />
+                </div>
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery1.jpg" />
+                </div>
+            </div>
+            <div class="headline-bottom">
+                <div class="yuedu">
+                    阅读
+                </div>
+                <div class="yuedul">
+                    3124234
+                </div>
+                <div class="pingbi">
+                    屏蔽
+                </div>
+                <div class="jubao">
+                    举报
+                </div>
+                <div class="xintu">
+                    <img src="../image/xin.png">
+                </div>
+                <div class="dianzanl">
+                    23482
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jiange"></div>
+    <div class="pinglun">
+        <p class="PLun">评论</p>
+    </div>
+    <div class="pl-content">
+        <div class="pl-pic">
+            <img src="../image/jiexin.jpg">
+        </div>
+        <div class="pl-user">
+            <div class="pl-name">鹿小彤</div>
+            <p class="pl-con">哎呦,不错哦</p>
+        </div>
+        <div class="pl-date">2017.00.00
+        </div>
+    </div>
+    <div class="pl-content">
+        <div class="pl-pic">
+            <img src="../image/jiexin.jpg">
+        </div>
+        <div class="pl-user">
+            <div class="pl-name">鹿小彤</div>
+            <p class="pl-con">哎呦,不错哦</p>
+        </div>
+        <div class="pl-date">2017.00.00
+        </div>
+    </div>
+    <div class="pl-content">
+        <div class="pl-pic">
+            <img src="../image/jiexin.jpg">
+        </div>
+        <div class="pl-user">
+            <div class="pl-name">鹿小彤</div>
+            <p class="pl-con">哎呦,不错哦</p>
+        </div>
+        <div class="pl-date">2017.00.00
+        </div>
+    </div>
+    <div class="shuru">
+        <div class="sr-fbpl">
+            <span class="fbpl">发表评论</span>
+        </div>
+        <img src="../image/fenxiang.png" class="zhuanzai">
+        <div class="fasong">发送</div>
+    </div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
     apiready = function() {
-        api.parseTapmode();
-        var header = $api.byId('aui-header');
-        $api.fixStatusBar(header);
-        var headerPos = $api.offset(header);
-        var body_h = $api.offset($api.dom('body')).h;
-        api.openFrame({
-            name: 'lyx_content_frame',
-            url: 'lyx_content_frame.html',
-            bounces: true,
-            rect: {
-                x: 0,
-                y: headerPos.h,
-                w: 'auto',
-                h: 'auto'
-            }
-        })
-
 
     };
-
-    function closeWin() {
-        api.closeWin({});
-    }
 </script>
 
 </html>
