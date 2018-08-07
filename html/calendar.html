@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scal
+    able=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>EeApp</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+</head>
+<style type="text/css">
+    .guanzhu_tx {
+        width:1.4rem;
+        height:1.4rem;
+        border-radius:0.7rem;
+        margin-top:0.4rem;
+    }
+
+    .aui-margin-l-5 {
+        margin-left:0.45rem !important;
+    }
+
+    .guanzhu_sex {
+        width:1rem;
+        height:1rem;
+        margin-right:0.2rem;
+    }
+
+    .aui-margin-t-10 {
+        margin-top:0rem !important;
+    }
+
+    .list_bg {
+        background-color:white;
+    }
+
+    .guanzhu_btn {
+        width:3rem;
+        height:1rem;
+        border:1px solid;
+        border-radius:4px;
+        border-color:#48B9FD;
+        color:#48B9FD;
+        font-size:12px;
+        text-align:center;
+    }
+
+    .guanzhu_btn i {
+        width:3rem;
+        height:1rem;
+        display: block;
+        text-align:center;
+        line-height:20px;
+    }
+</style>
+<body>
+    <header class="aui-bar aui-bar-nav" id="aui-header">
+        <a class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">日期</div>
+    </header>
+    <ul class="aui-list aui-form-list">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        日历
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="日期">
+                    </div>
+                </div>
+            </li>
+        </ul>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+
+    }
+    function fnOpenUICalendar(){
+      var UICalendar = api.require('UICalendar');
+      UICalendar.open({
+      rect: {
+          x: 30,
+          y: api.frameHeight / 2 - 170,
+          w: api.frameWidth - 60,
+          h: 340
+      },
+      styles: {
+          bg: 'rgba(0,0,0,0)',
+          week: {
+              weekdayColor: '#3b3b3b',
+              weekendColor: '#a8d400',
+              size: 12
+          },
+          date: {
+              color: '#3b3b3b',
+              selectedColor: '#fff',
+              selectedBg: '#a8d500',
+              size: 12
+          },
+          today: {
+              color: 'rgb(230,46,37)',
+              bg: ''
+          },
+          specialDate: {
+              color: '#a8d500',
+              bg: 'widget://image/a.png'
+          }
+      },
+      specialDate: [{
+          date: '2015-06-01'
+      }],
+      switchMode: 'vertical',
+      fixedOn: api.frameName,
+      fixed: false
+      }, function(ret, err) {
+      if (ret) {
+          alert(JSON.stringify(ret));
+      } else {
+          alert(JSON.stringify(err));
+      }
+      });
+    }
+</script>
+</html>

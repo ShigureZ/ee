@@ -50,90 +50,6 @@
         </a>
         <div class="aui-title">积分明细</div>
     </header>
-    <div class="aui-card-list">
-        <div class="aui-card-list-content">
-            <ul class="aui-list aui-media-list">
-                <li class="aui-list-item aui-list-item-middle">
-                    <div class="aui-media-list-item-inner">
-                        <div class="aui-list-item-inner aui-list-item-arrow">
-                            <div class="aui-list-item-text">
-                                <div class="aui-list-item-title aui-font-size-14" style="color:#03a9f4;">完成任务</div>
-                                <div class="aui-list-item-right">+1</div>
-                            </div>
-                            <div class="aui-list-item-text">
-                                2017-12-12  08:00
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="aui-list-item aui-list-item-middle">
-                    <div class="aui-media-list-item-inner">
-                        <div class="aui-list-item-inner aui-list-item-arrow">
-                            <div class="aui-list-item-text">
-                                <div class="aui-list-item-title aui-font-size-14" style="color:#03a9f4;">完成任务</div>
-                                <div class="aui-list-item-right">+1</div>
-                            </div>
-                            <div class="aui-list-item-text">
-                                2017-12-16  07:00
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="aui-list-item aui-list-item-middle">
-                    <div class="aui-media-list-item-inner">
-                        <div class="aui-list-item-inner aui-list-item-arrow">
-                            <div class="aui-list-item-text">
-                                <div class="aui-list-item-title aui-font-size-14">未完成任务</div>
-                                <div class="aui-list-item-right" style="color:#212121;">-1</div>
-                            </div>
-                            <div class="aui-list-item-text">
-                                2017-12-22  21:00
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="aui-list-item aui-list-item-middle">
-                    <div class="aui-media-list-item-inner">
-                        <div class="aui-list-item-inner aui-list-item-arrow">
-                            <div class="aui-list-item-text">
-                                <div class="aui-list-item-title aui-font-size-14" style="color:#03a9f4;">完成任务</div>
-                                <div class="aui-list-item-right">+1</div>
-                            </div>
-                            <div class="aui-list-item-text">
-                                2017-12-23  15:00
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="aui-list-item aui-list-item-middle">
-                    <div class="aui-media-list-item-inner">
-                        <div class="aui-list-item-inner aui-list-item-arrow">
-                            <div class="aui-list-item-text">
-                                <div class="aui-list-item-title aui-font-size-14" style="color:#03a9f4;">完成任务</div>
-                                <div class="aui-list-item-right">+1</div>
-                            </div>
-                            <div class="aui-list-item-text">
-                                2017-12-24  12:00
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="aui-list-item aui-list-item-middle">
-                    <div class="aui-media-list-item-inner">
-                        <div class="aui-list-item-inner aui-list-item-arrow">
-                            <div class="aui-list-item-text">
-                                <div class="aui-list-item-title aui-font-size-14">未完成任务</div>
-                                <div class="aui-list-item-right" style="color:#212121;">-1</div>
-                            </div>
-                            <div class="aui-list-item-text">
-                                2017-12-28  22:00
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
@@ -144,8 +60,8 @@
         var headerPos = $api.offset(header);
         var body_h = $api.offset($api.dom('body')).h;
         api.openFrame({
-            name: 'dialog_frm',
-            url: 'dialog_frm.html',
+            name: 'yzx_xinyujifen_jifenmingxi_frame',
+            url: 'yzx_xinyujifen_jifenmingxi_frame.html',
             bounces: true,
             rect: {
                 x: 0,
