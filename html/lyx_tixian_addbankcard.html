@@ -59,7 +59,7 @@
             font-size: 0.7rem;
             line-height: 2rem;
             text-align: center;
-            margin-left: 0.75rem;
+            margin-left: 1rem;
         }
 
         .zhifubao {
@@ -132,35 +132,21 @@
             margin-right: 0.75rem;
         }
 
-        .n-tcdl {
-            height: 2rem;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            top: 60%;
-        }
-
-        .blue-box {
-            background: #48b9fd;
-            height: 2rem;
-            width: 14.2rem;
-            text-align: center;
-            line-height: 2rem;
-            margin: 0 auto;
-            border-radius: 0.2rem;
-        }
-
-        .blue-box .text {
-            color: #fff;
+        .title_quxiao {
+          display: block;
+          position: absolute;
+          right: 15px;
         }
     </style>
 </head>
+
 <body>
     <header class="aui-bar aui-bar-nav" id="aui-header">
         <a class="aui-pull-left aui-btn">
             <span class="aui-iconfont aui-icon-left"></span>
         </a>
-        <div class="aui-title">充值</div>
+        <div class="aui-title">提现</div>
+        <span class="title_quxiao">取消</span>
     </header>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
@@ -172,8 +158,8 @@
         var headerPos = $api.offset(header);
         var body_h = $api.offset($api.dom('body')).h;
         api.openFrame({
-            name: 'lyx_chongzhi_frame',
-            url: 'lyx_chongzhi_frame.html',
+            name: 'lyx_tixian_addbankcard_frame',
+            url: 'lyx_tixian_addbankcard_frame.html',
             bounces: true,
             rect: {
                 x: 0,

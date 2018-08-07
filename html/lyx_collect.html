@@ -69,7 +69,7 @@
     </style>
 </head>
 <body>
-    <header class="aui-bar aui-bar-nav">
+    <header class="aui-bar aui-bar-nav" id="aui-header">
         <a class="aui-pull-left aui-btn">
             <span class="aui-iconfont aui-icon-left"></span>
         </a>
@@ -79,27 +79,29 @@
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
-apiready = function(){
-    var header = $api.byId('header');
-    $api.fixStatusBar(header);
-    var headerH = $api.offset(header).h;
-  api.openFrame({
-      name: 'lyx.tianjiayinhangka.html',
-      url: 'lyx.tianjiayinhangka_frame.html',
-      rect: {
-          x: 0,
-          y: headerH,
-          w: 'auto',
-          h: 'auto'
-      },
-      pageParam: {
-          name: 'test'
-      },
-      bounces: true,
-      bgColor: 'rgba(0,0,0,0)',
-      vScrollBarEnabled: true,
-      hScrollBarEnabled: true
-  });
-};
+    apiready = function(){
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        api.openFrame({
+            name: 'lyx_collect_frame',
+            url: 'lyx_collect_frame.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: 'auto',
+                h: 'auto'
+            }
+        })
+
+
+    };
+    function closeWin(){
+        api.closeWin({
+        });
+    }
 </script>
 </html>
