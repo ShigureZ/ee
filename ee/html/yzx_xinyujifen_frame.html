@@ -31,23 +31,23 @@
 </style>
 <body>
     <div class="top">
-        <div class="jifen_num">7</div>
-        <div class="jifen_all">总积分</div>
-    </div>
+      <div class="jifen_num">7</div>
+      <div class="jifen_all">总积分</div>
+   </div>
     <ul class="aui-list aui-list-noborder">
-        <li class="aui-list-item">
+        <li class="aui-list-item" onclick="jifenmingxi()">
             <div class="aui-list-item-inner aui-list-item-arrow">
                  <div class="aui-list-item-title">积分明细</div>
                 <div class="aui-list-item-right"></div>
             </div>
         </li>
-        <li class="aui-list-item">
+        <li class="aui-list-item" onclick="jifenshangcheng()">
             <div class="aui-list-item-inner aui-list-item-arrow">
                 <div class="aui-list-item-title">积分商城</div>
                 <div class="aui-list-item-right"></div>
             </div>
         </li>
-        <li class="aui-list-item">
+        <li class="aui-list-item" onclick="woyongyoude()">
             <div class="aui-list-item-inner aui-list-item-arrow">
                 <div class="aui-list-item-title">我拥有的</div>
                 <div class="aui-list-item-right"></div>
@@ -55,4 +55,48 @@
         </li>
     </ul>
 </body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+
+
+    };
+    function closeWin(){
+        api.closeWin({
+        });
+    }
+
+    function jifenmingxi(){
+      api.openWin({
+          name: 'yzx_xinyujifen_jifenmingxi',
+          url: './yzx_xinyujifen_jifenmingxi.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
+
+    function jifenshangcheng(){
+      api.openWin({
+          name: 'yzx_xinyujifen_jifenshangcheng',
+          url: './yzx_xinyujifen_jifenshangcheng.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
+
+    function woyongyoude(){
+      api.openWin({
+          name: 'yzx_xinyujifen_woyongyoude',
+          url: './yzx_xinyujifen_woyongyoude.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
+</script>
 </html>
