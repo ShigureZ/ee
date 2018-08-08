@@ -39,8 +39,8 @@
         }
 
         .aui-list-item-input {
-          margin-left: 15px;
-          border-bottom: 1px solid #f2f2f2;
+            margin-left: 15px;
+            border-bottom: 1px solid #f2f2f2;
         }
 
         .tubiao {
@@ -61,13 +61,12 @@
         }
 
         .aui-list-item-inner {
-    			text-align:center;
-    		}
+            text-align: center;
+        }
 
-    		.input {
-    			font-size:13px;
-    		}
-
+        .input {
+            font-size: 13px;
+        }
 
         .button {
             width: 76%;
@@ -109,22 +108,22 @@
         <img src="../image/Ee.png" alt="">
     </div>
     <ul>
-       <li class="aui-list-item">
+        <li class="aui-list-item">
             <div class="aui-list-item-inner">
                 <div class="aui-list-item-input">
-                    <input class="input" type="text" placeholder="手机号">
+                    <input class="input" type="text" placeholder="手机号" id="username">
                 </div>
             </div>
         </li>
         <li class="aui-list-item">
             <div class="aui-list-item-inner">
                 <div class="aui-list-item-input">
-                    <input class="input" type="password" placeholder="密码">
+                    <input class="input" type="password" placeholder="密码" id="password">
                 </div>
             </div>
         </li>
-      </ul>
-    <div class="button">
+    </ul>
+    <div class="button" onclick="login()">
         <i>登录</i>
     </div>
     <div class="text-area3">忘记密码?</div>
@@ -132,33 +131,17 @@
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript" src="../script/APICloud-rest-SHA1.js"></script>
 <script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
-<!-- <script id="articleTemp" type="text/x-dot-template">
-    {{~it:value:index}}
-    <div class="c1" onclick="showDetailById('{{=value.id}}')">
-        {{= value.title }}-赞{{= value.likeNum }}
-    </div>
-    {{~}}
-</script> -->
 <script type="text/javascript">
     apiready = function() {
-      //读取数据
-          var username = $api.getStorage('username');
-          var password = $api.getStorage('password');
-           if(username && password)
-                 autoLogin(username,password);
+
     };
+
 
     function login() {
         var username = $("#username").val();
         var password = $("#password").val();
-        alert(username + "--" + password);
-          autoLogin(username,password);
+        // alert(username + "--" + password);
 
-
-
-    }
-    //自动登录
-    function autoLogin(username,password) {
         var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
         var Model = client.Factory("user"); //表名称
         Model.login({
@@ -168,7 +151,7 @@
             function(ret, err) {
                 if (err) {
                     //处理错误 err
-                    alert(JSON.stringify(err)) //讲json对象转换成字符串
+                    // alert(JSON.stringify(err)) //讲json对象转换成字符串
                 } else {
                     //处理数据 ret
                     // alert(JSON.stringify(ret))
@@ -179,17 +162,16 @@
                     }, function(ret, err) {
                         if (err) {
                             //处理错误 err
-                            alert(JSON.stringify(err))
+                            // alert(JSON.stringify(err))
                         } else {
                             //处理数据 ret
                             // alert(JSON.stringify(ret))
-                            //再次存储数据，以防不同设备登录
-                          $api.setStorage('username',username);
-                          $api.setStorage('password',password);
-                          $api.setStorage('user_info',ret);
                             api.openWin({
-                                name: 'title',
-                                url: './title.html',
+                                name: 'lyx_find',
+                                url: './lyx_find.html',
+                                pageParam: {
+                                    name: 'test'
+                                }
                             });
 
                         }
@@ -199,6 +181,6 @@
 
 
     }
-</script>
 
+</script>
 </html>
