@@ -26,7 +26,7 @@
 	    <div class="aui-title">
 	        <div class="aui-bar aui-bar-btn aui-bar-btn-round">
 	            <div class="aui-bar-btn-item aui-active" onclick="openzhushou()">提醒</div>
-	            <div class="aui-bar-btn-item">私信</div>
+	            <div class="aui-bar-btn-item" onclick="opensixin()">私信</div>
 	        </div>
 	    </div>
 	</header>
@@ -57,5 +57,16 @@
     function closeWin() {
         api.closeWin({});
     }
+
+		function opensixin(){
+			api.openWin({
+			    name: 'sixinye',
+			    url: './sixinye.html',
+			    pageParam: {
+			        name: 'test'
+			    }
+			});
+
+		}
 </script>
 </html>

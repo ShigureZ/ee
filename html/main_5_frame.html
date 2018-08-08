@@ -64,7 +64,7 @@
 </head>
 <body>
 	<div class="n-tcdl">
-		<div class="blue-box">
+		<div class="blue-box" onclick="openduanxinyanzheng()">
 			<span class="text">短信验证</span>
 		</div>
 	</div>
@@ -79,5 +79,15 @@
 	    apiready = function(){
 
 	    };
+			function openduanxinyanzheng(){
+				api.openWin({
+						name: 'main_6',
+						url: './main_6.html',
+						pageParam: {
+								name: 'test'
+						}
+				});
+
+			}
 	</script>
 </html>

@@ -127,9 +127,9 @@
 
 <body>
 	<header class="aui-bar aui-bar-nav aui-bar-light" id="header">
-		<a class="aui-pull-left aui-btn">
+		<div class="aui-pull-left aui-btn" onclick="closeduanxinyanzheng()">
 			<span class="aui-iconfont aui-icon-left"></span>
-		</a>
+		</div>
 		<div class="aui-title">短信验证</div>
 	</header>
 </body>
@@ -157,6 +157,10 @@
 			hScrollBarEnabled: true
 		});
 	};
+	function closeduanxinyanzheng() {
+		api.closeWin({
+		});
+	}
 </script>
 
 </html>

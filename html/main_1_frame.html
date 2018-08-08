@@ -55,7 +55,7 @@
             width: 100%;
             text-align: center;
             position: absolute;
-            top: 26rem;
+            top: 70%;
         }
 
         .blue-box {
@@ -82,7 +82,7 @@
     <div class="aui-content aui-margin-b-15">
         <div class="s-box">
         </div>
-        <div class="b-box">
+        <div class="b-box" onclick="openzhanghaoyuanquan()">
             <span class="title">账号与安全</span>
         </div>
         <div class="s-box">
@@ -105,10 +105,33 @@
             <span class="title">关于我们</span>
         </div>
         <div class="n-tcdl">
-            <div class="blue-box">
+            <div class="blue-box" onclick="opentuichudenglu()">
                 <span class="text">退出登录</span>
             </div>
         </div>
     </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+      function openzhanghaoyuanquan(){
+        api.openWin({
+            name: 'main_2',
+            url: './main_2.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
 
+      }
+      function opentuichudenglu(){
+        api.openWin({
+            name: 'main_7',
+            url: './main_7.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+
+      }
+</script>
 </html>

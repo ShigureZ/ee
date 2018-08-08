@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/api.css" />
 	<link rel="stylesheet" type="text/css" href="../css/aui.css" />
 	<style>
+
 		.aui-bar-light {
 			border-bottom: 0.05rem solid #f2f2f2;
 		}
@@ -83,7 +84,6 @@
 </head>
 
 <body>
-
 	<div class="image_circle">
 		<img src="../image/circle1.jpg" alt="" class="circle_avatar">
 		<span class="text_top">
@@ -93,12 +93,12 @@
 	<div class="box_bottom">
 		<div class="s-box">
 		</div>
-		<div class="box_bottom_title">
+		<div class="box_bottom_title" onclick="openshimingzhi()">
 			<span class="title">
 				实名制
 			</span>
 		</div>
-		<div class="box_bottom_title">
+		<div class="box_bottom_title" onclick="openxiugaimima()">
 			<span class="title">
 				修改密码
 			</span>
@@ -110,4 +110,24 @@
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
 	apiready = function() {}
-</script>
+	function openshimingzhi(){
+		api.openWin({
+				name: 'main_3',
+				url: './main_3.html',
+				pageParam: {
+						name: 'test'
+				}
+		});
+
+	}
+	function openxiugaimima(){
+		api.openWin({
+				name: 'main_5',
+				url: './main_5.html',
+				pageParam: {
+						name: 'test'
+				}
+		});
+
+	}
+	</script>

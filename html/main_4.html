@@ -73,9 +73,9 @@
 </head>
 <body>
 	<header class="aui-bar aui-bar-nav aui-bar-light" id="header">
-		<a class="aui-pull-left aui-btn">
+		<div class="aui-pull-left aui-btn" onclick="closequeding()">
 		    <span class="aui-iconfont aui-icon-left"></span>
-		</a>
+		</div>
 		<div class="aui-title">系统提示</div>
 	</header>
 </body>
@@ -103,5 +103,8 @@
 				hScrollBarEnabled: true
 			});
 		};
+		function closequeding() {
+			api.closeWin({});
+		}
 </script>
 </html>

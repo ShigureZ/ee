@@ -136,7 +136,7 @@
 		</div>
 		<div class="qqqqq"></div>
 		<div class="n-tcdl">
-			<div class="blue-box">
+			<div class="blue-box" onclick="openbaocun()">
 				<span class="text">保存</span>
 			</div>
 		</div>
@@ -147,5 +147,15 @@
 	    apiready = function(){
 
 	    };
+			function openbaocun(){
+				api.openWin({
+						name: 'main_4',
+						url: './main_4.html',
+						pageParam: {
+								name: 'test'
+						}
+				});
+
+			}
 	</script>
 </html>
