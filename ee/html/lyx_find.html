@@ -101,8 +101,8 @@
             <i class="aui-iconfont3 aui-icon-publish1"></i>
         </div>
 
-        <div class="aui-bar-tab-item" tapmode>
-            <i class="aui-iconfont aui-icon-cart1"></i>
+        <div class="aui-bar-tab-item" tapmode onclick="openmessge()">
+            <i class="aui-iconfont aui-icon-cart1" ></i>
             <div class="aui-bar-tab-label">消息</div>
         </div>
         <div class="aui-bar-tab-item" tapmode onclick="openwode()">
@@ -148,6 +148,17 @@
             //     name: 'test'
             // }
         });
+    }
+
+    function openmessge(){
+      api.openWin({
+          name: 'sixinye',
+          url: './sixinye.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
     }
 </script>
 </html>
