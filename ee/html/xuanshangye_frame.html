@@ -164,39 +164,31 @@
 </head>
 <body>
 	<div class="wrap">
-		<header class="aui-bar aui-bar-nav" id="aui-header">
-	        <a class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
-	            <span class="aui-iconfont aui-icon-left"></span>
-	        </a>
-	        <div class="aui-title">悬赏令</div>
-	    </header>
+			<div class="center">
+				<div class="text-area">大佬，赏点银子吧...</div>
+				<div class="camera">
+					<img src="../image/xiangji.png" alt="">
+					<i>照片</i>
+				</div>
+				<div class="type">
+					<div class="type-1">分类</div>
+					<div class="type-2">学习交流</div>
+					<img src="../image/fanhui2.png" alt="">
+				</div>
+				<div class="juxing"></div>
+				<div class="text-area-2">赏金</div>
+				<div class="text-area-3">赏金金额</div>
+			</div>
+			<div class="button">
+				<i>设置赏金时间</i>
+			</div>
+			<div class="text-area-4">
+				<i>任务 悬赏金共同发布到平台，应赏者完成任务后，悬赏者
+			确认完成或应赏者确认完成则悬赏金到应赏者</i>
+			</div>
+			<div class="button2">
+				<i>支付赏金并发布</i>
+			</div>
 	</div>
 </body>
-<script type="text/javascript" src="../script/api.js"></script>
-<script type="text/javascript">
-    apiready = function() {
-        api.parseTapmode();
-        var header = $api.byId('aui-header');
-        $api.fixStatusBar(header);
-        var headerPos = $api.offset(header);
-        var body_h = $api.offset($api.dom('body')).h;
-        api.openFrame({
-            name: 'xuanshangye_frame',
-            url: 'xuanshangye_frame.html',
-            bounces: true,
-            rect: {
-                x: 0,
-                y: headerPos.h,
-                w: 'auto',
-                h: 'auto'
-            }
-        })
-
-
-    };
-
-    function closeWin() {
-        api.closeWin({});
-    }
-</script>
 </html>

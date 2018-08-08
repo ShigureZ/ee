@@ -30,7 +30,7 @@
 		.talk_picture img {
 			height: 1.1rem;
 		}
-		
+
 		.talk_box {
 			width: 85%;
 			height: 1.2rem;
@@ -43,7 +43,7 @@
 			color:#989898;
 			border-radius:0.25rem;
 		}
-		
+
 		.aui-chat-content {
 			border: 0.05px solid #f2f2f2;
 		}
@@ -60,69 +60,33 @@
             <span class="aui-iconfont aui-icon-left"></span>
         </a>
         <div class="aui-title">小李</div>
-    </header>
-	<section class="aui-chat">
-        <div class="aui-chat-header">2016年7月13日</div>
-        <div class="aui-chat-item aui-chat-left">
-            <div class="aui-chat-media">
-                <img src="../image/demo2.png" />
-            </div>
-            <div class="aui-chat-inner">
-                <div class="aui-chat-name">小李</span></div>
-                <div class="aui-chat-content">
-                    <div class="aui-chat-arrow"></div>
-                    Hello 小傻瓜！
-                </div>
-                <div class="aui-chat-status aui-chat-status-refresh">
-                    <i class="aui-iconfont aui-icon-correct aui-text-success"></i>
-                </div>
-            </div>
-        </div>
-        <div class="aui-chat-item aui-chat-right">
-            <div class="aui-chat-media">
-                <img src="../image/liulangnan.png" />
-            </div>
-            <div class="aui-chat-inner">
-                <div class="aui-chat-name">小鹿</div>
-                <div class="aui-chat-content">
-                    <div class="aui-chat-arrow"></div>
-                    你好！大傻瓜
-                </div>
-                <div class="aui-chat-status">
-                    <i class="aui-iconfont aui-icon-info aui-text-danger"></i>
-                </div>
-            </div>
-        </div>
-        <div class="aui-chat-item aui-chat-left">
-            <div class="aui-chat-media">
-                <img src="../image/demo2.png" />
-            </div>
-            <div class="aui-chat-inner">
-                <div class="aui-chat-name">小李</span></div>
-                <div class="aui-chat-content">
-                    <div class="aui-chat-arrow"></div>
-                    <img src="../image/l1.png" />
-                </div>
-            </div>
-        </div>
-        <div class="aui-chat-item aui-chat-right">
-            <div class="aui-chat-media">
-                <img src="../image/liulangnan.png" />
-            </div>
-            <div class="aui-chat-inner">
-                <div class="aui-chat-name">小鹿</div>
-                <div class="aui-chat-content">
-                    <div class="aui-chat-arrow"></div>
-                    以前拍摄的牛背山星空
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="talk">
-    	<div class="talk_picture">
-    		<img src="../image/pic.png">
-    	</div>
-    	<div class="talk_box">打个招呼吧...</div>
-    </footer>
+  </header>
 </body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        api.openFrame({
+            name: 'chat_frame',
+            url: 'chat_frame.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: 'auto',
+                h: 'auto'
+            }
+        })
+
+
+    };
+
+    function closeWin() {
+        api.closeWin({});
+    }
+</script>
 </html>

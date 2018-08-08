@@ -67,38 +67,23 @@
     </style>
 </head>
 <body>
-	<header class="aui-bar aui-bar-nav" id="aui-header">
-	    <a class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
-	        <span class="aui-iconfont aui-icon-left"></span>
-	    </a>
-	    <div class="aui-title">注册</div>
-	</header>
+	<div class="center">
+		<div class="text">
+			<img src="../image/shouji.png" alt="">请输入手机号
+		</div>
+		<div class="text">
+			<img src="../image/yanzhengma.png" alt="">请输入收到的验证码
+		</div>
+		<div class="text">
+			<img src="../image/suo.png" alt="">请输入（6~16位）密码
+		</div>
+		<div class="text">
+			<img src="../image/suo.png" alt="">请确认（6~16位）密码
+		</div>
+	</div>
+	<div class="button">
+	    <i>完成</i>
+    </div>
+    <div class="text-area">注册账号视为同意《悬赏协议》</div>
 </body>
-<script type="text/javascript" src="../script/api.js"></script>
-<script type="text/javascript">
-    apiready = function() {
-        api.parseTapmode();
-        var header = $api.byId('aui-header');
-        $api.fixStatusBar(header);
-        var headerPos = $api.offset(header);
-        var body_h = $api.offset($api.dom('body')).h;
-        api.openFrame({
-            name: 'zhuceye_frame',
-            url: 'zhuceye_frame.html',
-            bounces: true,
-            rect: {
-                x: 0,
-                y: headerPos.h,
-                w: 'auto',
-                h: 'auto'
-            }
-        })
-
-
-    };
-
-    function closeWin() {
-        api.closeWin({});
-    }
-</script>
 </html>
