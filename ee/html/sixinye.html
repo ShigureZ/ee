@@ -10,7 +10,7 @@
 	<title>Document</title>
 	<style type="text/css">
 		.aui-icon-home1 {
-			background:url(../image/shouye1.png) no-repeat center center;
+			background:url(../image/shouye.png) no-repeat center center;
 			background-size:100%;
 			display:inline-block;
 			width:24px;
@@ -29,16 +29,16 @@
 			background:url(../image/jiahao1.png) no-repeat center center;
 			background-size:100%;
 			display:inline-block;
-			width:58px;
-			height:58px;
-			margin-left:-29px;
+			width:56px;
+			height:56px;
+			margin-left:-28px;
 			position:absolute;
 			left:50%;
-			top:-10px;
+			top:-3px;
 		}
 
 		.aui-icon-cart1 {
-			background:url(../image/xiaoxi.png) no-repeat center center;
+			background:url(../image/xiaoxi1.png) no-repeat center center;
 			background-size:100%;
 			display:inline-block;
 			width:26px;
@@ -74,6 +74,28 @@
 	        </div>
 	    </div>
 	</header>
+	<footer class="aui-bar aui-bar-tab" id="footer">
+      <div class="aui-bar-tab-item" tapmode>
+          <i class="aui-iconfont aui-icon-home1"></i>
+          <div class="aui-bar-tab-label">首页</div>
+      </div>
+      <div class="aui-bar-tab-item" tapmode onclick="openfind()">
+          <i class="aui-iconfont aui-icon-search1"></i>
+          <div class="aui-bar-tab-label">发现</div>
+      </div>
+      <div class="aui-bar-tab-item" tapmode>
+        <i class="aui-iconfont3 aui-icon-publish1"></i>
+      </div>
+
+      <div class="aui-bar-tab-item  aui-active" tapmode onclick="openmessge()">
+          <i class="aui-iconfont aui-icon-cart1"></i>
+          <div class="aui-bar-tab-label">消息</div>
+      </div>
+      <div class="aui-bar-tab-item" tapmode onclick="openwode()">
+          <i class="aui-iconfont aui-icon-my1"></i>
+          <div class="aui-bar-tab-label">我的</div>
+      </div>
+  </footer>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
@@ -83,6 +105,12 @@
         $api.fixStatusBar(header);
         var headerPos = $api.offset(header);
         var body_h = $api.offset($api.dom('body')).h;
+
+				var footer = $api.byId('aui-footer');
+        $api.fixStatusBar(footer);
+        var footerH = $api.offset(footer);
+        var body_h = $api.offset($api.dom('body')).h;
+
         api.openFrame({
             name: 'sixinye_frame',
             url: 'sixinye_frame.html',
@@ -91,7 +119,9 @@
                 x: 0,
                 y: headerPos.h,
                 w: 'auto',
-                h: 'auto'
+                h: 'auto',
+								marginBottom:51
+
             }
         })
 
@@ -101,5 +131,29 @@
     function closeWin() {
         api.closeWin({});
     }
+
+		function openfind(){
+			api.openWin({
+					name: 'lyx_find',
+					url: './lyx_find.html',
+					pageParam: {
+							name: 'test'
+					}
+			});
+
+		}
+
+	
+
+		function openwode(){
+			api.openWin({
+			    name: 'yzx_wode',
+			    url: './yzx_wode.html',
+			    pageParam: {
+			        name: 'test'
+			    }
+			});
+
+		}
 </script>
 </html>
