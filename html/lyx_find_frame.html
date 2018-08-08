@@ -76,8 +76,8 @@
 </head>
 
 <body>
-    <div class="aui-card-list">
-        <div class="aui-card-list-header aui-card-list-user aui-border-b">
+    <div class="aui-card-list" >
+        <div class="aui-card-list-header aui-card-list-user aui-border-b" onclick="open()">
             <div class="aui-card-list-user-avatar">
                 <img src="../image/demo4.png" class="aui-img-round" />
             </div>
@@ -117,5 +117,27 @@
         </div>
     </div>
 </body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-scroll.js"></script>
+<script src="../script/aui-pull-refresh.js"></script>
+<script type="text/javascript" src="../script/doT.js"></script>
+<script type="text/javascript" src="../script/APICloud-rest-SHA1.js"></script>
+<script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+        apiready = function(){
 
+          };
+
+          function open(){
+              api.openWin({
+                  name: 'lyx_content',
+                  url: './lyx_content.html'
+                  pageParam: {
+                      name: 'test'
+                  }
+              });
+          }
+
+
+</script>
 </html>
