@@ -12,7 +12,7 @@
 		body {
 			background: white;
 		}
-		
+
 		.aui-info {
 			border-bottom: 1px solid #f2f2f2;
 		}
@@ -25,17 +25,32 @@
 	        </a>
 	        <div class="aui-title">小助手</div>
 	</header>
-	<div class="aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10">
-	    <div class="aui-info-item">
-	        <img src="../image/daka.png" style="width:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小东邀请你进行四级打卡</span>
-	        </div>
-	    <div class="aui-info-item">2015-07-13 22:31</div>
-	</div>
-	<div class="aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10">
-	    <div class="aui-info-item">
-	        <img src="../image/pk.png" style="width:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小鹿想对你发起挑战</span>
-	        </div>
-	    <div class="aui-info-item">2015-07-13 22:31</div>
-	</div>
 </body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        api.openFrame({
+            name: 'xiaozhushouye_frame',
+            url: 'xiaozhushouye_frame.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: 'auto',
+                h: 'auto'
+            }
+        })
+
+
+    };
+
+    function closeWin() {
+        api.closeWin({});
+    }
+</script>
 </html>
