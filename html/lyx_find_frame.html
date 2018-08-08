@@ -77,11 +77,11 @@
 
 <body>
     <div class="aui-card-list" >
-        <div class="aui-card-list-header aui-card-list-user aui-border-b">
+        <div class="aui-card-list-header aui-card-list-user aui-border-b" onclick="openContent()">
             <div class="aui-card-list-user-avatar">
-                <img src="../image/demo4.png" class="aui-img-round"/>
+                <img src="../image/demo4.png" class="aui-img-round" />
             </div>
-            <div class="aui-card-list-user-name" onclick="open()">
+            <div class="aui-card-list-user-name">
                 <div>AUI</div>
                 <small>1天前</small>
             </div>
@@ -128,15 +128,14 @@
 
           };
 
-          function open(){
-            api.openWin({
-                name: 'lyx_content',
-                url: './lyx_content.html',
-                pageParam: {
-                    name: 'test'
-                }
-            });
-
+          function openContent(){
+              api.openWin({
+                  name: 'lyx_content',
+                  url: './lyx_content.html',
+                  pageParam: {
+                      name: 'test'
+                  }
+              });
           }
 
 
