@@ -105,7 +105,7 @@
             <i class="aui-iconfont aui-icon-cart1"></i>
             <div class="aui-bar-tab-label">消息</div>
         </div>
-        <div class="aui-bar-tab-item" tapmode>
+        <div class="aui-bar-tab-item" tapmode onclick="openwode()">
             <i class="aui-iconfont aui-icon-my1"></i>
             <div class="aui-bar-tab-label">我的</div>
         </div>
@@ -140,14 +140,14 @@
 
 
     };
-    // function open(){
-    //     api.openWin({
-    //         name: 'lyx_content',
-    //         url: './lyx_content.html'
-    //         // pageParam: {
-    //         //     name: 'test'
-    //         // }
-    //     });
-    // }
+    function openwode(){
+        api.openWin({
+            name: 'yzx_wode',
+            url: './yzx_wode.html'
+            // pageParam: {
+            //     name: 'test'
+            // }
+        });
+    }
 </script>
 </html>
