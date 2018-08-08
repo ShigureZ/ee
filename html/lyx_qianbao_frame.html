@@ -138,32 +138,33 @@
             <img src="../image/chongzhi.png">
             <span>充值</span>
         </div>
-        <div class="tixian" onclick="opentixian()">
+        <div class="tixian" onclick="openDialog('text')">
             <img src="../image/tixian.png">
             <span>提现</span>
         </div>
-        <div class="jiaoyi">
+        <div class="jiaoyi" onclick="openshouzhi()">
             <img src="../image/renminbi.png">
             <span>收支明细</span>
         </div>
     </div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-dialog.js"></script>
 <script type="text/javascript">
     apiready = function(){
 
     };
 
-    function opentixian(){
-      api.openWin({
-          name: 'lyx_qianbao_tixian',
-          url: './lyx_qianbao_tixian.html',
-          pageParam: {
-              name: 'test'
-          }
-      });
-
-    }
+    // function opentixian(){
+    //   api.openWin({
+    //       name: 'lyx_qianbao_tixian',
+    //       url: './lyx_qianbao_tixian.html',
+    //       pageParam: {
+    //           name: 'test'
+    //       }
+    //   });
+    //
+    // }
 
     function openchongzhi(){
       api.openWin({
@@ -175,5 +176,33 @@
       });
 
     }
+
+    var dialog = new auiDialog({
+
+    })
+      function openDialog(type){
+          switch (type) {
+              case "text":
+                  dialog.alert({
+                      title:"实名认证后才可以提现哦",
+                      msg:'是否去认证',
+                      buttons:['取消','确定']
+                  },function(ret){
+                      console.log(ret)
+                  })
+                  break;
+          }
+        }
+
+        function openshouzhi(){
+          api.openWin({
+              name: 'lyx_shouzhimingxi',
+              url: './lyx_shouzhimingxi.html',
+              pageParam: {
+                  name: 'test'
+              }
+          });
+
+        }
 </script>
 </html>

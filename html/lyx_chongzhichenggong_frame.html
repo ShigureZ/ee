@@ -110,7 +110,7 @@
         <span class="sp1">金额</span>
         <span class="sp2">1.00元</span>
     </div>
-    <div class="finish">
+    <div class="finish" onclick="closetoqianbao()">
         <p>完成</p>
     </div>
 </body>
@@ -119,5 +119,13 @@
     apiready = function(){
 
     };
+
+    function closetoqianbao(){
+        api.closeToWin({
+            name: 'root'
+        });
+
+
+    }
 </script>
 </html>

@@ -177,7 +177,7 @@
             <img class="duihao" src="../image/yuanquan.png">
         </div>
         <div class="n-tcdl">
-            <div class="blue-box">
+            <div class="blue-box" onclick="openchongzhifinish()">
                 <span class="text">下一步</span>
             </div>
         </div>
@@ -188,5 +188,16 @@
     apiready = function(){
 
     };
+
+    function openchongzhifinish(){
+      api.openWin({
+          name: 'lyx_chongzhichenggong',
+          url: './lyx_chongzhichenggong.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
 </script>
 </html>
