@@ -21,7 +21,7 @@
 
 <body>
     <header class="aui-bar aui-bar-nav" id="aui-header">
-        <a class="aui-pull-left aui-btn">
+        <a class="aui-pull-left aui-btn" onclick="closeqianbao()">
             <span class="aui-iconfont aui-icon-left"></span>
         </a>
         <div class="aui-title">我的钱包</div>
@@ -50,5 +50,12 @@
 
 
     };
+
+    function closeqianbao(){
+      api.closeWin({
+          name: 'page1'
+      });
+
+    }
 </script>
 </html>

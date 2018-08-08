@@ -32,7 +32,7 @@
 		}
 
 		.talk_box {
-			width: 85%;
+			width: 75%;
 			height: 1.2rem;
 			background: white;
 			float: left;
@@ -52,6 +52,18 @@
 			background: white;
 		}
 
+		.talk_send {
+			width: 15%;
+			height: 1.2rem;
+			background: #48b9fd;
+			float: right;
+			margin-right: 0.2rem;
+			font-size: 14px;
+			font-family: '微软雅黑';
+			color:#ffffff;
+			border-radius:0.25rem;
+			text-align: center;
+		}
 	</style>
 </head>
 <body>
@@ -61,6 +73,13 @@
         </a>
         <div class="aui-title">小鹿</div>
   </header>
+	<footer class="talk">
+		<div class="talk_picture">
+			<img src="../image/pic.png">
+		</div>
+		<div class="talk_box">打个招呼吧...</div>
+		<div class="talk_send">发送</div>
+	</footer>talk_send
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
@@ -78,7 +97,8 @@
                 x: 0,
                 y: headerPos.h,
                 w: 'auto',
-                h: 'auto'
+                h: 'auto',
+								marginBottom: 47
             }
         })
 
