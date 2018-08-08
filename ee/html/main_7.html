@@ -24,7 +24,7 @@
     	.tanchukuang {
     		width:12.5rem;
     		height:7.5rem;
-    		background:white; 
+    		background:white;
 			margin:0 auto;
 			top:50%;
 			position:absolute;
@@ -93,10 +93,12 @@
 				</ul>
 			</div>
 			<div class="tck-d">
-				<div class="tck-d-b">
+				<div class="tck-d-l" onclick="closetuichudenglu()">
 					<ul class="tck-left-t">
 						<li class="left-text">取消</li>
 					</ul>
+				</div>
+				<div class="tck-d-r">
 					<ul class="tck-right-t">
 						<li class="right-text">确定</li>
 					</ul>
@@ -108,7 +110,11 @@
 	<script type="text/javascript" src="../script/api.js"></script>
 	<script type="text/javascript">
 	    apiready = function(){
-			
+
 	    };
+			function closetuichudenglu() {
+				api.closeWin({
+				});
+			}
 	</script>
 </html>
