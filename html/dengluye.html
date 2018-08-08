@@ -15,13 +15,13 @@
 
         .head {
             width: 100%;
-            height: 0.8rem;
+            height: 1.5rem;
             top: 1.75rem;
             position: absolute;
         }
 
         .text1 {
-            width: 8.8%;
+            width: 9%;
             height: 1.1rem;
             font-family: '微软雅黑';
             font-size: 0.8rem;
@@ -30,12 +30,17 @@
         }
 
         .text2 {
-            width: 8.8%;
+            width: 9%;
             height: 1.1rem;
             font-family: '微软雅黑';
             font-size: 0.8rem;
             float: right;
             margin-right: 0.75rem
+        }
+
+        .aui-list-item-input {
+          margin-left: 15px;
+          border-bottom: 1px solid #f2f2f2;
         }
 
         .tubiao {
@@ -55,28 +60,14 @@
             color: white;
         }
 
-        .text-area1 {
-            width: 93.6%;
-            height: 1.35rem;
-            margin-left: 1.2rem;
-            border-bottom: 1px solid #f2f2f2;
-            font-family: '微软雅黑';
-            font-size: 0.7rem;
-            color: #989898;
-        }
+        .aui-list-item-inner {
+    			text-align:center;
+    		}
 
-        .text-area2 {
-            width: 93.6%;
-            height: 1.35rem;
-            margin-left: 1.2rem;
-            margin-bottom: 3rem;
-            border-bottom: 1px solid #f2f2f2;
-            font-family: '微软雅黑';
-            font-size: 0.7rem;
-            color: #989898;
-            top: 15.5rem;
-            position: absolute;
-        }
+    		.input {
+    			font-size:13px;
+    		}
+
 
         .button {
             width: 76%;
@@ -117,8 +108,22 @@
     <div class="tubiao">
         <img src="../image/Ee.png" alt="">
     </div>
-    <div class="text-area1">手机号</div>
-    <div class="text-area2">密码</div>
+    <ul>
+       <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-input">
+                    <input class="input" type="text" placeholder="手机号">
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-input">
+                    <input class="input" type="password" placeholder="密码">
+                </div>
+            </div>
+        </li>
+      </ul>
     <div class="button">
         <i>登录</i>
     </div>

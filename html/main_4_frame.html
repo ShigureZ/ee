@@ -72,36 +72,26 @@
     </style>
 </head>
 <body>
-	<header class="aui-bar aui-bar-nav aui-bar-light" id="header">
-		<a class="aui-pull-left aui-btn">
-		    <span class="aui-iconfont aui-icon-left"></span>
-		</a>
-		<div class="aui-title">系统提示</div>
-	</header>
+	<div class="main-duihao-text">
+		<img src="../image/duihao.png" alt="" class="duihao">
+	</div>
+	<div class="text-czcg">
+		<ul>
+			<li>
+				操作成功！
+			</li>
+		</ul>
+	</div>
+	<div class="n-tcdl">
+		<div class="blue-box">
+			<span class="text">保存</span>
+		</div>
+	</div>
 </body>
-<script type="text/javascript" src="../script/api.js"></script>
-<script type="text/javascript">
-		apiready = function(){
-			var header = $api.byId('header');
-			$api.fixStatusBar(header);
-			var headerH = $api.offset(header).h;
-			api.openFrame({
-				name: 'main_4_frame',
-				url: 'main_4_frame.html',
-				rect: {
-					x: 0,
-					y: headerH,
-					w: 'auto',
-					h: 'auto'
-				},
-				pageParam: {
-					name: 'test'
-				},
-				bounces: true,
-				bgColor: 'rgba(0,0,0,0)',
-				vScrollBarEnabled: true,
-				hScrollBarEnabled: true
-			});
-		};
-</script>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+	    apiready = function(){
+
+	    };
+	</script>
 </html>

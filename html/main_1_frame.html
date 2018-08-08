@@ -79,39 +79,36 @@
 </head>
 
 <body>
-    <header class="aui-bar aui-bar-nav aui-bar-light" id="header">
-        <a class="aui-pull-left aui-btn">
-            <span class="aui-iconfont aui-icon-left"></span>
-        </a>
-        <div class="aui-title">设置</div>
-    </header>
-
-</body>
-<script type="text/javascript" src="../script/api.js"></script>
-<script type="text/javascript">
-    apiready = function() {
-        var header = $api.byId('header');
-        $api.fixStatusBar(header);
-        var headerH = $api.offset(header).h;
-        api.openFrame({
-            name: 'main_1_frame',
-            url: 'main_1_frame.html',
-            rect: {
-                x: 0,
-                y: headerH,
-                w: 'auto',
-                h: 'auto'
-            },
-            pageParam: {
-                name: 'test'
-            },
-            bounces: true,
-            bgColor: 'rgba(0,0,0,0)',
-            vScrollBarEnabled: true,
-            hScrollBarEnabled: true
-        });
-
-    }
-</script>
+    <div class="aui-content aui-margin-b-15">
+        <div class="s-box">
+        </div>
+        <div class="b-box">
+            <span class="title">账号与安全</span>
+        </div>
+        <div class="s-box">
+        </div>
+        <div class="b-box">
+            <span class="title">推送通知</span>
+        </div>
+        <div class="b-box1">
+            <span class="title">屏蔽对象</span>
+        </div>
+        <div class="s-box">
+        </div>
+        <div class="b-box">
+            <span class="title">举报申诉</span>
+        </div>
+        <div class="b-box1">
+            <span class="title">检查更新</span>
+        </div>
+        <div class="b-box1">
+            <span class="title">关于我们</span>
+        </div>
+        <div class="n-tcdl">
+            <div class="blue-box">
+                <span class="text">退出登录</span>
+            </div>
+        </div>
+    </div>
 
 </html>
