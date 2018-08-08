@@ -82,7 +82,7 @@
                     <div class="aui-list-item-media">
                         <img src="../image/qq.png">
                     </div>
-                    <div class="aui-list-item-inner">
+                    <div class="aui-list-item-inner" onclick="lyx_content()">
                         <div class="aui-list-item-text">
                             <div class="aui-list-item-title">9420 麦小兜</div>
                             <div class="aui-list-item-right">2015-07-14</div>
@@ -104,5 +104,16 @@
     apiready = function(){
 
     };
+
+    function lyx_content(){
+      api.openWin({
+          name: 'lyx_content',
+          url: './lyx_content.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
 </script>
 </html>
