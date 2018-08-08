@@ -23,7 +23,7 @@
 
 		.aui-title {
 			color:#282828;
-			font-size:0.8rem;			
+			font-size:0.8rem;
 		}
 
 		.aui-list .aui-list-header {
@@ -39,7 +39,7 @@
 		.input {
 			font-size:13px;
 		}
-		
+
 		.qqqqq {
 			height: 5rem;
 		}
@@ -89,69 +89,37 @@
 </head>
 <body>
 	<div class="wrap">
-		<header class="aui-bar aui-bar-nav aui-bar-light">
+		<header class="aui-bar aui-bar-nav aui-bar-light" id="header">
 		    <a class="aui-pull-left aui-btn">
 		        <span class="aui-iconfont aui-icon-left"></span>
-		    </a>   
-		    <div class="aui-title">实名制</div> 
+		    </a>
+		    <div class="aui-title">实名制</div>
 		</header>
-		<div class="aui-content aui-margin-b-15">
-			<ul class="aui-list aui-list-in">
-				<li class="aui-list-header">
-					<div class="aui-list-item-inner">
-	                	<div class="aui-list-item-title">手机号绑定</div>
-	                	<div class="aui-list-item-right">已绑定</div>
-	            	</div>
-				</li>
-			</ul>
-			<ul class="aui-list aui-list-in">
-				<li class="aui-list-header">
-					<div class="aui-list-item-inner">
-	                	<div class="aui-list-item-title">邮箱绑定</div>
-	                	<div class="aui-list-item-right">已绑定</div>
-	            	</div>
-				</li>
-			</ul>
-			<ul class="aui-list aui-form-list">
-				<li class="aui-list-item">
-		            <div class="aui-list-item-inner">
-		                <div class="aui-list-item-input">
-		                    <input class="input" type="text" placeholder="请输入您的真实姓名">
-		                </div>
-		            </div>
-	        	</li>
-	        	<li class="aui-list-item">
-		            <div class="aui-list-item-inner">
-		                <div class="aui-list-item-input">
-		                    <input class="input" type="text" placeholder="请输入您的身份证号">
-		                </div>
-		            </div>
-	        	</li>
-	        	<li class="aui-list-item">
-	            <div class="aui-list-item-inner">
-	                <div class="aui-list-item-label">
-	                    性别
-	                </div>
-	                <div class="aui-list-item-input">
-	                    <label><input class="aui-radio" type="radio" name="demo1" checked>男</label>
-	                    <label><input class="aui-radio" type="radio" name="demo1"> 女</label>
-	                </div>
-	            </div>
-	        </li>
-			</ul>
-		</div>
-		<div class="qqqqq"></div>
-		<div class="n-tcdl">
-			<div class="blue-box">
-				<span class="text">保存</span>
-			</div>			
-		</div>
 	</div>
 </body>
 	<script type="text/javascript" src="../script/api.js"></script>
 	<script type="text/javascript">
 	    apiready = function(){
-			
+				var header = $api.byId('header');
+				$api.fixStatusBar(header);
+				var headerH = $api.offset(header).h;
+				api.openFrame({
+					name: 'main_3_frame',
+					url: 'main_3_frame.html',
+					rect: {
+						x: 0,
+						y: headerH,
+						w: 'auto',
+						h: 'auto'
+					},
+					pageParam: {
+						name: 'test'
+					},
+					bounces: true,
+					bgColor: 'rgba(0,0,0,0)',
+					vScrollBarEnabled: true,
+					hScrollBarEnabled: true
+				});
 	    };
 	</script>
 </html>

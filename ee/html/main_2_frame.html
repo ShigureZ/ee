@@ -78,45 +78,36 @@
 			line-height: 2rem;
 			font-size: 0.7rem;
 			text-align: center;
-			margin-left: 1rem;
 		}
 	</style>
 </head>
 
 <body>
-	<header class="aui-bar aui-bar-nav aui-bar-light" id="header">
-		<a class="aui-pull-left aui-btn">
-			<span class="aui-iconfont aui-icon-left"></span>
-		</a>
-		<div class="aui-title">账号与安全</div>
-	</header>
+
+	<div class="image_circle">
+		<img src="../image/circle1.jpg" alt="" class="circle_avatar">
+		<span class="text_top">
+			你若成风
+		</span>
+	</div>
+	<div class="box_bottom">
+		<div class="s-box">
+		</div>
+		<div class="box_bottom_title">
+			<span class="title">
+				实名制
+			</span>
+		</div>
+		<div class="box_bottom_title">
+			<span class="title">
+				修改密码
+			</span>
+		</div>
+	</div>
 </body>
-<script type="text/javascript" src="../script/api.js"></script>
-<script type="text/javascript">
-	apiready = function() {
-
-		var header = $api.byId('header');
-		$api.fixStatusBar(header);
-		var headerH = $api.offset(header).h;
-		api.openFrame({
-			name: 'main_2_frame',
-			url: 'main_2_frame.html',
-			rect: {
-				x: 0,
-				y: headerH,
-				w: 'auto',
-				h: 'auto'
-			},
-			pageParam: {
-				name: 'test'
-			},
-			bounces: true,
-			bgColor: 'rgba(0,0,0,0)',
-			vScrollBarEnabled: true,
-			hScrollBarEnabled: true
-		});
-
-	};
-</script>
 
 </html>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function() {}
+</script>
