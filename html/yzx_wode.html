@@ -156,7 +156,7 @@
           <i class="aui-iconfont aui-icon-home1"></i>
           <div class="aui-bar-tab-label">首页</div>
       </div>
-      <div class="aui-bar-tab-item" tapmode>
+      <div class="aui-bar-tab-item" tapmode onclick="openfind()">
           <i class="aui-iconfont aui-icon-search1"></i>
           <div class="aui-bar-tab-label">发现</div>
       </div>
@@ -164,7 +164,7 @@
         <i class="aui-iconfont3 aui-icon-publish1"></i>
       </div>
 
-      <div class="aui-bar-tab-item" tapmode>
+      <div class="aui-bar-tab-item" tapmode onclick="openmessge()">
           <i class="aui-iconfont aui-icon-cart1"></i>
           <div class="aui-bar-tab-label">消息</div>
       </div>
@@ -206,6 +206,28 @@
     function closeWin(){
         api.closeWin({
         });
+    }
+
+    function openfind(){
+      api.openWin({
+          name: 'lyx_find',
+          url: './lyx_find.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
+
+    function openmessge(){
+      api.openWin({
+          name: 'sixinye',
+          url: './sixinye.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
     }
 </script>
 </html>
