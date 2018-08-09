@@ -98,7 +98,7 @@
         <li class="aui-list-item">
             <div class="aui-list-item-inner">
                 <div class="aui-list-item-input">
-                    <input class="input" type="password" placeholder="请确认（6~16位）密码" >
+                    <input class="input" type="password" placeholder="请确认（6~16位）密码" id="password2">
                 </div>
             </div>
         </li>
@@ -121,6 +121,7 @@
         var username = $("#username").val();
 
         var password = $("#password").val();
+        var password2 = $("#password2").val();
         //获取用户信息
         var userInfo=$api.getStorage('user_info');
         //alert(userInfo.nickname);
@@ -130,20 +131,26 @@
         Model.save({
             "username": username,
             "password": password,
+            "password2": password2
         }, function(ret, err) {
             if (err) {
                 //处理错误 err
             } else {
                 //处理数据 ret
                 // alert(JSON.stringify(ret));//刚添加的记录的完整信息
-                alert("注册成功！");
-                api.sendEvent({
-                    name: 'reloadArticleList'
-                });
+                if (password==password2) {
+                  alert("注册成功！");
+                  api.sendEvent({
+                      name: 'reloadArticleList'
+                  });
 
-                api.closeWin({
-                    name: 'zhuceye'
-                });
+                  api.closeWin({
+                      name: 'zhuceye'
+                  });
+                } else {
+                  alert("两次密码不一致！")
+                  return false;
+                }
 
 
             }
