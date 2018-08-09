@@ -138,6 +138,34 @@
               });
           }
 
+          function query() {
+              var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
+              var Model = client.Factory("article");
+              Model.query({
+                  filter: {
+                      fields: {
+                          "id": true,
+                          "title": true,
+                          "likeNum": true
+                      }, //或者["id","make","model"]
+                      order: "createdAt DESC"
+                  }
+              }, function(ret, err) {
+                  if (err) {
+                      //处理错误 err
+                      alert(JSON.stringify(err));
+                  } else {
+                      //处理数据 ret
+                      //alert(JSON.stringify(ret));
+                      //编译模版
+                      var interation = doT.template($('#articleTemp').html());
+                      //将数据显示到网页中
+                      $('#content').html(interation(ret));
 
+
+
+                  }
+              })
+          }
 </script>
 </html>
