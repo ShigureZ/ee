@@ -13,7 +13,7 @@
         }
 
         .aui-icon-home1 {
-            background: url(../image/shouye1.png) no-repeat center center;
+            background: url(../image/shouye.png) no-repeat center center;
             background-size: 100%;
             display: inline-block;
             width: 24px;
@@ -21,7 +21,7 @@
         }
 
         .aui-icon-search1 {
-            background: url(../image/diqiu.png) no-repeat center center;
+            background: url(../image/diqiu1.png) no-repeat center center;
             background-size: 100%;
             display: inline-block;
             width: 30px;find_earth
@@ -172,102 +172,91 @@
             margin-top: 0.4rem;
             margin-left: 0.3rem;
         }
-
-        .aui-active {
-            color: #48b9fd;
-        }
     </style>
 </head>
 
 <body>
-    <header class="aui-bar aui-bar-nav" id="header">
-        <div class="aui-title">悬赏</div>
-        <a class="aui-pull-right aui-btn aui-btn-outlined">
-            <span class="aui-iconfont aui-icon-search"></span>
-        </a>
-    </header>
-    <footer class="aui-bar aui-bar-tab" >
-        <div class="aui-bar-tab-item aui-active" tapmode>
-            <i class="aui-iconfont aui-icon-home1"></i>
-            <div class="aui-bar-tab-label">首页</div>
+    <div class="sldeder">
+        <img src="../image/scenery1.jpg" alt="">
+    </div>
+    <div class="spinner">
+        <div class="spinner_type">
+            <select>
+                <option value="run">跑腿代劳</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+            </select>
         </div>
-        <div class="aui-bar-tab-item" tapmode onclick="openfind()">
-            <i class="aui-iconfont aui-icon-search1"></i>
-            <div class="aui-bar-tab-label">发现</div>
+        <div class="spinner_select">
+            <img src="../image/select.png" alt="">
         </div>
-        <div class="aui-bar-tab-item" tapmode>
-            <i class="aui-iconfont3 aui-icon-publish1"></i>
+        <div class="spinner_order">
+            <select>
+                <option value="time">按时间排序</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+            </select>
         </div>
-
-        <div class="aui-bar-tab-item" tapmode onclick="openmessge()">
-            <i class="aui-iconfont aui-icon-cart1" ></i>
-            <div class="aui-bar-tab-label">消息</div>
+        <div class="spinner_select">
+            <img src="../image/select.png" alt="">
         </div>
-        <div class="aui-bar-tab-item" tapmode onclick="openwode()">
-            <i class="aui-iconfont aui-icon-my1"></i>
-            <div class="aui-bar-tab-label">我的</div>
-        </div>
-    </footer>
+    </div>
+    <div class="content">
+        <img src="../image/scenery2.jpg" alt="">
+        <ul>
+            <li class="content_word content_word_top">代取快递</li>
+            <li><img src="../image/qianbao.png" alt=""></li>
+            <li class='content_word content_word_img'>20</li>
+        </ul>
+        <ul>
+            <li class="content_word content_word_bottom">长春理工</li>
+            <li class="content_word content_word_bottom">1:00:00</li>
+        </ul>
+    </div>
+    <div class="content">
+        <img src="../image/scenery2.jpg" alt="">
+        <ul>
+            <li class="content_word content_word_top">代取快递</li>
+            <li><img src="../image/qianbao.png" alt=""></li>
+            <li class='content_word content_word_img'>20</li>
+        </ul>
+        <ul>
+            <li class="content_word content_word_bottom">长春理工</li>
+            <li class="content_word content_word_bottom">1:00:00</li>
+        </ul>
+    </div>
+    <div class="content">
+        <img src="../image/scenery2.jpg" alt="">
+        <ul>
+            <li class="content_word content_word_top">代取快递</li>
+            <li><img src="../image/qianbao.png" alt=""></li>
+            <li class='content_word content_word_img'>20</li>
+        </ul>
+        <ul>
+            <li class="content_word content_word_bottom">长春理工</li>
+            <li class="content_word content_word_bottom">1:00:00</li>
+        </ul>
+    </div>
+    <div class="content">
+        <img src="../image/scenery2.jpg" alt="">
+        <ul>
+            <li class="content_word content_word_top">代取快递</li>
+            <li><img src="../image/qianbao.png" alt=""></li>
+            <li class='content_word content_word_img'>20</li>
+        </ul>
+        <ul>
+            <li class="content_word content_word_bottom">长春理工</li>
+            <li class="content_word content_word_bottom">1:00:00</li>
+        </ul>
+    </div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
     apiready = function() {
-        var header = $api.byId('header');
-        $api.fixStatusBar(header);
-        var headerH = $api.offset(header).h;
-        api.openFrame({
-            name: 'wanted-frame',
-            url: 'wanted-frame.html',
-            rect: {
-                x: 0,
-                y: headerH,
-                w: 'auto',
-                h: 'auto',
-                marginBottom:51
-            },
-            pageParam: {
-                name: 'test'
-            },
-            bounces: true,
-            bgColor: 'rgba(0,0,0,0)',
-            vScrollBarEnabled: true,
-            hScrollBarEnabled: true
-        });
 
-    }
-
-    function openfind(){
-      api.openWin({
-          name: 'lyx_find',
-          url: './lyx_find.html',
-          pageParam: {
-              name: 'test'
-          }
-      });
-
-    }
-
-    function openmessge(){
-      api.openWin({
-          name: 'sixinye',
-          url: './sixinye.html',
-          pageParam: {
-              name: 'test'
-          }
-      });
-
-    }
-
-    function openwode(){
-      api.openWin({
-          name: 'yzx_wode',
-          url: './yzx_wode.html',
-          pageParam: {
-              name: 'test'
-          }
-      });
-
-    }o
+    };
 </script>
 
 </html>
