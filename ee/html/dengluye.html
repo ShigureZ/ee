@@ -148,6 +148,9 @@
     function login() {
         var username = $("#username").val();
         var password = $("#password").val();
+        //获取用户信息
+        var userInfo=$api.getStorage('user_info');
+
         // alert(username + "--" + password);
 
         var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
@@ -174,6 +177,9 @@
                         } else {
                             //处理数据 ret
                             // alert(JSON.stringify(ret))
+                            $api.setStorage('username', username);
+                            $api.setStorage('password', password);
+                            $api.setStorage('user_info', ret);
                             api.openWin({
                                 name: 'lyx_find',
                                 url: './lyx_find.html',
@@ -184,9 +190,10 @@
 
                         }
                     })
+                    // 以上model.get方法
                 }
             })
-
+// 以上model.login登录
 
     }
 </script>
