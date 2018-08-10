@@ -291,17 +291,13 @@
 </head>
 
 <body>
-    <div class="aui-card-list">
+    <!-- <div class="aui-card-list">
         <div class="list-header">
             <div class="head-pic">
                 <img src="../image/jiexin.jpg">
             </div>
             <div class="head-user">
-                <div class="head-name">鹿小彤</div>
-                <div class="user-label">
-                    <div class="label1">可爱</div>
-                    <div class="label2">漂亮</div>
-                </div>
+                <div class="head-name" id="nickname"></div>
             </div>
             <div class="guanzhu">
                 关注</div>
@@ -309,14 +305,12 @@
 
         <div class="aui-card-list-content-padded aui-border-b aui-border-t">
             <div class="headline">
-                <div class="headline-title">
-                    你是一个大傻瓜!!!
+                <div class="headline-title" id="title">
                 </div>
                 <div class="headline-date">
-                    2017.00.00
                 </div>
             </div>
-            <p class="content">我原本以为，所谓的缘份就是：冥冥之中，注定相遇、相识，仅此而已.....我原本以为，所有的缘份在遇见之后,都能通过彼此的心，让它坚强的走下去.....终于，某天的某一刻，我觉得自己似乎错了......所谓的缘份，言不楚、道不清.....
+            <p class="content" id="content">
             </p>
             <div class="aui-row aui-row-padded">
                 <div class="aui-col-xs-4">
@@ -333,20 +327,12 @@
                 <div class="yuedu">
                     阅读
                 </div>
-                <div class="yuedul">
-                    3124234
-                </div>
-                <div class="pingbi">
-                    屏蔽
-                </div>
-                <div class="jubao">
-                    举报
+                <div class="yuedul" id="viewNum">
                 </div>
                 <div class="xintu">
                     <img src="../image/xin.png">
                 </div>
-                <div class="dianzanl">
-                    23482
+                <div class="dianzanl" id="likeNum">
                 </div>
             </div>
         </div>
@@ -363,7 +349,7 @@
             <div class="pl-name">鹿小彤</div>
             <p class="pl-con">哎呦,不错哦</p>
         </div>
-        <div class="pl-date">2017.00.00
+        <div class="pl-date">2017.01.08
         </div>
     </div>
     <div class="pl-content">
@@ -387,13 +373,154 @@
         </div>
         <div class="pl-date">2017.00.00
         </div>
-    </div>
+    </div> -->
+    <div id="content"></div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
-<script type="text/javascript">
-    apiready = function() {
+<script type="text/javascript" src="../script/aui-scroll.js"></script>
+<script src="../script/aui-pull-refresh.js"></script>
+<script type="text/javascript" src="../script/doT.js"></script>
+<script type="text/javascript" src="../script/APICloud-rest-SHA1.js"></script>
+<script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
+<script id="articleTemp" type="text/x-dot-template">
+    {{~it:value:index}}
+    <div class="aui-card-list">
+        <div class="list-header">
+            <div class="head-pic">
+                <img src="../image/jiexin.jpg">
+            </div>
+            <div class="head-user">
+                <div class="head-name" id="nickname">{{= value.nickname }}</div>
+            </div>
+            <div class="user-label">
+                   <div class="address">{{= value.saddress }}</div>
+               </div>
+            <div class="guanzhu">
+                关注</div>
+        </div>
 
+        <div class="aui-card-list-content-padded aui-border-b aui-border-t">
+            <div class="headline">
+                <div class="headline-title" id="title">{{= value.title }}
+                </div>
+                <div class="headline-date">{{= value.createdAt }}
+                </div>
+            </div>
+            <p class="content" id="content">{{= value.content }}
+            </p>
+            <div class="aui-row aui-row-padded">
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery1.jpg" />
+                </div>
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery2.jpg" />
+                </div>
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery1.jpg" />
+                </div>
+            </div>
+            <div class="headline-bottom">
+                <div class="yuedu">
+                    阅读
+                </div>
+                <div class="yuedul" id="viewNum">{{= value.viewNum }}
+                </div>
+                <div class="xintu">
+                    <img src="../image/xin.png">
+                </div>
+                <div class="dianzanl" id="likeNum">{{= value.likeNum }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jiange"></div>
+    <div class="pinglun">
+        <p class="PLun">评论</p>
+    </div>
+    <div class="pl-content">
+        <div class="pl-pic">
+            <img src="../image/jiexin.jpg">
+        </div>
+        <div class="pl-user">
+            <div class="pl-name">鹿小彤</div>
+            <p class="pl-con">哎呦,不错哦</p>
+        </div>
+        <div class="pl-date">2017.01.08
+        </div>
+    </div>
+    <div class="pl-content">
+        <div class="pl-pic">
+            <img src="../image/jiexin.jpg">
+        </div>
+        <div class="pl-user">
+            <div class="pl-name">鹿小彤</div>
+            <p class="pl-con">哎呦,不错哦</p>
+        </div>
+        <div class="pl-date">2017.00.00
+        </div>
+    </div>
+    <div class="pl-content">
+        <div class="pl-pic">
+            <img src="../image/jiexin.jpg">
+        </div>
+        <div class="pl-user">
+            <div class="pl-name">鹿小彤</div>
+            <p class="pl-con">哎呦,不错哦</p>
+        </div>
+        <div class="pl-date">2017.00.00
+        </div>
+    </div>
+    {{~}}
+</script>
+<script type="text/javascript">
+    var id;
+    apiready = function() {
+        id = api.pageParam.id;
+        alert("lyx_content-id" + id);
+        showArticleById();
     };
+
+    function showArticleById() {
+        var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
+        var Model = client.Factory("main_find");
+        Model.get({
+            "_id": id
+        }, function(ret, err) {
+            if (err) {
+                //处理错误 err
+                // alert(JSON.stringify(err))
+            } else {
+                //处理数据 ret
+                alert(JSON.stringify(ret))
+                // $("#title").html(ret.title);
+                // $("#likeNum").html(ret.likeNum);
+                // $("#content").html(ret.content);
+                // $("#viewNum").html(ret.viewNum);
+                // $("#nickname").html(ret.nickname);
+
+                var interation = doT.template($('#articleTemp').html());
+                //将数据显示到网页中
+                $('#content').html(interation(ret));
+            }
+        })
+
+        Model.save({
+            "_id": id
+        }, {
+            "$inc": {
+                viewNum: +1
+            }
+        }, function(ret, err) {
+            if (err) {
+                //处理错误 err
+                alert(JSON.stringify(err))
+            } else {
+                //处理数据 ret
+                alert(JSON.stringify(ret))
+            }
+        })
+
+    }
 </script>
 
 </html>
