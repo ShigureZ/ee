@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
     <style>
         .aui-bar-nav {
-          background-color: #48b9fd;
+            background-color: #48b9fd;
         }
 
         .aui-icon-home1 {
@@ -25,8 +25,8 @@
             background: url(../image/diqiu1.png) no-repeat center center;
             background-size: 100%;
             display: inline-block;
-            width: 30px;find_earth
-            height: 32px;
+            width: 30px;
+            find_earth height: 32px;
         }
 
         .aui-icon-publish1 {
@@ -74,6 +74,7 @@
         }
     </style>
 </head>
+
 <body>
     <header class="aui-bar aui-bar-nav" id="aui-header">
         <div class="aui-title">发现</div>
@@ -81,13 +82,13 @@
             <span class="aui-iconfont aui-icon-search"></span>
         </div>
     </header>
-        <div class="aui-tab">
-            <div class="aui-tab-item tapmode aui-active">推荐</div>
-            <div class="aui-tab-item tapmode">
-                <div></div>视频</div>
-            <div class="aui-tab-item tapmode">图文</div>
-            <div class="aui-tab-item tapmode">关注</div>
-        </div>
+    <div class="aui-tab">
+        <div class="aui-tab-item tapmode aui-active">推荐</div>
+        <div class="aui-tab-item tapmode">
+            <div></div>视频</div>
+        <div class="aui-tab-item tapmode">图文</div>
+        <div class="aui-tab-item tapmode">关注</div>
+    </div>
     <footer class="aui-bar aui-bar-tab" id="footer">
         <div class="aui-bar-tab-item" tapmode>
             <i class="aui-iconfont aui-icon-home1"></i>
@@ -102,7 +103,7 @@
         </div>
 
         <div class="aui-bar-tab-item" tapmode onclick="openmessge()">
-            <i class="aui-iconfont aui-icon-cart1" ></i>
+            <i class="aui-iconfont aui-icon-cart1"></i>
             <div class="aui-bar-tab-label">消息</div>
         </div>
         <div class="aui-bar-tab-item" tapmode onclick="openwode()">
@@ -118,7 +119,7 @@
 <script type="text/javascript" src="../script/APICloud-rest-SHA1.js"></script>
 <script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
-    apiready = function(){
+    apiready = function() {
         api.parseTapmode();
         var header = $api.byId('aui-header');
         $api.fixStatusBar(header);
@@ -140,25 +141,27 @@
 
 
     };
-    function openwode(){
+
+    function openwode() {
         api.openWin({
             name: 'yzx_wode',
             url: './yzx_wode.html'
-            // pageParam: {
-            //     name: 'test'
-            // }
+                // pageParam: {
+                //     name: 'test'
+                // }
         });
     }
 
-    function openmessge(){
-      api.openWin({
-          name: 'sixinye',
-          url: './sixinye.html',
-          pageParam: {
-              name: 'test'
-          }
-      });
+    function openmessge() {
+        api.openWin({
+            name: 'sixinye',
+            url: './sixinye.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
 
     }
 </script>
+
 </html>
