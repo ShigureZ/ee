@@ -54,7 +54,7 @@
     }
 </style>
 <body>
-    <div class="list_bg aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10 aui-border-b">
+    <div class="list_bg aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10 aui-border-b" onclick="opentade()">
         <div class="aui-info-item">
             <img src="../image/usertx.jpg" style="width:1.5rem;height:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小一</span>
         </div>
@@ -100,4 +100,21 @@
     </div>
 
 </body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+  apiready = function(){
+
+  }
+
+  function opentade(){
+    api.openWin({
+        name: 'yzx_tade',
+        url: './yzx_tade.html',
+        pageParam: {
+            name: 'test'
+        }
+    });
+
+  }
+</script>
 </html>
