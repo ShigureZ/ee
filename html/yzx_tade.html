@@ -54,9 +54,6 @@
         height: 26px;
     }
 
-    .aui-bar {
-        border-top: 1px solid #f2f2f2;
-    }
 
     .aui-active {
         color: #48b9fd;
@@ -158,16 +155,20 @@
         margin-left: 3.6rem;
     }
 
+    #aui-footer {
+        height: 2rem;
+    }
+
     body {
         background-color: #f5f5f5;
     }
 
     .aui-bar-tab .aui-bar-tab-label {
-      font-size:0.7rem;
+        font-size: 0.7rem;
     }
 
     .tade_footer {
-      border-right:1px solid #f5f5f5;
+        border-right: 1px solid #f5f5f5;
     }
     /*发现页面样式*/
 
@@ -223,10 +224,14 @@
         padding-left: 15px;
         padding-right: 15px;
     }
+
+    .aui-bar {
+      min-height: 1rem;
+    }
 </style>
 
 <body>
-    <footer class="aui-bar aui-bar-tab" id="aui-footer">
+    <footer class="aui-bar aui-bar-tab" id="footer">
         <div class="aui-bar-tab-item tade_footer" tapmode>
             <div class="aui-bar-tab-label">关注</div>
         </div>
@@ -240,7 +245,7 @@
 <script type="text/javascript" src="../script/APICloud-rest-SHA1.js"></script>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
-    apiready = function(){
+    apiready = function() {
         api.parseTapmode();
         var footer = $api.byId('aui-footer');
         $api.fixStatusBar(footer);
@@ -254,7 +259,7 @@
                 y: footerH,
                 w: 'auto',
                 h: 'auto',
-                marginBottom:51
+                marginBottom: 51
             },
             pageParam: {
                 name: 'test'
