@@ -307,7 +307,9 @@
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
+      var id;
     apiready = function() {
+      id = api.pageParam.id;
         api.parseTapmode();
         var header = $api.byId('aui-header');
         $api.fixStatusBar(header);
@@ -323,12 +325,15 @@
                 w: 'auto',
                 h: 'auto',
                 marginBottom:47
+            },
+            pageParam: {
+                id: id
             }
         })
 
 
     };
-
+    
     function closethis() {
         api.closeWin({
 

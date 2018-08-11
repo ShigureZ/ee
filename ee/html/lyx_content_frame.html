@@ -50,24 +50,12 @@
         .label1 {
             display: inline-block;
             font-size: 0.6rem;
-            background: #48b9fd;
-            color: #fff;
-            width: 2rem;
+            background: #fff;
+            color: #333;
+            width: 3rem;
             height: 0.9rem;
             line-height: 0.9rem;
-            text-align: center;
-            border-radius: 0.2rem;
-        }
-
-        .label2 {
-            display: inline-block;
-            font-size: 0.6rem;
-            background: #48b9fd;
-            color: #fff;
-            width: 2rem;
-            height: 0.9rem;
-            line-height: 0.9rem;
-            text-align: center;
+            /*text-align: center;*/
             border-radius: 0.2rem;
         }
 
@@ -287,22 +275,41 @@
             right: 0.8rem;
             top: 0.5rem;
         }
+
+        .label_time {
+          display: inline-block;
+          position: absolute;
+          right: 1rem;
+          top: 1.8rem;
+          font-size: 0.6rem;
+          background: #fff;
+          color: #333;
+          width: 10rem;
+          height: 0.9rem;
+          line-height: 0.9rem;
+          text-align: right;
+          border-radius: 0.2rem;
+        }
     </style>
 </head>
 
 <body>
-    <!-- <div class="aui-card-list">
+    <div class="aui-card-list">
         <div class="list-header">
             <div class="head-pic">
                 <img src="../image/jiexin.jpg">
             </div>
             <div class="head-user">
                 <div class="head-name" id="nickname"></div>
+                <div class="user-label">
+                    <div class="label1" id="address"></div>
+                </div>
             </div>
             <div class="guanzhu">
-                关注</div>
+                关注
+            </div>
+            <div class="label_time" id="createdAt">222</div>
         </div>
-
         <div class="aui-card-list-content-padded aui-border-b aui-border-t">
             <div class="headline">
                 <div class="headline-title" id="title">
@@ -373,8 +380,8 @@
         </div>
         <div class="pl-date">2017.00.00
         </div>
-    </div> -->
-    <div id="content"></div>
+    </div>
+    <!-- <div id="content"></div> -->
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript" src="../script/aui-scroll.js"></script>
@@ -383,99 +390,13 @@
 <script type="text/javascript" src="../script/APICloud-rest-SHA1.js"></script>
 <script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
 <script id="articleTemp" type="text/x-dot-template">
-    {{~it:value:index}}
-    <div class="aui-card-list">
-        <div class="list-header">
-            <div class="head-pic">
-                <img src="../image/jiexin.jpg">
-            </div>
-            <div class="head-user">
-                <div class="head-name" id="nickname">{{= value.nickname }}</div>
-            </div>
-            <div class="user-label">
-                   <div class="address">{{= value.saddress }}</div>
-               </div>
-            <div class="guanzhu">
-                关注</div>
-        </div>
-
-        <div class="aui-card-list-content-padded aui-border-b aui-border-t">
-            <div class="headline">
-                <div class="headline-title" id="title">{{= value.title }}
-                </div>
-                <div class="headline-date">{{= value.createdAt }}
-                </div>
-            </div>
-            <p class="content" id="content">{{= value.content }}
-            </p>
-            <div class="aui-row aui-row-padded">
-                <div class="aui-col-xs-4">
-                    <img src="../image/scenery1.jpg" />
-                </div>
-                <div class="aui-col-xs-4">
-                    <img src="../image/scenery2.jpg" />
-                </div>
-                <div class="aui-col-xs-4">
-                    <img src="../image/scenery1.jpg" />
-                </div>
-            </div>
-            <div class="headline-bottom">
-                <div class="yuedu">
-                    阅读
-                </div>
-                <div class="yuedul" id="viewNum">{{= value.viewNum }}
-                </div>
-                <div class="xintu">
-                    <img src="../image/xin.png">
-                </div>
-                <div class="dianzanl" id="likeNum">{{= value.likeNum }}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="jiange"></div>
-    <div class="pinglun">
-        <p class="PLun">评论</p>
-    </div>
-    <div class="pl-content">
-        <div class="pl-pic">
-            <img src="../image/jiexin.jpg">
-        </div>
-        <div class="pl-user">
-            <div class="pl-name">鹿小彤</div>
-            <p class="pl-con">哎呦,不错哦</p>
-        </div>
-        <div class="pl-date">2017.01.08
-        </div>
-    </div>
-    <div class="pl-content">
-        <div class="pl-pic">
-            <img src="../image/jiexin.jpg">
-        </div>
-        <div class="pl-user">
-            <div class="pl-name">鹿小彤</div>
-            <p class="pl-con">哎呦,不错哦</p>
-        </div>
-        <div class="pl-date">2017.00.00
-        </div>
-    </div>
-    <div class="pl-content">
-        <div class="pl-pic">
-            <img src="../image/jiexin.jpg">
-        </div>
-        <div class="pl-user">
-            <div class="pl-name">鹿小彤</div>
-            <p class="pl-con">哎呦,不错哦</p>
-        </div>
-        <div class="pl-date">2017.00.00
-        </div>
-    </div>
-    {{~}}
+    {{~it:value:index}} {{~}}
 </script>
 <script type="text/javascript">
     var id;
     apiready = function() {
         id = api.pageParam.id;
+        // alert(JSON.stringify(api.pageParam))
         // alert("lyx_content-id" + id);
         showArticleById();
     };
@@ -491,35 +412,61 @@
                 // alert(JSON.stringify(err))
             } else {
                 //处理数据 ret
-                alert(JSON.stringify(ret))
-                // $("#title").html(ret.title);
-                // $("#likeNum").html(ret.likeNum);
-                // $("#content").html(ret.content);
-                // $("#viewNum").html(ret.viewNum);
-                // $("#nickname").html(ret.nickname);
-
-                var interation = doT.template($('#articleTemp').html());
-                //将数据显示到网页中
-                $('#content').html(interation(ret));
+                // alert(JSON.stringify(ret))
+                $("#head").html(ret.head);
+                $("#address").html(ret.address);
+                $("#createdAt").html(apicloudTimeFormat(ret.createdAt,'yyyy-MM-dd'));
+                $("#title").html(ret.title);
+                $("#likeNum").html(ret.likeNum);
+                $("#content").html(ret.content);
+                $("#viewNum").html(ret.viewNum);
+                $("#nickname").html(ret.nickname);
+                $("#commentNum").html(ret.commentNum);
             }
         })
 
-        // Model.save({
-        //     "_id": id
-        // }, {
-        //     "$inc": {
-        //         viewNum: +1
-        //     }
-        // }, function(ret, err) {
-        //     if (err) {
-        //         //处理错误 err
-        //         alert(JSON.stringify(err))
-        //     } else {
-        //         //处理数据 ret
-        //         alert(JSON.stringify(ret))
-        //     }
-        // })
+        Model.save({
+            "_id": id
+        }, {
+            "$inc": {
+                viewNum: +1
+            }
+        }, function(ret, err) {
+            if (err) {
+                //处理错误 err
+                // alert(JSON.stringify(err))
+            } else {
+                //处理数据 ret
+                // alert(JSON.stringify(ret))
+            }
+        })
 
+    }
+
+    Date.prototype.Format = function (fmt) { //author: meizz
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "h+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    }
+    /*
+    * time字符串类型
+    * fmt:日期格式，比如：yyyy-MM-dd hh:mm
+    */
+    function apicloudTimeFormat(time,fmt){
+        var b=Date.parse(time);
+        var c=new Date(b);
+        var d=c.Format(fmt);
+        return d;
     }
 </script>
 
