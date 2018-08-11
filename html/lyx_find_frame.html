@@ -77,6 +77,12 @@
             padding-left: 15px;
             padding-right: 15px;
         }
+
+        .contentpart p {
+          display: inline-block;
+          width: 100%;
+          height: 14px;
+        }
     </style>
 </head>
 
@@ -91,14 +97,14 @@
 <script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
 <script id="articleTemp" type="text/x-dot-template">
     {{~it:value:index}}
-    <div class="aui-card-list" >
-        <div class="aui-card-list-header aui-card-list-user aui-border-b" >
+    <div class="aui-card-list">
+        <div class="aui-card-list-header aui-card-list-user ">
             <div class="aui-card-list-user-avatar">
-                <img class="aui-img-round" />{{= value.head }}
+                <img class="aui-img-round" src="{{= value.head }}" />
             </div>
             <div class="aui-card-list-user-name">
                 <div>{{= value.nickname }}</div>
-                <small>{{= value.createdAt }}</small>
+                <small>{{= apicloudTimeFormat(value.createdAt, 'yyyy-MM-dd') }}</small>
             </div>
             <div class="aui-card-list-user-info">{{= value.address }}</div>
         </div>
@@ -138,7 +144,7 @@
             filter: {
                 fields: {
                     "id": true,
-                    // "head": true,
+                    "head": true,
                     "nickname": true,
                     "createdAt": true,
                     "address": true,
@@ -154,10 +160,10 @@
         }, function(ret, err) {
             if (err) {
                 //处理错误 err
-                alert(JSON.stringify(err));
+                // alert(JSON.stringify(err));
             } else {
                 //处理数据 ret
-                alert(JSON.stringify(ret));
+                // alert(JSON.stringify(ret));
                 //编译模版
                 var interation = doT.template($('#articleTemp').html());
                 //将数据显示到网页中
@@ -170,7 +176,7 @@
     }
 
     function showDetailById(id) {
-        alert(id)
+        // alert(id)
         api.openWin({
             name: 'lyx_content',
             url: './lyx_content.html',
