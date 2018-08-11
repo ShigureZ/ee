@@ -1,0 +1,493 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>EeApp</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+</head>
+<style type="text/css">
+    .aui-icon-home1 {
+        background: url(../image/shouye.png) no-repeat center center;
+        background-size: 100%;
+        display: inline-block;
+        width: 24px;
+        height: 22px;
+    }
+
+    .aui-icon-search1 {
+        background: url(../image/diqiu.png) no-repeat center center;
+        background-size: 100%;
+        display: inline-block;
+        width: 30px;
+        height: 32px;
+    }
+
+    .aui-icon-publish1 {
+        background: url(../image/jiahao1.png) no-repeat center center;
+        background-size: 100%;
+        display: inline-block;
+        width: 58px;
+        height: 58px;
+        margin-left: -29px;
+        position: absolute;
+        left: 50%;
+        top: -10px;
+    }
+
+    .aui-icon-cart1 {
+        background: url(../image/xiaoxi.png) no-repeat center center;
+        background-size: 100%;
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+    }
+
+    .aui-icon-my1 {
+        background: url(../image/wode4.png) no-repeat center center;
+        background-size: 100%;
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+    }
+
+    .aui-bar {
+        border-top: 1px solid #f2f2f2;
+    }
+
+    .aui-active {
+        color: #48b9fd;
+    }
+
+    .aui-margin-l-5 {
+        margin-left: 0.45rem !important;
+    }
+
+    .aui-margin-t-10 {
+        margin-top: 0rem !important;
+    }
+
+    .list_bg {
+        background-color: white;
+        height: 2rem;
+    }
+
+    img.aui-img-round {
+        border-radius: 50%;
+    }
+
+    .main_width {
+        width: 50%;
+    }
+
+    .main_boder {
+        border-right: 1px solid #F2F2F2;
+    }
+
+    .aui-col-xs-4 i {
+        color: #333333;
+        font-style: normal;
+        font-size: 0.8rem;
+    }
+
+    .aui-col-xs-4 div {
+        color: #838591;
+        font-size: 0.7rem;
+    }
+
+    .sign {
+        width: 100%;
+        height: 1.75rem;
+        background-color: white;
+    }
+
+    .backgroung_skin {
+        width: 100%;
+        height: 8.5rem;
+    }
+
+    .guanzhu_sex {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.2rem;
+    }
+
+    .intrduce {
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+    }
+
+    .aui-info {
+        padding: 0.2rem 0;
+    }
+
+    .top {
+        background: url(../image/pifu.jpg);
+        background-size: 100% 8.5rem;
+        width: 100%;
+        height: 8.5rem;
+    }
+
+    .top_full {
+        width: 100%;
+        height: 7.05rem;
+        background-color: white;
+        opacity: 0;
+    }
+
+    .tx_image {
+        width: 3.1rem;
+        height: 3.1rem;
+        border-radius: 1.55rem;
+        position: absolute;
+        top: 22.5%;
+        left: 0.75rem;
+        z-index: 1;
+        border: 0.15rem solid white;
+    }
+
+    #signature {
+        margin-left: 3.6rem;
+    }
+
+    #nickname {
+        margin-left: 3.6rem;
+    }
+
+    body {
+        background-color: #f5f5f5;
+    }
+
+    .aui-bar-tab .aui-bar-tab-label {
+      font-size:0.7rem;
+    }
+
+    .tade_footer {
+      border-right:1px solid #f5f5f5;
+    }
+    /*发现页面样式*/
+
+    .aui-bar-nav {
+        background-color: #48b9fd;
+    }
+
+    .aui-icon-publish1 {
+        background: url(../image/jiahao1.png) no-repeat center center;
+        background-size: 100%;
+        display: inline-block;
+        width: 58px;
+        height: 58px;
+        margin-left: -29px;
+        position: absolute;
+        left: 50%;
+        top: -10px;
+    }
+
+    .aui-icon-cart1 {
+        background: url(../image/xiaoxi.png) no-repeat center center;
+        background-size: 100%;
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+    }
+
+    .aui-icon-my1 {
+        background: url(../image/wode3.png) no-repeat center center;
+        background-size: 100%;
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+    }
+
+    .aui-bar {
+        border-top: 1px solid #f2f2f2;
+    }
+
+    .aui-active {
+        color: #48b9fd;
+    }
+
+    .aui-margin-l-5 {
+        margin-left: 0.45rem !important;
+    }
+
+    .aui-margin-t-10 {
+        margin-top: 0rem !important;
+    }
+
+    .contentpart {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+</style>
+
+<body>
+    <div class="top">
+        <div class="top_full"></div>
+        <div onclick="person()"><img src="../image/usertx.jpg" class="tx_image"></div>
+        <div class="intrduce">
+            <div class="list_bg aui-info aui-padded-l-10 aui-padded-r-10 aui-border-b">
+                <div class="aui-info-item">
+                    <span style="color:#333333;" id="nickname">用户名</span>
+                    <img src="../image/woman.png" style="width:1rem;height:1rem" class="aui-img-round" />
+                </div>
+                <div class="aui-list-item-right">
+                    <img src="../image/huangguan.png" class="guanzhu_sex">
+                    <div class="aui-info-item guanzhu_btn">
+                        <i>No.27</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list_bg aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10 aui-border-b sign">
+        <div class="aui-info-item">
+            <span id="signature">个性签名</span>
+        </div>
+        <div class="aui-list-item-right aui-list-item-arrow">
+            <div class="aui-info-item" style="margin-right:1.3rem;"></div>
+        </div>
+    </div>
+    <section class="aui-grid aui-margin-b-15">
+        <div class="aui-row">
+            <div class="aui-col-xs-4 main_boder" onclick="guanzhu()">
+                <i class="" id="focusNum">0</i>
+                <div class="aui-grid-label">关注</div>
+            </div>
+            <div class="aui-col-xs-4 main_boder" onclick="fensi()">
+                <i class="" id="fanNum">0</i>
+                <div class="aui-grid-label">粉丝</div>
+            </div>
+            <div class="aui-col-xs-4 main_boder" onclick="xinyujifen()">
+                <i class="" id="creditPoint">0</i>
+                <div class="aui-grid-label">信誉积分</div>
+            </div>
+        </div>
+    </section>
+    <section class="aui-grid aui-margin-b-15">
+        <div class="aui-row">
+            <div class="aui-col-xs-4 main_width main_boder">
+                <i id="myLaunch">0</i>
+                <div class="aui-grid-label">ta发起的</div>
+            </div>
+            <div class="aui-col-xs-4 main_width main_boder">
+                <i id="myAccept">0</i>
+                <div class="aui-grid-label">ta接受的</div>
+            </div>
+        </div>
+    </section>
+    <div class="aui-card-list">
+        <div class="aui-card-list-header aui-card-list-user">
+            <div class="aui-card-list-user-avatar">
+                <img class="aui-img-round" / src="../image/jiexin.jpg">
+            </div>
+            <div class="aui-card-list-user-name">
+                <div>小鹿</div>
+            </div>
+            <div class="aui-card-list-user-info">20180803</div>
+        </div>
+        <div class='contentpart'>
+            <span>燃烧我的卡路里！</span>
+            <p>拜拜甜甜圈面包奶茶方便面
+            </p>
+            <div class="aui-row aui-row-padded">
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery1.jpg" />
+                </div>
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery2.jpg" />
+                </div>
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery1.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class="aui-card-list-footer aui-border-t">
+            <div><i class="aui-iconfont aui-icon-note"></i> 5</div>
+            <div><i class="aui-iconfont aui-icon-laud"></i> 1</div>
+            <div><i class="aui-iconfont aui-icon-star"></i> 2</div>
+        </div>
+    </div>
+    <div class="aui-card-list">
+        <div class="aui-card-list-header aui-card-list-user">
+            <div class="aui-card-list-user-avatar">
+                <img class="aui-img-round" / src="../image/jiexin.jpg">
+            </div>
+            <div class="aui-card-list-user-name">
+                <div>小鹿</div>
+            </div>
+            <div class="aui-card-list-user-info">20180803</div>
+        </div>
+        <div class='contentpart'>
+            <span>燃烧我的卡路里！</span>
+            <p>拜拜甜甜圈面包奶茶方便面
+            </p>
+            <div class="aui-row aui-row-padded">
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery1.jpg" />
+                </div>
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery2.jpg" />
+                </div>
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery1.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class="aui-card-list-footer aui-border-t">
+            <div><i class="aui-iconfont aui-icon-note"></i> 5</div>
+            <div><i class="aui-iconfont aui-icon-laud"></i> 1</div>
+            <div><i class="aui-iconfont aui-icon-star"></i> 2</div>
+        </div>
+    </div>
+    <div class="aui-card-list">
+        <div class="aui-card-list-header aui-card-list-user">
+            <div class="aui-card-list-user-avatar">
+                <img class="aui-img-round" / src="../image/jiexin.jpg">
+            </div>
+            <div class="aui-card-list-user-name">
+                <div>小鹿</div>
+            </div>
+            <div class="aui-card-list-user-info">20180803</div>
+        </div>
+        <div class='contentpart'>
+            <span>燃烧我的卡路里！</span>
+            <p>拜拜甜甜圈面包奶茶方便面
+            </p>
+            <div class="aui-row aui-row-padded">
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery1.jpg" />
+                </div>
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery2.jpg" />
+                </div>
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery1.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class="aui-card-list-footer aui-border-t">
+            <div><i class="aui-iconfont aui-icon-note"></i> 5</div>
+            <div><i class="aui-iconfont aui-icon-laud"></i> 1</div>
+            <div><i class="aui-iconfont aui-icon-star"></i> 2</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/doT.js"></script>
+<script type="text/javascript" src="../script/APICloud-rest-SHA1.js"></script>
+<script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+    var id;
+    apiready = function() {
+
+        id = $api.getStorage('user_info').id;
+        // alert(id);
+        showWodeById();
+    };
+
+
+    function showWodeById() {
+        var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
+        var Model = client.Factory("user");
+        Model.get({
+            "_id": id,
+        }, function(ret, err) {
+            if (err) {
+                //处理错误 err
+                // alert(JSON.stringify(err))
+            } else {
+                //处理数据 ret
+                // alert(JSON.stringify(ret))
+                $('#fanNum').html(ret.fanNum);
+                $('#focusNum').html(ret.focusNum);
+                $('#creditPoint').html(ret.creditPoint);
+                $('#myLaunch').html(ret.myLaunch);
+                $('#myAccept').html(ret.myAccept);
+                $('#wallet').html(ret.wallet);
+                $('#collNum').html(ret.collNum);
+                $('#nickname').html(ret.nickname);
+                $('#signature').html(ret.signature);
+
+            }
+        })
+
+    }
+
+
+    function closeWin() {
+        api.closeWin({});
+    }
+
+    function guanzhu() {
+        api.openWin({
+            name: 'yzx_guanzhu',
+            url: './yzx_guanzhu.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+
+    }
+
+    function fensi() {
+        api.openWin({
+            name: 'yzx_fensi',
+            url: './yzx_fensi.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+
+    }
+
+    function xinyujifen() {
+        api.openWin({
+            name: 'yzx_xinyujifen',
+            url: './yzx_xinyujifen.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+
+    }
+
+    function person() {
+        api.openWin({
+            name: 'yzx_person_main',
+            url: './yzx_person_main.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+
+    }
+
+    function opencollect() {
+        api.openWin({
+            name: 'lyx_collect',
+            url: './lyx_collect.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+
+    }
+
+    function openmoney() {
+        api.openWin({
+            name: 'lyx_qianbao',
+            url: './lyx_qianbao.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+
+    }
+</script>
+
+</html>
