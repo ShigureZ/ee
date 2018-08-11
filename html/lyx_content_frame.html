@@ -476,7 +476,7 @@
     var id;
     apiready = function() {
         id = api.pageParam.id;
-        alert("lyx_content-id" + id);
+        // alert("lyx_content-id" + id);
         showArticleById();
     };
 
@@ -504,21 +504,21 @@
             }
         })
 
-        Model.save({
-            "_id": id
-        }, {
-            "$inc": {
-                viewNum: +1
-            }
-        }, function(ret, err) {
-            if (err) {
-                //处理错误 err
-                alert(JSON.stringify(err))
-            } else {
-                //处理数据 ret
-                alert(JSON.stringify(ret))
-            }
-        })
+        // Model.save({
+        //     "_id": id
+        // }, {
+        //     "$inc": {
+        //         viewNum: +1
+        //     }
+        // }, function(ret, err) {
+        //     if (err) {
+        //         //处理错误 err
+        //         alert(JSON.stringify(err))
+        //     } else {
+        //         //处理数据 ret
+        //         alert(JSON.stringify(ret))
+        //     }
+        // })
 
     }
 </script>
