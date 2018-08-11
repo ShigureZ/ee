@@ -102,7 +102,7 @@
             </div>
             <div class="aui-card-list-user-info">{{= value.address }}</div>
         </div>
-        <div class='contentpart' onclick="openContent('{{= value.id }}')">
+        <div class='contentpart' onclick="showDetailById('{{=value.id}}')">
             <span>{{= value.title }}</span>
             <p>{{= value.content }}
             </p>
@@ -130,16 +130,6 @@
     apiready = function() {
         query();
     };
-
-    function openContent(id) {
-        api.openWin({
-            name: 'lyx_content',
-            url: './lyx_content.html',
-            pageParam: {
-                id: id
-            }
-        });
-    }
 
     function query() {
         var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
@@ -177,6 +167,18 @@
 
             }
         })
+    }
+
+    function showDetailById(id) {
+        alert(id)
+        api.openWin({
+            name: 'lyx_content',
+            url: './lyx_content.html',
+            pageParam: { //parameter
+                id: id
+            }
+        });
+
     }
 
     Date.prototype.Format = function(fmt) { //author: meizz
