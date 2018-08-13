@@ -32,7 +32,7 @@
         }
 
         .head-name {
-            width: 3rem;
+            width: 8rem;
             height: 1.4rem;
             font-size: 0.8rem;
             line-height: 1.4rem;
@@ -123,29 +123,32 @@
             font-size: 0.7rem;
         }
 
-        .xintu {
+        .dianzan {
             display: inline-block;
-            color: #989898;
-            font-size: 0.7rem;
-        }
-
-        .xintu img {
-            display: inline-block;
-            color: #989898;
-            font-size: 0.7rem;
             position: absolute;
-            width: 0.8rem;
-            height: 0.8rem;
-            top: 0.1rem;
-            right: 2.2rem;
+            width:2.5rem;
+            color: #989898;
+            font-size: 0.7rem;
+            right: 0rem;
         }
 
         .dianzanl {
             display: inline-block;
             color: #989898;
-            position: absolute;
+            float: right;
             font-size: 0.7rem;
-            right: 0rem;
+            margin-left: 10px;
+        }
+
+        .dianzantu {
+            display: inline-block;
+            color: #989898;
+            float: right;
+            font-size: 0.7rem;
+            width: 0.8rem;
+            height: 0.8rem;
+            /*top: 0.1rem;*/
+            /*right: 2.2rem;*/
         }
 
         .aui-card-list {
@@ -308,7 +311,7 @@
             <div class="guanzhu">
                 关注
             </div>
-            <div class="label_time" id="createdAt">222</div>
+            <div class="label_time" id="createdAt"></div>
         </div>
         <div class="aui-card-list-content-padded aui-border-b aui-border-t">
             <div class="headline">
@@ -336,10 +339,10 @@
                 </div>
                 <div class="yuedul" id="viewNum">
                 </div>
-                <div class="xintu">
-                    <img src="../image/xin.png">
-                </div>
-                <div class="dianzanl" id="likeNum">
+                <div class="dianzan">
+                    <div class="dianzanl" id="likeNum">
+                    </div>
+                    <i class="aui-iconfont aui-icon-laud dianzantu"></i>
                 </div>
             </div>
         </div>

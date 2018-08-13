@@ -110,7 +110,11 @@
         </div>
         <div class='contentpart' onclick="showDetailById('{{=value.id}}')">
             <span>{{= value.title }}</span>
-            <p>{{= value.content }}
+            <p>{{ if(value.content.length>30){ }}
+            {{= value.content.substring(0,30) }}...
+            {{}else{}}
+            {{= value.content}}
+            {{}}}
             </p>
             <div class="aui-row aui-row-padded">
                 <div class="aui-col-xs-4">
