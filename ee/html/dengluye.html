@@ -109,14 +109,14 @@
         <li class="aui-list-item">
             <div class="aui-list-item-inner">
                 <div class="aui-list-item-input">
-                    <input class="input" type="text" placeholder="手机号" id="username" value="123456">
+                    <input class="input" type="text" placeholder="手机号" id="username" value="">
                 </div>
             </div>
         </li>
         <li class="aui-list-item">
             <div class="aui-list-item-inner">
                 <div class="aui-list-item-input">
-                    <input class="input" type="password" placeholder="密码" id="password" value="123456">
+                    <input class="input" type="password" placeholder="密码" id="password" value="">
                 </div>
             </div>
         </li>
@@ -131,7 +131,10 @@
 <script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
     apiready = function() {
-
+      var username = $api.getStorage('username');
+      var password = $api.getStorage('password');
+       if(username && password)
+             autoLogin(username,password);
     };
 
     function zhuce() {
@@ -150,9 +153,11 @@
         var password = $("#password").val();
         //获取用户信息
         var userInfo=$api.getStorage('user_info');
-
+        autoLogin(username,password);
         // alert(username + "--" + password);
+      }
 
+    function autoLogin(username,password) {
         var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
         var Model = client.Factory("user"); //表名称
         Model.login({
