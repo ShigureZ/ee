@@ -87,7 +87,9 @@
 </head>
 
 <body>
-    <div id="content"></div>
+    <div class="" id="list">
+
+    </div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript" src="../script/aui-scroll.js"></script>
@@ -137,9 +139,31 @@
     {{~}}
 </script>
 <script type="text/javascript">
+    var LIMIT=5;
+    var skip=0;
+    var isQueryFlag=false;
+
     apiready = function() {
         query();
+        pullScroll();
     };
+
+    function pullScroll() {
+
+        var scroll = new auiScroll({
+            listen: false, //是否监听滚动高度，开启后将实时返回滚动高度
+            distance: 200 //判断到达底部的距离，isToBottom为true
+        }, function(ret) {
+            console.log(JSON.stringify(ret))
+            if(ret.isToBottom){
+                  //查询数据库
+                  if(!isQueryFlag){
+                    isQueryFlag=true;
+                    query();
+                  }
+            }
+        });
+    }
 
     function query() {
         var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
@@ -159,7 +183,9 @@
                     "commentNum": true,
                     "collNum": true
                 }, //或者["id","make","model"]
-                order: "createdAt DESC"
+                order: "createdAt DESC",
+                "limit": LIMIT,
+                skip:skip
             }
         }, function(ret, err) {
             if (err) {
@@ -171,8 +197,15 @@
                 //编译模版
                 var interation = doT.template($('#articleTemp').html());
                 //将数据显示到网页中
-                $('#content').html(interation(ret));
+                // $('#content').html(interation(ret));
+                // $('#titleList').html(interation(ret));//html() 是将新数据覆盖原数据  append用于加载已有数据
+                // if (pullCancelFlag) {
+                //     pullRefresh.cancelLoading(); //刷新成功后弹回
+                // };
 
+                $('#list').append(interation(ret));
+                skip=skip+ret.length;
+                isQueryFlag=false;
 
 
             }

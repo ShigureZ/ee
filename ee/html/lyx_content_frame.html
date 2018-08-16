@@ -300,7 +300,7 @@
     <div class="aui-card-list">
         <div class="list-header">
             <div class="head-pic">
-                <img src="">
+                <img src="" id="head">
             </div>
             <div class="head-user">
                 <div class="head-name" id="nickname"></div>
@@ -351,39 +351,6 @@
     <div class="pinglun">
         <p class="PLun">评论</p>
     </div>
-    <div class="pl-content">
-        <div class="pl-pic">
-            <img src="../image/jiexin.jpg">
-        </div>
-        <div class="pl-user">
-            <div class="pl-name">鹿小彤</div>
-            <p class="pl-con">哎呦,不错哦</p>
-        </div>
-        <div class="pl-date">2017.01.08
-        </div>
-    </div>
-    <div class="pl-content">
-        <div class="pl-pic">
-            <img src="../image/jiexin.jpg">
-        </div>
-        <div class="pl-user">
-            <div class="pl-name">鹿小彤</div>
-            <p class="pl-con">哎呦,不错哦</p>
-        </div>
-        <div class="pl-date">2017.00.00
-        </div>
-    </div>
-    <div class="pl-content">
-        <div class="pl-pic">
-            <img src="../image/jiexin.jpg">
-        </div>
-        <div class="pl-user">
-            <div class="pl-name">鹿小彤</div>
-            <p class="pl-con">哎呦,不错哦</p>
-        </div>
-        <div class="pl-date">2017.00.00
-        </div>
-    </div>
     <!-- <div id="content"></div> -->
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
@@ -393,7 +360,19 @@
 <script type="text/javascript" src="../script/APICloud-rest-SHA1.js"></script>
 <script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
 <script id="articleTemp" type="text/x-dot-template">
-    {{~it:value:index}} {{~}}
+    {{~it:value:index}}
+    <div class="pl-content">
+        <div class="pl-pic">
+            <img src="../image/jiexin.jpg">
+        </div>
+        <div class="pl-user">
+            <div class="pl-name">鹿小彤</div>
+            <p class="pl-con">哎呦,不错哦</p>
+        </div>
+        <div class="pl-date">2017.00.00
+        </div>
+    </div>
+    {{~}}
 </script>
 <script type="text/javascript">
     var id;
@@ -416,7 +395,7 @@
             } else {
                 //处理数据 ret
                 // alert(JSON.stringify(ret))
-                $("#head").html(ret.head);
+                $("#head").attr('src',ret.head);
                 $("#address").html(ret.address);
                 $("#createdAt").html(apicloudTimeFormat(ret.createdAt,'yyyy-MM-dd'));
                 $("#title").html(ret.title);
