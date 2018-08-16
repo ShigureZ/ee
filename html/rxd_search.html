@@ -13,7 +13,7 @@
         }
 
         .aui-icon-home1 {
-            background: url(../image/shouye.png) no-repeat center center;
+            background: url(../image/shouye1.png) no-repeat center center;
             background-size: 100%;
             display: inline-block;
             width: 24px;
@@ -21,7 +21,7 @@
         }
 
         .aui-icon-search1 {
-            background: url(../image/diqiu1.png) no-repeat center center;
+            background: url(../image/diqiu.png) no-repeat center center;
             background-size: 100%;
             display: inline-block;
             width: 30px;find_earth
@@ -172,91 +172,135 @@
             margin-top: 0.4rem;
             margin-left: 0.3rem;
         }
+
+        .aui-active {
+            color: #48b9fd;
+        }
+
+        .location img{
+          position: absolute;
+          right: 0.75rem;
+        }
+
+        .search_position{
+          height: 90px;
+          position: absolute;
+          top: 0px;
+          display: none;
+        }
+
+        .search_kuang{
+          top:20px;
+          border: 0.05rem solid #f2f2f2;
+          border-radius: 0.1rem;
+        }
+
+        .search_kuang_cancel{
+          font-size: 0.8rem;
+          position: absolute;
+          right: 0.25rem;
+
+        }
     </style>
 </head>
 
 <body>
-    <div class="sldeder">
-        <img src="../image/scenery1.jpg" alt="">
+
+    <div class="aui-searchbar-input aui-border-radius search_kuang">
+      <i class="aui-iconfont aui-icon-search"></i>
+      <input type="search" placeholder="请输入搜索内容" id="search-input">
+      <div class="aui-searchbar-clear-btn">
+          <i class="aui-iconfont aui-icon-close"></i>
+      </div>
+      <div class="search_kuang_cancel" onclick="openWanted()">取消</div>
     </div>
-    <div class="spinner">
-        <div class="spinner_type">
-            <select>
-                <option value="run">跑腿代劳</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
-            </select>
+
+  <div class="search_content">
+    <div></div>
+  </div>
+
+
+    <footer class="aui-bar aui-bar-tab" >
+        <div class="aui-bar-tab-item aui-active" tapmode>
+            <i class="aui-iconfont aui-icon-home1"></i>
+            <div class="aui-bar-tab-label">首页</div>
         </div>
-        <div class="spinner_select">
-            <img src="../image/select.png" alt="">
+        <div class="aui-bar-tab-item" tapmode onclick="openfind()">
+            <i class="aui-iconfont aui-icon-search1"></i>
+            <div class="aui-bar-tab-label">发现</div>
         </div>
-        <div class="spinner_order">
-            <select>
-                <option value="time">按时间排序</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
-            </select>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="aui-iconfont3 aui-icon-publish1"></i>
         </div>
-        <div class="spinner_select">
-            <img src="../image/select.png" alt="">
+
+        <div class="aui-bar-tab-item" tapmode onclick="openmessge()">
+            <i class="aui-iconfont aui-icon-cart1" ></i>
+            <div class="aui-bar-tab-label">消息</div>
         </div>
-    </div>
-    <div class="content">
-        <img src="../image/scenery2.jpg" alt="">
-        <ul>
-            <li class="content_word content_word_top">代取快递</li>
-            <li><img src="../image/qianbao.png" alt=""></li>
-            <li class='content_word content_word_img'>20</li>
-        </ul>
-        <ul>
-            <li class="content_word content_word_bottom">长春理工</li>
-            <li class="content_word content_word_bottom">1:00:00</li>
-        </ul>
-    </div>
-    <div class="content">
-        <img src="../image/scenery2.jpg" alt="">
-        <ul>
-            <li class="content_word content_word_top">代取快递</li>
-            <li><img src="../image/qianbao.png" alt=""></li>
-            <li class='content_word content_word_img'>20</li>
-        </ul>
-        <ul>
-            <li class="content_word content_word_bottom">长春理工</li>
-            <li class="content_word content_word_bottom">1:00:00</li>
-        </ul>
-    </div>
-    <div class="content">
-        <img src="../image/scenery2.jpg" alt="">
-        <ul>
-            <li class="content_word content_word_top">代取快递</li>
-            <li><img src="../image/qianbao.png" alt=""></li>
-            <li class='content_word content_word_img'>20</li>
-        </ul>
-        <ul>
-            <li class="content_word content_word_bottom">长春理工</li>
-            <li class="content_word content_word_bottom">1:00:00</li>
-        </ul>
-    </div>
-    <div class="content">
-        <img src="../image/scenery2.jpg" alt="">
-        <ul>
-            <li class="content_word content_word_top">代取快递</li>
-            <li><img src="../image/qianbao.png" alt=""></li>
-            <li class='content_word content_word_img'>20</li>
-        </ul>
-        <ul>
-            <li class="content_word content_word_bottom">长春理工</li>
-            <li class="content_word content_word_bottom">1:00:00</li>
-        </ul>
-    </div>
+        <div class="aui-bar-tab-item" tapmode onclick="openwode()">
+            <i class="aui-iconfont aui-icon-my1"></i>
+            <div class="aui-bar-tab-label">我的</div>
+        </div>
+    </footer>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
     apiready = function() {
+    }
+    function openfind(){
+      api.openWin({
+          name: 'lyx_find',
+          url: './lyx_find.html',
+          pageParam: {
+              name: 'test'
+          },
+          animation: {
+            type:"none",
+            subType:"from_right",
+            duration:300
+          }
+      });
 
-    };
+    }
+
+    function openmessge(){
+      api.openWin({
+          name: 'sixinye',
+          url: './sixinye.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
+
+    function openwode(){
+      api.openWin({
+          name: 'yzx_wode',
+          url: './yzx_wode.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
+
+    function openWanted(){
+      api.openWin({
+          name: 'rxd_wanted',
+          url: './rxd_wanted.html',
+          pageParam: {
+              name: 'test'
+          },
+          animation: {
+            type:"fade",
+            subType:"from_right",
+            duration:300
+          }
+      });
+
+    }
+
 </script>
 
 </html>

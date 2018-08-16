@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>E 易</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        .aui-bar-nav {
+            background: #48b9fd;
+        }
+
+        .head-pic {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 1.25rem;
+            display: inline-block;
+            position: relative;
+            margin-left: 1rem;
+            margin-top: 0.3rem;
+            border: 0.05rem solid #48b9fd;
+            overflow: hidden;
+        }
+
+        .head-user {
+            position: relative;
+            display: inline-block;
+            top: 0rem;
+        }
+
+        .head-name {
+            width: 3rem;
+            height: 1.4rem;
+            font-size: 0.8rem;
+            line-height: 1.4rem;
+            position: absolute;
+            top: -2.5rem;
+        }
+
+        .user-label {
+            height: 1rem;
+            width: 5rem;
+            position: absolute;
+            top: -1.2rem;
+        }
+
+        .label1 {
+            display: inline-block;
+            font-size: 0.6rem;
+            background: #48b9fd;
+            color: #fff;
+            width: 2rem;
+            height: 0.9rem;
+            line-height: 0.9rem;
+            text-align: center;
+            border-radius: 0.2rem;
+        }
+
+        .label2 {
+            display: inline-block;
+            font-size: 0.6rem;
+            background: #48b9fd;
+            color: #fff;
+            width: 2rem;
+            height: 0.9rem;
+            line-height: 0.9rem;
+            text-align: center;
+            border-radius: 0.2rem;
+        }
+
+        .guanzhu {
+            width: 3rem;
+            height: 1.3rem;
+            position: absolute;
+            display: inline-block;
+            right: 1rem;
+            top: 0.5rem;
+            border: 0.1rem solid #FFCC00;
+            font-size: 0.8rem;
+            line-height: 1.1rem;
+            text-align: center;
+            border-radius: 0.5rem;
+            color: #FFCC00;
+        }
+
+        .headline-title {
+            font-size: 0.8rem;
+        }
+
+        .headline-date {
+            color: #989898;
+            font-size: 0.7rem;
+        }
+
+        .content {
+            display: block;
+            color: #333333;
+            font-size: 0.7rem;
+            line-height: 1rem;
+            text-align: bottom;
+        }
+
+        .headline-bottom {
+            position: relative;
+            top: 0.5rem;
+        }
+
+        .yuedu {
+            display: inline-block;
+            color: #989898;
+            font-size: 0.7rem;
+        }
+
+        .yuedul {
+            display: inline-block;
+            margin-left: 0.2rem;
+            color: #989898;
+            font-size: 0.7rem;
+        }
+
+        .pingbi {
+            display: inline-block;
+            color: #989898;
+            font-size: 0.7rem;
+            margin-left: 20%;
+        }
+
+        .jubao {
+            display: inline-block;
+            margin-left: 1rem;
+            color: #989898;
+            font-size: 0.7rem;
+        }
+
+        .xintu {
+            display: inline-block;
+            color: #989898;
+            font-size: 0.7rem;
+        }
+
+        .xintu img {
+            display: inline-block;
+            color: #989898;
+            font-size: 0.7rem;
+            position: absolute;
+            width: 0.8rem;
+            height: 0.8rem;
+            top: 0.1rem;
+            right: 2.2rem;
+        }
+
+        .dianzanl {
+            display: inline-block;
+            color: #989898;
+            position: absolute;
+            font-size: 0.7rem;
+            right: 0rem;
+        }
+
+        .aui-card-list {
+            margin-bottom: 0rem;
+        }
+
+        .jiange {
+            width: 100%;
+            height: 0.5rem;
+            background: #f2f2f2;
+        }
+
+        .pinglun {
+            position: relative;
+            width: 100%;
+            height: 2rem;
+            background: #ffffff;
+            border-bottom: 0.05rem solid #f2f2f2;
+        }
+
+        .PLun {
+            display: block;
+            position: absolute;
+            left: 0.75rem;
+            top: 0.5rem;
+            font-size: 0.8rem;
+            background: #ffffff;
+        }
+
+        .pl-content {
+            background: #ffffff;
+            position: relative;
+            border-bottom: 0.05rem solid #f2f2f2;
+        }
+
+        .pl-pic {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 1rem;
+            display: inline-block;
+            position: relative;
+            margin-left: 1rem;
+            margin-top: 0.3rem;
+            border: 0.05rem solid #48b9fd;
+            overflow: hidden;
+        }
+
+        .pl-user {
+            position: relative;
+            display: inline-block;
+            top: 0rem;
+        }
+
+        .pl-name {
+            width: 3rem;
+            height: 1.4rem;
+            font-size: 0.8rem;
+            line-height: 1.4rem;
+            margin-top: 0.3rem;
+        }
+
+        .pl-con {
+            display: block;
+            color: #333333;
+            font-size: 0.7rem;
+            line-height: 1rem;
+            text-align: bottom;
+        }
+
+        .pl-date {
+            display: inline-block;
+            color: #989898;
+            font-size: 0.7rem;
+            position: absolute;
+            top: 0.3rem;
+            right: 1rem;
+        }
+
+        .shuru {
+            position: fixed;
+            bottom: 0rem;
+            width: 100%;
+            height: 2.4rem;
+            background: #ffffff;
+            border-top: 0.05rem solid #f2f2f2;
+        }
+
+        .sr-fbpl {
+            display: inline-block;
+            width: 65%;
+            height: 1.5rem;
+            border: 0.05rem solid #c3c3c3;
+            border-radius: 0.4rem;
+            margin-top: 0.4rem;
+            margin-left: 0.7rem;
+        }
+
+        .fbpl {
+            font-size: 0.8rem;
+            color: #989898;
+            background: #ffffff;
+            line-height: 1.3rem;
+            margin-left: 0.75rem;
+            margin-top: 0.05rem;
+        }
+
+        .zhuanzai {
+            width: 1.25rem;
+            height: 1.25rem;
+            display: inline-block;
+            position: absolute;
+            margin-top: 0.45rem;
+            margin-left: 0.8rem;
+        }
+
+        .fasong {
+            width: 2rem;
+            height: 1.4rem;
+            display: inline-block;
+            background: #48b9fd;
+            color: #ffffff;
+            font-size: 0.8rem;
+            line-height: 1.4rem;
+            text-align: center;
+            border-radius: 0.4rem;
+            position: absolute;
+            right: 0.8rem;
+            top: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="aui-bar aui-bar-nav" id="aui-header">
+        <a class="aui-pull-left aui-btn" onclick="closethis()">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">内容详情</div>
+    </header>
+    <div class="shuru">
+        <div class="sr-fbpl">
+            <span class="fbpl">发表评论</span>
+        </div>
+        <img src="../image/fenxiang.png" class="zhuanzai">
+        <div class="fasong">发送</div>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+      var id;
+    apiready = function() {
+      id = api.pageParam.id;
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        api.openFrame({
+            name: 'rxd_xuanshang_frame',
+            url: 'rxd_xuanshang_frame.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: 'auto',
+                h: 'auto',
+                marginBottom:47
+            },
+            pageParam: {
+                id: id
+            }
+        })
+
+
+    };
+
+    function closethis() {
+        api.closeWin({
+
+        });
+    }
+</script>
+
+</html>

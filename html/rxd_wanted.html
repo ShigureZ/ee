@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        .aui-bar-nav {
+          background-color: #48b9fd;
+        }
+
+        .aui-icon-home1 {
+            background: url(../image/shouye1.png) no-repeat center center;
+            background-size: 100%;
+            display: inline-block;
+            width: 24px;
+            height: 22px;
+        }
+
+        .aui-icon-search1 {
+            background: url(../image/diqiu.png) no-repeat center center;
+            background-size: 100%;
+            display: inline-block;
+            width: 30px;find_earth
+            height: 32px;
+        }
+
+        .aui-icon-publish1 {
+            background: url(../image/jiahao1.png) no-repeat center center;
+            background-size: 100%;
+            display: inline-block;
+            width: 56px;
+            height: 56px;
+            margin-left: -28px;
+            position: absolute;
+            left: 50%;
+            top: -3px;
+        }
+
+        .aui-icon-cart1 {
+            background: url(../image/xiaoxi.png) no-repeat center center;
+            background-size: 100%;
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+        }
+
+        .aui-icon-my1 {
+            background: url(../image/wode3.png) no-repeat center center;
+            background-size: 100%;
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+        }
+
+        body {
+            background: white;
+            font-family: '微软雅黑';
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .sldeder {
+            width: 100%;
+            height: 7.5rem;
+        }
+
+        .sldeder img {
+            width: 100%;
+            height: 7.5rem;
+        }
+
+        .spinner {
+            width: 100%;
+            height: 2.5rem;
+            border-top: 1px solid #F2F2F2;
+            border-bottom: 1px solid #F2F2F2;
+            text-align: center;
+        }
+
+        .spinner_type {
+            width: 25%;
+            float: left;
+            margin-left: 10%;
+            text-align: center;
+            text-align-last: center;
+            height: 2.5rem;
+        }
+
+        .spinner_order {
+            width: 25%;
+            float: left;
+            margin-left: 20%;
+            text-align: center;
+            text-align-last: center;
+            height: 2.5rem;
+        }
+
+        .spinner_select {
+            width: 5%;
+            height: 2.5rem;
+            float: left;
+            margin-left: 2%;
+        }
+
+        .spinner_select img {
+            width: 16px;
+            height: 16px;
+            float: left;
+            margin-top: 0.7rem;
+        }
+
+        .content {
+            width: 45%;
+            height: 45%;
+            border: 1px solid #F2F2F2;
+            margin-left: 3%;
+            margin-top: 2%;
+            background: white;
+            float: left;
+        }
+
+        .content ul {
+            width: 100%;
+            height: 2rem;
+            position: relative;
+        }
+
+        .content img {
+            width: 100%;
+            height: 5.5625rem;
+        }
+
+        .content ul li img {
+            width: 1.4375rem;
+            height: 1.4375rem;
+            margin-left: 0.8rem;
+            margin-top: 0.4rem;
+        }
+
+        .content ul li {
+            float: left;
+            list-style: none;
+        }
+
+        .content_word {
+            font-family: '微软雅黑';
+        }
+
+        .content_word_top {
+            color: #333;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-top: 0.4rem;
+            margin-left: 0.6rem;
+        }
+
+        .content_word_bottom {
+            color: #565656;
+            font-size: 0.75rem;
+            margin: 0.2rem 0.8rem;
+            margin-right: 0rem;
+        }
+
+        .content_word_img {
+            color: #48B9FD;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-top: 0.4rem;
+            margin-left: 0.3rem;
+        }
+
+        .aui-active {
+            color: #48b9fd;
+        }
+
+        .location img{
+          position: absolute;
+          right: 0.75rem;
+        }
+
+        .search_position{
+          height: 90px;
+          position: absolute;
+          top: 0px;
+
+        }
+
+        .search_kuang{
+          top:20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="aui-bar aui-bar-nav" id="header">
+        <div class="aui-title">悬赏</div>
+
+        <div class="aui-pull-right aui-btn aui-tab-img location" onclick="openSearch()">
+    			<img src="../image/magnifier.png">
+    		</div>
+
+    </header>
+    <footer class="aui-bar aui-bar-tab" >
+        <div class="aui-bar-tab-item aui-active" tapmode>
+            <i class="aui-iconfont aui-icon-home1"></i>
+            <div class="aui-bar-tab-label">首页</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode onclick="openfind()">
+            <i class="aui-iconfont aui-icon-search1"></i>
+            <div class="aui-bar-tab-label">发现</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="aui-iconfont3 aui-icon-publish1"></i>
+        </div>
+
+        <div class="aui-bar-tab-item" tapmode onclick="openmessge()">
+            <i class="aui-iconfont aui-icon-cart1" ></i>
+            <div class="aui-bar-tab-label">消息</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode onclick="openwode()">
+            <i class="aui-iconfont aui-icon-my1"></i>
+            <div class="aui-bar-tab-label">我的</div>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        var header = $api.byId('header');
+        $api.fixStatusBar(header);
+        var headerH = $api.offset(header).h;
+        api.openFrame({
+            name: 'rxd_wanted-frame',
+            url: 'rxd_wanted-frame.html',
+            rect: {
+                x: 0,
+                y: headerH,
+                w: 'auto',
+                h: 'auto',
+                marginBottom:51
+            },
+            pageParam: {
+                name: 'test'
+            },
+            bounces: true,
+            bgColor: 'rgba(0,0,0,0)',
+            vScrollBarEnabled: true,
+            hScrollBarEnabled: true
+        });
+
+    }
+
+    function openfind(){
+      api.openWin({
+          name: 'lyx_find',
+          url: './lyx_find.html',
+          pageParam: {
+              name: 'test'
+          },
+          animation: {
+            type:"none",
+            subType:"from_right",
+            duration:300
+          }
+      });
+
+    }
+
+    function openmessge(){
+      api.openWin({
+          name: 'sixinye',
+          url: './sixinye.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
+
+    function openwode(){
+      api.openWin({
+          name: 'yzx_wode',
+          url: './yzx_wode.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
+
+    function openSearch(){
+      api.openWin({
+          name: 'rxd_search',
+          url: './rxd_search.html',
+          pageParam: {
+              name: 'test'
+          },
+          animation: {
+            type:"fade",
+            subType:"from_right",
+            duration:300
+          }
+      });
+
+    }
+
+
+
+
+</script>
+
+</html>
