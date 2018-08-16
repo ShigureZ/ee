@@ -65,55 +65,187 @@
             height:2rem;
         }
 
+        .contentpart {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
 
+        .contentpart p {
+          display: inline-block;
+          width: 100%;
+          height: 14px;
+        }
     </style>
 </head>
 <body>
-    <div class="sousuo">
-        <div class="sousuokuang">
-            <img src="../image/sousuo.png">
-            <span>搜索</span>
-        </div>
-    </div>
-    <div class="aui-content ">
-        <ul class="aui-list aui-media-list">
-            <li class="aui-list-item">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-media">
-                        <img src="../image/qq.png">
-                    </div>
-                    <div class="aui-list-item-inner" onclick="lyx_content()">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title">9420 麦小兜</div>
-                            <div class="aui-list-item-right">2015-07-14</div>
-                        </div>
-                        <div class="aui-info aui-margin-t-5" style="padding:0">
-                            <div class="aui-info-item">
-                                <img src="../image/scenery1.jpg" style="width:2rem" >
-                                <span class="aui-margin-l-5">手牵手一起走在幸福的大街 微风缓缓的吹来你我相依偎 爱的目光如此的热烈 这份爱就像是在燃烧的火堆 炽热的火焰如同盛开的玫瑰 不管白天黑夜继续的沉醉</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
+      <div class="" id="list">
+
+      </div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-scroll.js"></script>
+<script src="../script/aui-pull-refresh.js"></script>
+<script type="text/javascript" src="../script/doT.js"></script>
+<script type="text/javascript" src="../script/APICloud-rest-SHA1.js"></script>
+<script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
+<script id="articleTemp" type="text/x-dot-template">
+    {{~it:value:index}}
+    <div class="aui-card-list">
+        <div class="aui-card-list-header aui-card-list-user ">
+            <div class="aui-card-list-user-avatar">
+                <img class="aui-img-round" src="{{= value.head }}" />
+            </div>
+            <div class="aui-card-list-user-name">
+                <div>{{= value.nickname }}</div>
+                <small></small>
+            </div>
+            <div class="aui-card-list-user-info">{{= apicloudTimeFormat(value.createdAt, 'yyyy-MM-dd') }}</div>
+        </div>
+        <div class='contentpart' onclick="showDetailById('{{=value.id}}')">
+            <span>{{= value.title }}</span>
+            <p>{{ if(value.content.length>30){ }}
+            {{= value.content.substring(0,30) }}...
+            {{}else{}}
+            {{= value.content}}
+            {{}}}
+            </p>
+            <div class="aui-row aui-row-padded">
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery1.jpg" />
+                </div>
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery2.jpg" />
+                </div>
+                <div class="aui-col-xs-4">
+                    <img src="../image/scenery1.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class="aui-card-list-footer aui-border-t">
+            <div><i class="aui-iconfont aui-icon-note"></i> {{= value.commentNum }}</div>
+            <div><i class="aui-iconfont aui-icon-laud"></i> {{= value.likeNum }}</div>
+            <div><i class="aui-iconfont aui-icon-star"></i> {{= value.collNum }}</div>
+        </div>
+    </div>
+    {{~}}
+</script>
 <script type="text/javascript">
     apiready = function(){
 
     };
 
-    function lyx_content(){
-      api.openWin({
-          name: 'lyx_content',
-          url: './lyx_content.html',
-          pageParam: {
-              name: 'test'
-          }
-      });
+    var LIMIT=5;
+    var skip=0;
+    var isQueryFlag=false;
+
+    apiready = function() {
+        query();
+        pullScroll();
+    };
+
+    function pullScroll() {
+
+        var scroll = new auiScroll({
+            listen: false, //是否监听滚动高度，开启后将实时返回滚动高度
+            distance: 200 //判断到达底部的距离，isToBottom为true
+        }, function(ret) {
+            console.log(JSON.stringify(ret))
+            if(ret.isToBottom){
+                  //查询数据库
+                  if(!isQueryFlag){
+                    isQueryFlag=true;
+                    query();
+                  }
+            }
+        });
+    }
+
+    function query() {
+        var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
+        var Model = client.Factory("main_find");
+        Model.query({
+            filter: {
+                fields: {
+                    "id": true,
+                    "head": true,
+                    "nickname": true,
+                    "createdAt": true,
+                    "address": true,
+                    "title": true,
+                    "content": true,
+                    "likeNum": true,
+                    "viewNum": true,
+                    "commentNum": true,
+                    "collNum": true
+                }, //或者["id","make","model"]
+                order: "createdAt DESC",
+                "limit": LIMIT,
+                skip:skip
+            }
+        }, function(ret, err) {
+            if (err) {
+                //处理错误 err
+                // alert(JSON.stringify(err));
+            } else {
+                //处理数据 ret
+                // alert(JSON.stringify(ret));
+                //编译模版
+                var interation = doT.template($('#articleTemp').html());
+                //将数据显示到网页中
+                // $('#content').html(interation(ret));
+                // $('#titleList').html(interation(ret));//html() 是将新数据覆盖原数据  append用于加载已有数据
+                // if (pullCancelFlag) {
+                //     pullRefresh.cancelLoading(); //刷新成功后弹回
+                // };
+
+                $('#list').append(interation(ret));
+                skip=skip+ret.length;
+                isQueryFlag=false;
+
+
+            }
+        })
+    }
+
+    function showDetailById(id) {
+        // alert(id)
+        api.openWin({
+            name: 'lyx_content',
+            url: './lyx_content.html',
+            pageParam: { //parameter
+                id: id
+            }
+        });
 
     }
+
+    Date.prototype.Format = function(fmt) { //author: meizz
+            var o = {
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+        /*
+         * time字符串类型
+         * fmt:日期格式，比如：yyyy-MM-dd hh:mm
+         */
+    function apicloudTimeFormat(time, fmt) {
+        var b = Date.parse(time);
+        var c = new Date(b);
+        var d = c.Format(fmt);
+        return d;
+    }
+    // var a = ["user_info,createdAt"];
+    // var b = apicloudTimeFormat(a, 'yyyy-MM-dd');
+    // alert(b);
 </script>
 </html>
