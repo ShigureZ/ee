@@ -132,7 +132,7 @@
         </div>
         <div class="aui-card-list-footer aui-border-t">
             <div><i class="aui-iconfont aui-icon-note"></i> {{= value.commentNum }}</div>
-            <div><i class="aui-iconfont aui-icon-laud"></i> {{= value.likeNum }}</div>
+            <div>{{if(value.isLike ){}} <i class="aui-iconfont aui-icon-laud" style="color: #48b9fd" onclick='clear()'></i> {{}else{}}<i class="aui-iconfont aui-icon-laud" onclick="saveLike()"></i>{{}}} {{= value.likeNum }}</div>
             <div><i class="aui-iconfont aui-icon-star"></i> {{= value.collNum }}</div>
         </div>
     </div>
@@ -212,16 +212,109 @@
         })
     }
 
-    function showDetailById(id) {
-        // alert(id)
-        api.openWin({
-            name: 'lyx_content',
-            url: './lyx_content.html',
-            pageParam: { //parameter
-                id: id
-            }
-        });
 
+        function showDetailById(id) {
+            // alert(id)
+            api.openWin({
+                name: 'lyx_content',
+                url: './lyx_content.html',
+                pageParam: { //parameter
+                    id: id
+                }
+            });
+
+        }
+
+
+    //当前登录人id
+var userId = '5b6cec242364314a5379e3a9';
+    apiready = function() {
+        query();
+    };
+//查询微博列表函数
+    function query() {
+    //查询weibo2表，查询id、概要、创建时间
+        var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
+        var Model = client.Factory("main_find");
+        Model.query({
+            filter: {
+                fields: ["id", "content", "createdAt"],
+                order: "createdAt DESC",
+                fields: {
+                    "id": true,
+                    "head": true,
+                    "nickname": true,
+                    "createdAt": true,
+                    "address": true,
+                    "title": true,
+                    "content": true,
+                    "likeNum": true,
+                    "viewNum": true,
+                    "commentNum": true,
+                    "collNum": true
+                }, //或者["id","make","model"]
+                "limit": LIMIT,
+                skip:skip
+            }
+        }, function(ret, err) {
+            if (err) {
+                //处理错误 err
+                alert(JSON.stringify(err));
+            } else {
+                //处理数据 ret
+                // alert(JSON.stringify(ret));
+                queryLike(ret);
+            }
+        })
+    }
+//处理点赞回显函数
+    function queryLike(weiboArray) {
+        var webiIdArray = [];
+        for (var i = 0; i < weiboArray.length; i++) {
+            webiIdArray[i] = weiboArray[i].id;
+        }
+        // alert(webiIdArray);
+        var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
+        var Model = client.Factory("like");
+        Model.query({
+            filter: {
+                order: "createdAt DESC",
+                "where": {
+                    "and": [{
+                        "article": {
+                            "inq": webiIdArray
+                        }
+                    }, {
+                        "liker": userId
+                    }]
+                },
+            }
+        }, function(ret, err) {
+            if (err) {
+                //处理错误 err
+                alert(JSON.stringify(err));
+            } else {
+                //处理数据 ret
+                // alert(JSON.stringify(ret));
+                for (var i = 0; i < weiboArray.length; i++) {
+                    var weiboId = weiboArray[i].id;
+                    for (var j = 0; j < ret.length; j++) {
+                        var weibo2Id = ret[j].article;
+                        //alert(weiboId+"-"+weibo2Id);
+                        if (weiboId == weibo2Id) {
+                            weiboArray[i]["isLike"] = true;
+                        }
+                    }
+                }
+            }
+            alert(JSON.stringify(weiboArray));
+            //编译模版
+            var interation = doT.template($('#articleTemp').html());
+            //将数据显示到网页中
+            $('#list').html(interation(weiboArray));
+            skip=skip+ret.length;
+            isQueryFlag=false;
+        })
     }
 
     Date.prototype.Format = function(fmt) { //author: meizz
@@ -252,6 +345,23 @@
     // var a = ["user_info,createdAt"];
     // var b = apicloudTimeFormat(a, 'yyyy-MM-dd');
     // alert(b);
+
+    // function saveLike() {
+    //   var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
+    //   var Model = client.Factory("like"); //表名称
+    //   Model.save({
+    //       "liker": userId,
+    //       "article": id
+    //   }, function(ret, err) {
+    //       if (err) {
+    //           //处理错误 err
+    //           alert(JSON.stringify(err))
+    //       } else {
+    //           //处理数据 ret
+    //           alert(JSON.stringify(ret))
+    //       }
+    //   })
+    // }
 </script>
 
 </html>
