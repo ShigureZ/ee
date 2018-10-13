@@ -90,7 +90,7 @@
         <div class="b-box" onclick="opentuisongtongzhi()">
             <span class="title">推送通知</span>
         </div>
-        <div class="b-box1">
+        <div class="b-box1" onclick="openpingbiduixiang()">
             <span class="title">屏蔽对象</span>
         </div>
         <div class="s-box">
@@ -137,6 +137,16 @@
         api.openWin({
             name: 'main_8',
             url: './main_8.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+
+      }
+      function openpingbiduixiang(){
+        api.openWin({
+            name: 'main_9_1',
+            url: './main_9_1.html',
             pageParam: {
                 name: 'test'
             }
