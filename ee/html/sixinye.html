@@ -69,8 +69,8 @@
 				background: url(../image/xiaoxi1.png) no-repeat center center;
 				background-size: 100%;
 				display: inline-block;
-				width: 30px;
-				height: 32px;
+				width: 26px;
+				height: 26px;
 		}
 
 		.aui-icon-publish1 {
@@ -123,11 +123,11 @@
 	    </div>
 	</header>
 	<footer class="aui-bar aui-bar-tab" id="footer">
-      <div class="aui-bar-tab-item" tapmode>
+      <div class="aui-bar-tab-item" tapmode onclick="openshouye()">
           <i class="aui-iconfont aui-icon-home1"></i>
           <div class="aui-bar-tab-label">首页</div>
       </div>
-      <div class="aui-bar-tab-item  aui-active" tapmode onclick="openfind()">
+      <div class="aui-bar-tab-item aui-active" tapmode>
           <i class="aui-iconfont aui-icon-search1"></i>
           <div class="aui-bar-tab-label">消息</div>
       </div>
@@ -135,11 +135,11 @@
         <i class="aui-iconfont3 aui-icon-publish1"></i>
       </div>
 
-      <div class="aui-bar-tab-item" tapmode >
+      <div class="aui-bar-tab-item" tapmode onclick="openwode()">
           <i class="aui-iconfont aui-icon-cart1"></i>
           <div class="aui-bar-tab-label">我的</div>
       </div>
-      <div class="aui-bar-tab-item" tapmode onclick="openwode()">
+      <div class="aui-bar-tab-item" tapmode onclick="openset()">
           <i class="aui-iconfont aui-icon-my1"></i>
           <div class="aui-bar-tab-label">设置</div>
       </div>
@@ -180,10 +180,10 @@
         api.closeWin({});
     }
 
-		function openfind(){
+		function openshouye(){
 			api.openWin({
-					name: 'lyx_find',
-					url: './lyx_find.html',
+					name: 'rxd_wanted',
+					url: './rxd_wanted.html',
 					pageParam: {
 							name: 'test'
 					},
@@ -212,6 +212,21 @@
           }
 			});
 
+		}
+
+		function openset(){
+			api.openWin({
+			    name: 'main_1',
+			    url: './main_1.html',
+			    pageParam: {
+			        name: 'test'
+			    },
+					animation:{
+            type:"none",
+            subType:"from_right",
+            duration:300
+          }
+			});
 		}
 
 		function openzhushou(){
