@@ -66,9 +66,9 @@
 
 <body>
 	<header class="aui-bar aui-bar-nav aui-bar-light" id="header">
-		<a class="aui-pull-left aui-btn">
+		<div class="aui-pull-left aui-btn" onclick="closexiugaimima()">
 			<span class="aui-iconfont aui-icon-left"></span>
-		</a>
+		</div>
 		<div class="aui-title">修改密码</div>
 	</header>
 </body>
@@ -96,6 +96,10 @@
 			hScrollBarEnabled: true
 		});
 	};
+	function closexiugaimima() {
+		api.closeWin({
+		});
+	}
 </script>
 
 </html>
