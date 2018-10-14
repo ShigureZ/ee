@@ -1,152 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
-    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="../css/api.css" />
-    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/api.css" />
+	<link rel="stylesheet" type="text/css" href="../css/aui.css" />
 	<title>Document</title>
 	<style type="text/css">
 		.aui-icon-home1 {
-			background:url(../image/shouye.png) no-repeat center center;
-			background-size:100%;
-			display:inline-block;
-			width:24px;
-			height:22px;
+			background: url(../image/shouye.png) no-repeat center center;
+			background-size: 100%;
+			display: inline-block;
+			width: 24px;
+			height: 22px;
 		}
 
 		.aui-icon-search1 {
-			background:url(../image/diqiu.png) no-repeat center center;
-			background-size:100%;
-			display:inline-block;
-			width:30px;
-			height:32px;
+			background: url(../image/diqiu.png) no-repeat center center;
+			background-size: 100%;
+			display: inline-block;
+			width: 30px;
+			height: 32px;
 		}
 
 		.aui-icon-publish1 {
-			background:url(../image/jiahao1.png) no-repeat center center;
-			background-size:100%;
-			display:inline-block;
-			width:58px;
-			height:58px;
-			margin-left:-29px;
-			position:absolute;
-			left:50%;
-			top:-10px;
+			background: url(../image/jiahao1.png) no-repeat center center;
+			background-size: 100%;
+			display: inline-block;
+			width: 58px;
+			height: 58px;
+			margin-left: -29px;
+			position: absolute;
+			left: 50%;
+			top: -10px;
 		}
 
 		.aui-icon-cart1 {
-			background:url(../image/xiaoxi1.png) no-repeat center center;
-			background-size:100%;
-			display:inline-block;
-			width:26px;
-			height:26px;
+			background: url(../image/xiaoxi1.png) no-repeat center center;
+			background-size: 100%;
+			display: inline-block;
+			width: 26px;
+			height: 26px;
 		}
 
 		.aui-icon-my1 {
-			background:url(../image/wode3.png) no-repeat center center;
-			background-size:100%;
-			display:inline-block;
-			width:26px;
-			height:26px;
-		}
-
-		.aui-bar {
-			border-top:1px solid #f2f2f2;
+			background: url(../image/wode3.png) no-repeat center center;
+			background-size: 100%;
+			display: inline-block;
+			width: 26px;
+			height: 26px;
 		}
 
 		.aui-active {
-			color:#48b9fd;0
+			color: #48b9fd;
 		}
-
-		body {
-			background-color:#f5f5f5;
-			width:100%;
+		/*body {
+			background-color: #f5f5f5;
+			width: 100%;
 			height: 100%;
-		}
+		}*/
 
-		.aui-info {
-			background-color:white;
+		.aui-img-round {
+			border: 1px solid #48b9fd;
 		}
 	</style>
 </head>
+
 <body>
-	<div class="aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10" onclick="openchat()">
-	    <div class="aui-info-item">
-	        <img src="../image/touxiang1.jpg" style="width:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小鹿</span>
-	        </div>
-	    <div class="aui-info-item">2015-07-13 21:31</div>
+	<div class="" id="content">
+
 	</div>
-	<div class="aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10">
-	    <div class="aui-info-item">
-	        <img src="../image/touxiang2.jpg" style="width:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小1</span>
-	        </div>
-	    <div class="aui-info-item">2017-07-13 22:31</div>
-	</div>
-	<div class="aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10">
-	    <div class="aui-info-item">
-	        <img src="../image/touxiang2.jpg" style="width:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小东</span>
-	        </div>
-	    <div class="aui-info-item">2012-07-13 09:21</div>
-	</div><div class="aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10">
-	    <div class="aui-info-item">
-	        <img src="../image/touxiang2.jpg" style="width:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小2</span>
-	        </div>
-	    <div class="aui-info-item">2011-07-13 22:56</div>
-	</div><div class="aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10">
-	    <div class="aui-info-item">
-	        <img src="../image/touxiang2.jpg" style="width:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小3</span>
-	        </div>
-	    <div class="aui-info-item">2018-07-03 22:35</div>
-	</div><div class="aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10">
-	    <div class="aui-info-item">
-	        <img src="../image/touxiang2.jpg" style="width:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小东</span>
-	        </div>
-	    <div class="aui-info-item">2017-07-03 21:31</div>
-	</div><div class="aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10">
-	    <div class="aui-info-item">
-	        <img src="../image/touxiang2.jpg" style="width:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小5</span>
-	        </div>
-	    <div class="aui-info-item">2016-07-11 22:31</div>
-	</div><div class="aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10">
-	    <div class="aui-info-item">
-	        <img src="../image/touxiang2.jpg" style="width:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小6</span>
-	        </div>
-	    <div class="aui-info-item">2015-07-12 22:31</div>
-	</div><div class="aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10">
-	    <div class="aui-info-item">
-	        <img src="../image/touxiang2.jpg" style="width:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小7</span>
-	        </div>
-	    <div class="aui-info-item">2018-07-13 11:31</div>
-	</div><div class="aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10">
-	    <div class="aui-info-item">
-	        <img src="../image/touxiang2.jpg" style="width:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小8</span>
-	        </div>
-	    <div class="aui-info-item">2018-07-14 13:31</div>
-	</div><div class="aui-info aui-margin-t-10 aui-padded-l-10 aui-padded-r-10">
-	    <div class="aui-info-item">
-	        <img src="../image/touxiang2.jpg" style="width:1.5rem" class="aui-img-round" /><span class="aui-margin-l-5">小9</span>
-	        </div>
-	    <div class="aui-info-item">2018-07-15 03:31</div>
-	</div>
+	<!-- <div class="aui-card-list" onclick="openchat()">
+		<div class="aui-card-list-content">
+			<ul class="aui-list aui-media-list">
+				<li class="aui-list-item aui-list-item-middle">
+					<div class="aui-media-list-item-inner">
+						<div class="aui-list-item-media" style="width: 2.6rem; height: 2.6rem">
+							<div class="aui-dot"></div>
+							<img src="{{= value.head }}" class="aui-img-round">
+						</div>
+						<div class="aui-list-item-inner">
+							<div class="aui-list-item-text">
+								<div class="aui-list-item-title aui-font-size-14">小红果</div>
+								<div class="aui-list-item-right">3333</div>
+							</div>
+							<div class="aui-list-item-text">
+								倒数
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="aui-list-item aui-list-item-middle">
+					<div class="aui-media-list-item-inner">
+						<div class="aui-list-item-media" style="width: 2.6rem; height: 2.6rem">
+							<img src="{{= value.head }}" class="aui-img-round">
+						</div>
+						<div class="aui-list-item-inner">
+							<div class="aui-list-item-text">
+								<div class="aui-list-item-title aui-font-size-14">小明</div>
+								<div class="aui-list-item-right">3333</div>
+							</div>
+							<div class="aui-list-item-text">
+								光年之外
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div> -->
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-scroll.js"></script>
+<script src="../script/aui-pull-refresh.js"></script>
+<script type="text/javascript" src="../script/doT.js"></script>
+<script type="text/javascript" src="../script/APICloud-rest-SHA1.js"></script>
+<script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
+<script id="articleTemp" type="text/x-dot-template">
+	{{~it:value:index}}
+	<div class="aui-card-list" onclick="openchat()">
+		<div class="aui-card-list-content">
+			<ul class="aui-list aui-media-list">
+				<li class="aui-list-item aui-list-item-middle">
+					<div class="aui-media-list-item-inner">
+						<div class="aui-list-item-media" style="width: 2.6rem; height: 2.6rem">
+							<div class="aui-dot"></div>
+							<img src="{{= value.head }}" class="aui-img-round">
+						</div>
+						<div class="aui-list-item-inner">
+							<div class="aui-list-item-text">
+								<div class="aui-list-item-title aui-font-size-14">{{= value.nickname }}</div>
+								<div class="aui-list-item-right">{{= apicloudTimeFormat(value.createdAt, 'yyyy-MM-dd hh:mm') }}</div>
+							</div>
+							<div class="aui-list-item-text">
+									{{ if(value.content.length>14){ }}
+									{{= value.content.substring(0,14) }}...
+									{{}else{}}
+									{{= value.content}}
+									{{}}}
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	{{~}}
+</script>
 <script type="text/javascript">
-	function openchat(){
+	apiready = function() {
+		query();
+	};
+
+	function query() {
+		var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
+		var Model = client.Factory("main_messge");
+		Model.query({
+				filter: {
+					fields: {
+						"id": true,
+						"head": true,
+						"nickname": true,
+						"content": true,
+						"createdAt": true
+					}, //或者["id","make","model"]
+					order: "createdAt DESC",
+				}
+			},
+			function(ret, err) {
+				if (err) {
+					//处理错误 err
+					alert(JSON.stringify(err));
+				} else {
+					//处理数据 ret
+					alert(JSON.stringify(ret));
+					//编译模版
+					var interation = doT.template($('#articleTemp').html());
+					//将数据显示到网页中
+					$('#content').html(interation(ret));
+				}
+			})
+	}
+
+	Date.prototype.Format = function(fmt) { //author: meizz
+			var o = {
+				"M+": this.getMonth() + 1, //月份
+				"d+": this.getDate(), //日
+				"h+": this.getHours(), //小时
+				"m+": this.getMinutes(), //分
+				"s+": this.getSeconds(), //秒
+				"q+": Math.floor((this.getMonth() + 3) / 3), //季度
+				"S": this.getMilliseconds() //毫秒
+			};
+			if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+			for (var k in o)
+				if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+			return fmt;
+		}
+		/*
+		 * time字符串类型
+		 * fmt:日期格式，比如：yyyy-MM-dd hh:mm
+		 */
+	function apicloudTimeFormat(time, fmt) {
+		var b = Date.parse(time);
+		var c = new Date(b);
+		var d = c.Format(fmt);
+		return d;
+	}
+
+	function openchat() {
 		api.openWin({
-		    name: 'chat',
-		    url: './chat.html',
-		    pageParam: {
-		        name: 'test'
-		    }
+			name: 'chat',
+			url: './chat.html',
+			pageParam: {
+				name: 'test'
+			}
 		});
 
 	}
 
 	function closeWin() {
-			api.closeWin({});
+		api.closeWin({});
 	}
 </script>
+
 </html>

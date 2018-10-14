@@ -261,7 +261,7 @@
             <i class="aui-iconfont aui-icon-search1"></i>
             <div class="aui-bar-tab-label">消息</div>
         </div>
-        <div class="aui-bar-tab-item" tapmode>
+        <div class="aui-bar-tab-item" tapmode onclick="openfabu()">
             <i class="aui-iconfont3 aui-icon-publish1"></i>
         </div>
 
@@ -322,6 +322,22 @@
       api.openWin({
           name: 'sixinye',
           url: './sixinye.html',
+          pageParam: {
+              name: 'test'
+          },
+          animation: {
+            type:"fade",
+            subType:"from_right",
+            duration:300
+          }
+      });
+
+    }
+
+    function openfabu(){
+      api.openWin({
+          name: 'xuanshangye',
+          url: './xuanshangye.html',
           pageParam: {
               name: 'test'
           },
