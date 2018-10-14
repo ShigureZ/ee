@@ -34,8 +34,6 @@
             margin: auto;
           }
 
-
-
       </style>
   </head>
   <body>
@@ -43,7 +41,7 @@
         <div class="aui-info-item">
           <img src="../image/touxiang1.jpg" style="width:2rem" class="aui-img-round" /><span class="aui-margin-l-5">专业祛痘二十年</span>
         </div>
-        <div class="yichu" onclick="openpingbiliebiao()">
+        <div class="yichu" tapmode onclick="showDefault('success')">
           <span class="neirong">
             移除
           </span>
@@ -51,17 +49,21 @@
       </div>
   </body>
   <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/aui-toast.js" ></script>
   <script type="text/javascript">
   apiready = function(){
-          api.parseTapmode();
-          function openpingbiliebiao(){
-        		api.openWin({
-        				name: 'main_9_2',
-        				url: './main_9_2.html',
-        				pageParam: {
-        						name: 'test'
-        				}
-        		});
+        api.parseTapmode();
+    }
+    var toast = new auiToast({
+    })
+    function showDefault(type){
+        switch (type) {
+            case "success":
+                toast.success({
+                    title:"移除成功",
+                    duration:2000
+                });
+                break;
       }
     }
   </script>
