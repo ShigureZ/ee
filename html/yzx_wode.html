@@ -256,22 +256,6 @@
         });
     }
 
-    function openset(){
-      api.openWin({
-          name: 'main_1',
-          url: './main_1.html',
-          pageParam: {
-              name: 'test'
-          },
-          animation:{
-            type:"none",
-            subType:"from_right",
-            duration:300
-          }
-      });
-
-    }
-
     function openmessage(){
       api.openWin({
           name: 'sixinye',
@@ -303,5 +287,35 @@
       });
 
     }
+    function openwode(){
+			api.openWin({
+			    name: 'yzx_wode',
+			    url: './yzx_wode.html',
+			    pageParam: {
+			        name: 'test'
+			    },
+					animation:{
+            type:"none",
+            subType:"from_right",
+            duration:300
+          }
+			});
+
+		}
+    function openset(){
+			api.openWin({
+			    name: 'main_1',
+			    url: './main_1.html',
+			    pageParam: {
+			        name: 'test'
+			    },
+					animation:{
+            type:"none",
+            subType:"from_right",
+            duration:300
+          }
+			});
+		}
+
 </script>
 </html>
