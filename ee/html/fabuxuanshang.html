@@ -16,15 +16,18 @@
 				background-color: #ffffff;
 			}
 
+			.neirong span {
+				margin-top: 10px;
+			}
+
 			.biaoti {
 				width:100%;
 				height: 30px;
-				line-height: 30px;
-				font-size: 30px;
 			}
 
-			textarea {
-				margin-top: 10px;
+			.neirongwenben {
+				width:100%;
+				height: 100px;
 			}
 	</style>
 </head>
@@ -36,10 +39,11 @@
 		</div>
 		<div class="aui-title">发布悬赏</div>
 	</header>
-	<div class="neirong">标题：</br>
-		<input type="text" id="title" value="" placeholder="建议输入“带饭”、“代取快递”等" class="biaoti">
+	<div class="neirong">
+		<span>标题：</span>
+		<textarea name="name" rows="8" cols="80" placeholder="建议输入“带饭”、“代取快递”等" class="biaoti"></textarea>
 		悬赏内容：</br>
-		<textarea name="name" rows="20" cols="100" placeholder="请输入悬赏内容"></textarea>
+		<textarea name="name" rows="8" cols="100" placeholder="请输入悬赏内容" class="neirongwenben"></textarea>
 		<div class="addpic"></div>
 	</div>
 </body>
