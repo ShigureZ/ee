@@ -1,93 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
-    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="../css/api.css" />
-    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+	<meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+	<meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/api.css" />
+	<link rel="stylesheet" type="text/css" href="../css/aui.css" />
 	<title>Document</title>
 	<style type="text/css">
 		.wrap {
 			width: 100%;
-			height: 18.75rem;
 			background: white;
 		}
 
 		.center {
-			width:100%;
-			height: 18.6rem;
+			width: 100%;
+			position: relative;
+			border-bottom: 1px solid #f2f2f2;
+		}
+
+		.center2 {
+			width: 100%;
 			position: relative;
 		}
 
 		.text-area {
 			width: 100%;
-			height: 1.5rem;
+			height: 6rem;
 			margin-top: 0.8rem;
-			margin-left: 0.75rem;
-			color:#989898;
-			font-size: 0.7rem;
+			color: #333;
+			font-size: 0.9rem;
+			padding-left: 15px;
 		}
 
 		.camera {
 			width: 18.7%;
-			height:3.2rem;
-			top: 5.2rem;
 			margin-left: 0.75rem;
-			position: absolute;
 		}
 
-		.camera i {
-			display: block;
+		.camera div {
 			text-align: center;
-			font-style:normal;
+			font-style: normal;
 			font-family: '微软雅黑';
 			font-size: 0.65rem;
 			color: #989898;
 		}
 
 		.type {
+			padding-right: 15px;
+		}
+
+		.type-1 {
+			display: inline-block;
+			margin-left: 15px;
+			font-size: 0.8rem;
+		}
+
+		.type-2 {
+			display: inline-block;
+			float: right;
+			border-radius: 5px;
+			background-color: #48b9fd;
+		}
+
+		.type-2 select {
+			height: 25px;
+			color: #fff;
+		}
+
+		.zhankong {
+			width: 100%;
+			height: 15px;
+		}
+		/*.type {
 			width: 100%;
 			height: 1rem;
-			top: 11.9rem;
-			position: absolute;
 			border-bottom:0.05rem solid #f2f2f2;
 		}
 
 		.type-1 {
-			width: 72.3%;
+			width:50%;
 			margin-left: 0.75rem;
 			font-family: '微软雅黑';
 			font-size: 0.7rem;
-			float: left;
+			display: inline-block;
 		}
 
 		.type-2 {
-			width: 16%;
+			width: 30%;
 			height: 0.6rem;
 			font-family: '微软雅黑';
 			font-size: 0.65rem;
-			left: 14.25rem;
-			float: left;
 			color: #989898;
+			display: inline-block;
 		}
 
+		.type-2 select {
+			font-size: 0.65rem;
+
+		}*/
+
 		.type img {
-			width:6%;
+			width: 6%;
 			height: 1.1rem;
 			float: left;
 		}
-
-		.juxing {
-			width: 100%;
-			height: 0.5rem;
-			background: #f2f2f2;
-			top: 14.2rem;
-			position: absolute;
-		}
-
-		.text-area-2 {
+		/*	.text-area-2 {
 			width: 72.3%;
 			margin-left: 0.75rem;
 			font-family: '微软雅黑';
@@ -106,16 +126,36 @@
 			color: #989898;
 			top: 16.6rem;
 			position: absolute;
+		}*/
+
+		.text-area-2 {
+			display: block;
+			margin-left: 15px;
+			font-size: 0.8rem;
 		}
+
+		/*.jinekuang {
+			width: 100%;
+		}*/
+
+		.center2 input {
+			width: 30%;
+			height: 1.1rem;
+			margin: auto;
+			border-bottom: 1px solid #989898;
+			margin-bottom: 5px;
+			text-align: center;
+		}
+
 
 		.button {
 			width: 53%;
 			height: 2rem;
 			padding-top: 0.5rem;
 			background: #48b9fd;
-			margin:0rem auto;
+			margin: 0rem auto;
 			border-radius: 0.3rem;
-			}
+		}
 
 		.button i {
 			display: block;
@@ -123,7 +163,7 @@
 			font-size: 0.7rem;
 			font-style: normal;
 			color: white;
-			text-align:center;
+			text-align: center;
 		}
 
 		.text-area-4 {
@@ -142,13 +182,12 @@
 			color: #989898;
 		}
 
-
 		.button2 {
 			width: 76%;
 			height: 2rem;
 			padding-top: 0.5rem;
 			background: #48b9fd;
-			margin:0.6rem auto;
+			margin: 0.6rem auto;
 			border-radius: 0.3rem;
 		}
 
@@ -158,37 +197,45 @@
 			font-size: 0.8rem;
 			font-style: normal;
 			color: white;
-			text-align:center;
+			text-align: center;
 		}
 	</style>
 </head>
+
 <body>
 	<div class="wrap">
-			<div class="center">
-				<div class="text-area">大佬，赏点银子吧...</div>
-				<div class="camera">
-					<img src="../image/xiangji.png" alt="">
-					<i>照片</i>
-				</div>
-				<div class="type">
-					<div class="type-1">分类</div>
-					<div class="type-2">学习交流</div>
-					<img src="../image/fanhui2.png" alt="">
-				</div>
-				<div class="juxing"></div>
-				<div class="text-area-2">赏金</div>
-				<div class="text-area-3">赏金金额</div>
+		<div class="center">
+			<textarea name="name" rows="8" cols="80" placeholder="请输入内容 记得写清时间地点呦" class="text-area"></textarea>
+			<div class="camera">
+				<img src="../image/xiangji.png" alt="">
+				<div>上传照片</div>
 			</div>
-			<div class="button">
-				<i>设置赏金时间</i>
+			<div class="type">
+				<span class="type-1">分类</span>
+				<div class="type-2">
+					<select>
+								<option value ="volvo">学习交流</option>
+								<option value ="saab">代取快递</option>
+								<option value="opel">帮忙带饭</option>
+								<option value="audi">二手交易</option>
+						</select>
+				</div>
 			</div>
+			<div class="zhankong">
+			</div>
+		</div>
+		<div class="center2">
+			<div class="text-area-2">赏金</div>
+			<input type="text" class="text-area-3" placeholder="设置金额（元）">
 			<div class="text-area-4">
 				<i>任务 悬赏金共同发布到平台，应赏者完成任务后，悬赏者
-			确认完成或应赏者确认完成则悬赏金到应赏者</i>
+					确认完成或应赏者确认完成则悬赏金到应赏者</i>
 			</div>
 			<div class="button2">
 				<i>支付赏金并发布</i>
 			</div>
+		</div>
 	</div>
 </body>
+
 </html>
