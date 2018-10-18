@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
     <style>
         .aui-bar-nav {
-          background-color: #48b9fd;
+            background-color: #48b9fd;
         }
 
         .aui-icon-home1 {
@@ -24,8 +24,8 @@
             background: url(../image/diqiu1.png) no-repeat center center;
             background-size: 100%;
             display: inline-block;
-            width: 30px;find_earth
-            height: 32px;
+            width: 30px;
+            find_earth height: 32px;
         }
 
         .aui-icon-publish1 {
@@ -62,15 +62,47 @@
             margin: 0px;
             padding: 0px;
         }
-
-        .sldeder {
+        /*.silder {
             width: 100%;
             height: 7.5rem;
+        }*/
+        /*.silder img {
+            width: 100%;
+            height: 7.5rem;
+        }*/
+
+        .slider {
+            width: 100%;
+            height: 180px;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            /*border:1px solid #333;*/
         }
 
-        .sldeder img {
-            width: 100%;
-            height: 7.5rem;
+        .slider img {
+            max-width: 100%;
+            height: auto;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: none;
+        }
+
+        .slider ul {
+            position: absolute;
+            right: 15px;
+            bottom: 10px;
+        }
+
+        .slider ul li {
+            list-style: none;
+            float: left;
+            width: 12px;
+            height: 12px;
+            border-radius: 6px;
+            background: #fff;
+            margin-right: 8px;
         }
 
         .spinner {
@@ -117,13 +149,44 @@
             width: 45%;
             height: 45%;
             border: 1px solid #F2F2F2;
-            margin-left: 3%;
+            margin-left: 3.3%;
             margin-top: 2%;
             background: white;
             float: left;
         }
 
-        .content ul {
+        .content img {
+            width: 100%;
+            height: 5.5625rem;
+        }
+
+        .content2 {
+            width: 100%;
+        }
+
+        .content2 .fenlei {
+            display: inline-block;
+            margin-top: 0.4rem;
+            margin-left: 10px;
+        }
+
+        .content2 img {
+            display: inline-block;
+            width: 1rem;
+            margin-top: 0.4rem;
+            margin-right: 5px;
+            height: 1rem;
+            float: right;
+        }
+
+        .content2 .content_word {
+            display: inline-block;
+            float: right;
+            color: #48b9fd;
+            font-size: 22px;
+            margin-right: 10px;
+        }
+        /*.content ul {
             width: 100%;
             height: 2rem;
             position: relative;
@@ -135,18 +198,20 @@
         }
 
         .content ul li img {
-            width: 1.4375rem;
-            height: 1.4375rem;
-            margin-left: 0.8rem;
-            margin-top: 0.4rem;
+            width: 1rem;
+            height: 1rem;
+            margin-top: 0.7rem;
+            margin-left: 10px;
+            float: right;
         }
 
         .content ul li {
-            float: left;
             list-style: none;
-        }
+            float: right;
+            margin-right: 10px;
+        }*/
 
-        .content_word {
+        .content ul .content_word {
             font-family: '微软雅黑';
         }
 
@@ -164,28 +229,28 @@
             margin: 0.2rem 0.8rem;
             margin-right: 0rem;
         }
-
-        .content_word_img {
-            color: #48B9FD;
-            font-size: 0.875rem;
-            font-weight: 700;
-            margin-top: 0.4rem;
-            margin-left: 0.3rem;
-        }
     </style>
 </head>
 
 <body>
-    <div class="sldeder">
-        <img src="../image/DuskyWorld.jpg" alt="">
+    <div class="slider" id="slider">
+        <img src="../image/haimian.jpg" alt="" style="display:block;">
+        <img src="../image/xiaoren.jpg" alt="">
+        <img src="../image/xiaoji.jpeg" alt="">
+        <ul>
+            <li style="background:red;"></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
     <div class="spinner">
         <div class="spinner_type">
             <select>
-                <option value="run">跑腿代劳</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
+                <option value="0">全部悬赏</option>
+                <option value="1">学习交流</option>
+                <option value="2">代取快递</option>
+                <option value="3">帮忙带饭</option>
+                <option value="4">二手交易</option>
             </select>
         </div>
         <div class="spinner_select">
@@ -194,69 +259,166 @@
         <div class="spinner_order">
             <select>
                 <option value="time">按时间排序</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
+                <option value="从上到下">从上到下</option>
+                <option value="从下到上">从下到上</option>
             </select>
         </div>
         <div class="spinner_select">
             <img src="../image/select.png" alt="">
         </div>
     </div>
-    <div class="content">
-        <img src="../image/xiaohe1.jpg" alt="">
-        <ul>
-            <li class="content_word content_word_top">代取快递</li>
-            <li><img src="../image/qianbao.png" alt=""></li>
-            <li class='content_word content_word_img'>20</li>
-        </ul>
-        <ul>
-            <li class="content_word content_word_bottom">长春理工</li>
-            <li class="content_word content_word_bottom">12:00:00</li>
-        </ul>
-    </div>
-    <div class="content">
-        <img src="../image/xiaohe2.jpg" alt="">
-        <ul>
-            <li class="content_word content_word_top">取饭</li>
-            <li><img src="../image/qianbao.png" alt=""></li>
-            <li class='content_word content_word_img'>20</li>
-        </ul>
-        <ul>
-            <li class="content_word content_word_bottom">一号店</li>
-            <li class="content_word content_word_bottom">5:00:00</li>
-        </ul>
-    </div>
-    <div class="content">
-        <img src="../image/xiaohe4.jpg" alt="">
-        <ul>
-            <li class="content_word content_word_top">买东西</li>
-            <li><img src="../image/qianbao.png" alt=""></li>
-            <li class='content_word content_word_img'>30</li>
-        </ul>
-        <ul>
-            <li class="content_word content_word_bottom">长春理工</li>
-            <li class="content_word content_word_bottom">16:00:00</li>
-        </ul>
-    </div>
-    <div class="content">
-        <img src="../image/xiaohe3.jpg" alt="">
-        <ul>
-            <li class="content_word content_word_top">替课</li>
-            <li><img src="../image/qianbao.png" alt=""></li>
-            <li class='content_word content_word_img'>15</li>
-        </ul>
-        <ul>
-            <li class="content_word content_word_bottom">长春理工</li>
-            <li class="content_word content_word_bottom">6:00:00</li>
-        </ul>
+    <div id="list">
+
     </div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/APICloud-rest-SHA1.js"></script>
+<script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
+<script src="../script/aui-pull-refresh.js"></script>
+<script type="text/javascript" src="../script/doT.js"></script>
+
+<!-- 模板 -->
+<script id="articleTemp" type="text/x-dot-template">
+    {{~it:value:index}}
+    <div class="content">
+        <img src="../image/xiaohe1.jpg" alt="">
+        <div class="content2">
+            <span class="fenlei">{{= value.type}}</span>
+            <span class='content_word content_word_img'>{{= value.reward}}</span>
+            <img src="../image/qianbao.png" alt="">
+        </div>
+        <ul>
+            <li class="content_word content_word_bottom">{{= apicloudTimeFormat(value.createdAt, 'yyyy-MM-dd hh:mm') }}</li>
+        </ul>
+    </div>
+    {{~}}
+</script>
 <script type="text/javascript">
     apiready = function() {
-
+        api.addEventListener({
+            name: 'reloadArticleList'
+        }, function(ret, err) {
+            query();
+            // alert(JSON.stringify(ret.value));
+        });
+        query();
     };
+
+    function query() {
+        var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
+        var Model = client.Factory("main_reward");
+        Model.query({
+            filter: {
+                fields: {
+                    "id": true,
+                    "title": true,
+                    "likeNum": true,
+                    "reward": true,
+                    "type": true,
+                    "createdAt": true
+                }, //或者["id","make","model"]
+                order: "createdAt DESC"
+            }
+        }, function(ret, err) {
+            if (err) {
+                //处理错误 err
+                alert(JSON.stringify(err));
+            } else {
+                //处理数据 ret
+                // switch (ret.type) {
+                //     case 1:
+                //         ret.type = "学习交流";
+                //         break;
+                //     case 2:
+                //         ret.type = "代取快递";
+                //         break;
+                //     case 3:
+                //         ret.type = "帮忙取饭";
+                //         break;
+                //     case 4:
+                //         ret.type = "二手交易";
+                //         break;
+                // }
+                alert(JSON.stringify(ret));
+                //编译模版
+                var interation = doT.template($('#articleTemp').html());
+                //将数据显示到网页中
+                $('#list').html(interation(ret));
+
+
+
+            }
+        })
+    }
+
+    window.onload = function() {
+        var slider = document.getElementById('slider');
+        var imgs = slider.getElementsByTagName('img');
+        var lis = slider.getElementsByTagName('li');
+        var index = 0;
+
+        function run() {
+            index++
+            if (index > 2) {
+                index = 0;
+            }
+            for (var i = 0; i < 3; i++) {
+                imgs[i].style.display = 'none';
+                lis[i].style.background = '#fff';
+            }
+            imgs[index].style.display = 'block';
+            lis[index].style.background = 'red';
+        }
+        //鼠标移入slider 清除定时器 让动画停止
+        var timer = setInterval(run, 2000);
+        slider.onmouseover = function() {
+                clearInterval(timer);
+            }
+            //鼠标移除slider 恢复定时器 让动画播放
+        slider.onmouseout = function() {
+            timer = setInterval(run, 2000)
+        }
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].xuhao = i;
+            lis[i].onmouseover = function() {
+                index = this.xuhao;
+
+                clearInterval(timer);
+                for (var i = 0; i < 3; i++) {
+                    imgs[i].style.display = 'none';
+                    lis[i].style.background = '#fff';
+                }
+                lis[index].style.background = 'red';
+                imgs[index].style.display = 'block';
+            }
+        }
+    }
+
+    Date.prototype.Format = function(fmt) { //author: meizz
+            var o = {
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+        /*
+         * time字符串类型
+         * fmt:日期格式，比如：yyyy-MM-dd hh:mm
+         */
+    function apicloudTimeFormat(time, fmt) {
+        var b = Date.parse(time);
+        var c = new Date(b);
+        var d = c.Format(fmt);
+        return d;
+    }
 </script>
 
 </html>
