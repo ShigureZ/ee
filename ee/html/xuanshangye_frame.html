@@ -24,6 +24,7 @@
 		.center2 {
 			width: 100%;
 			position: relative;
+			padding-top: 5px;
 		}
 
 		.text-area {
@@ -68,6 +69,8 @@
 		.type-2 select {
 			height: 25px;
 			color: #fff;
+			background-color: #48b9fd;
+			border-radius: 5px;
 		}
 
 		.zhankong {
@@ -129,9 +132,11 @@
 		}*/
 
 		.text-area-2 {
+			width: 1.6rem;
 			display: block;
-			margin-left: 15px;
+			margin: auto;
 			font-size: 0.8rem;
+			margin-bottom: 15px;
 		}
 
 		/*.jinekuang {
@@ -139,12 +144,24 @@
 		}*/
 
 		.center2 input {
-			width: 30%;
+			width: 20%;
 			height: 1.1rem;
-			margin: auto;
+			float: right;
 			border-bottom: 1px solid #989898;
 			margin-bottom: 5px;
 			text-align: center;
+		}
+
+		.center2 span {
+			display: inline-block;
+			float: right;
+			margin-right:38%;
+		}
+
+		.center3 {
+			position: relative;
+			width: 100%;
+			display: block;
 		}
 
 
@@ -168,8 +185,9 @@
 
 		.text-area-4 {
 			width: 100%;
-			height: 3.75rem;
-			padding-top: 0.8rem;
+			height: 2rem;
+			display: block;
+			margin-top:15%;
 		}
 
 		.text-area-4 i {
@@ -187,7 +205,8 @@
 			height: 2rem;
 			padding-top: 0.5rem;
 			background: #48b9fd;
-			margin: 0.6rem auto;
+			margin: auto;
+			margin-top: 30%;
 			border-radius: 0.3rem;
 		}
 
@@ -205,7 +224,7 @@
 <body>
 	<div class="wrap">
 		<div class="center">
-			<textarea name="name" rows="8" cols="80" placeholder="请输入内容 记得写清时间地点呦" class="text-area"></textarea>
+			<textarea id="content" name="name" rows="8" cols="80" placeholder="请输入内容 记得写清时间地点呦" class="text-area"></textarea>
 			<div class="camera">
 				<img src="../image/xiangji.png" alt="">
 				<div>上传照片</div>
@@ -213,11 +232,11 @@
 			<div class="type">
 				<span class="type-1">分类</span>
 				<div class="type-2">
-					<select>
-								<option value ="volvo">学习交流</option>
-								<option value ="saab">代取快递</option>
-								<option value="opel">帮忙带饭</option>
-								<option value="audi">二手交易</option>
+					<select id="type">
+								<option value ="学习交流" >学习交流</option>
+								<option value ="代取快递" >代取快递</option>
+								<option value ="帮忙取饭" >帮忙带饭</option>
+								<option value ="二手交易" >二手交易</option>
 						</select>
 				</div>
 			</div>
@@ -226,16 +245,58 @@
 		</div>
 		<div class="center2">
 			<div class="text-area-2">赏金</div>
-			<input type="text" class="text-area-3" placeholder="设置金额（元）">
+			<span >元</span>
+			<input type="text" class="text-area-3" placeholder="0.00" id="reward">
+		</div>
+			<div class="button2" onclick="save()">
+				<i>支付赏金并发布</i>
+			</div>
 			<div class="text-area-4">
 				<i>任务 悬赏金共同发布到平台，应赏者完成任务后，悬赏者
 					确认完成或应赏者确认完成则悬赏金到应赏者</i>
 			</div>
-			<div class="button2">
-				<i>支付赏金并发布</i>
-			</div>
-		</div>
 	</div>
 </body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/APICloud-rest-SHA1.js"></script>
+<script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../script/doT.js"></script>
+<script type="text/javascript">
+    apiready = function() {
 
+    };
+
+    function save() {
+        var content = $("#content").val();
+				var reward = $("#reward").val();
+				var type = $("#type").val();
+        //获取用户信息
+        var userInfo = $api.getStorage('user_info');
+        //alert(userInfo.nickname);
+
+        var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
+        var Model = client.Factory("main_reward");
+        Model.save({
+            "content": content,
+						"reward": reward,
+						"type": type,
+            "likeNum": 0,
+            "collNum": 0,
+            "viewNum": 0,
+            "author": userInfo.nickname
+        }, function(ret, err) {
+            if (err) {
+                //处理错误 err
+            } else {
+                //处理数据 ret
+                //alert(JSON.stringify(ret));//刚添加的记录的完整信息
+                alert("发布成功！");
+                api.sendEvent({
+                    name: 'reloadArticleList',
+                })
+                api.closeWin({});
+            };
+        });
+    };
+</script>
 </html>
