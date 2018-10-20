@@ -204,11 +204,11 @@
     </section>
     <section class="aui-grid aui-margin-b-15">
         <div class="aui-row">
-            <div class="aui-col-xs-4 main_width main_boder">
+            <div class="aui-col-xs-4 main_width main_boder" onclick="openwofaqide()">
                 <i id="myLaunch">0</i>
                 <div class="aui-grid-label">我发起的</div>
             </div>
-            <div class="aui-col-xs-4 main_width main_boder">
+            <div class="aui-col-xs-4 main_width main_boder" onclick="openwojieshoude()">
                 <i id="myAccept">0</i>
                 <div class="aui-grid-label">我接受的</div>
             </div>
@@ -378,6 +378,26 @@
         api.openWin({
             name: 'lyx_qianbao',
             url: './lyx_qianbao.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+
+    }
+    function openwofaqide() {
+        api.openWin({
+            name: 'publish_daijiedan',
+            url: './publish_daijiedan.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+
+    }
+    function openwojieshoude() {
+        api.openWin({
+            name: 'publish_wojieshoude',
+            url: './publish_wojieshoude.html',
             pageParam: {
                 name: 'test'
             }

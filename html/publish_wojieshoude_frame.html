@@ -125,58 +125,74 @@
 </head>
 
 <body>
-    <header class="aui-bar aui-bar-nav" id="header">
-        <a class="aui-pull-left aui-btn">
-            <span class="aui-iconfont aui-icon-left" onclick="closewofabiaode()"></span>
-        </a>
-        <div class="aui-title">我发起的</div>
-    </header>
-    <div class="aui-tab" id="tab">
-        <div class="aui-tab-item aui-active">待接单</div>
-        <div class="aui-tab-item">待完成</div>
-        <div class="aui-tab-item">待确认</div>
-        <div class="aui-tab-item">已结束</div>
+    <div class="aui-content-f">
+        <div class="aui-content-f-f">
+            <div class="inner-left">
+                <div class="aui-main-title">
+                    标题：如何调酒
+                </div>
+                <div class="aui-main-float">
+                    学习问答
+                </div>
+                <div class="main-left-f">
+                    3.0元
+                </div>
+            </div>
+            <div class="inner-left">
+                <div class="aui-main-m1">
+                    本单状态
+                </div>
+                <div class="main-left-g">
+                    待接单
+                </div>
+            </div>
+            <div class="inner-left">
+                <div class="aui-main-m2">
+                    2018-05-21/12:34
+                </div>
+                <div class="main-left-h">
+                    取消该任务
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="aui-content-f1">
+        <div class="aui-content-f-f">
+            <div class="inner-left">
+                <div class="aui-main-title">
+                    标题：如何调酒
+                </div>
+                <div class="aui-main-float">
+                    学习问答
+                </div>
+                <div class="main-left-f">
+                    3.0元
+                </div>
+            </div>
+            <div class="inner-left">
+                <div class="aui-main-m1">
+                    本单状态
+                </div>
+                <div class="main-left-g">
+                    待接单
+                </div>
+            </div>
+            <div class="inner-left">
+                <div class="aui-main-m2">
+                    2018-05-21/12:34
+                </div>
+                <div class="main-left-h">
+                    取消该任务
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript" src="../script/aui-tab.js"></script>
 <script type="text/javascript">
-    var tab = new auiTab({
-        element: document.getElementById("tab"),
-        index: 1,
-        repeatClick: false
-    }, function(ret) {
-        console.log(ret);
-    });
-    apiready = function() {
-        var header = $api.byId('header');
-        $api.fixStatusBar(header);
-        var headerH = $api.offset(header).h;
-        api.openFrame({
-            name: 'publish_daijiedan_frame',
-            url: 'publish_daijiedan_frame.html',
-            rect: {
-                x: 0,
-                y: headerH + 44,
-                w: 'auto',
-                h: 'auto'
-            },
-            pageParam: {
-                name: 'test'
-            },
-            bounces: true,
-            bgColor: 'rgba(0,0,0,0)',
-            vScrollBarEnabled: true,
-            hScrollBarEnabled: true
-        });
-
-    };
-    function closewofabiaode() {
-  		api.closeWin({
-  		});
-
-
-  	}
+    
 </script>
 
 </html>
