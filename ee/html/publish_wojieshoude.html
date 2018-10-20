@@ -127,9 +127,9 @@
 <body>
     <header class="aui-bar aui-bar-nav" id="header">
         <a class="aui-pull-left aui-btn">
-            <span class="aui-iconfont aui-icon-left" onclick="closewofabiaode()"></span>
+            <span class="aui-iconfont aui-icon-left" onclick="closewojieshoude()"></span>
         </a>
-        <div class="aui-title">我发起的</div>
+        <div class="aui-title">我接受的</div>
     </header>
     <div class="aui-tab" id="tab">
         <div class="aui-tab-item aui-active">待接单</div>
@@ -138,45 +138,46 @@
         <div class="aui-tab-item">已结束</div>
     </div>
 </body>
+</body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript" src="../script/aui-tab.js"></script>
 <script type="text/javascript">
-    var tab = new auiTab({
-        element: document.getElementById("tab"),
-        index: 1,
-        repeatClick: false
-    }, function(ret) {
-        console.log(ret);
+var tab = new auiTab({
+    element: document.getElementById("tab"),
+    index: 1,
+    repeatClick: false
+}, function(ret) {
+    console.log(ret);
+});
+apiready = function() {
+    var header = $api.byId('header');
+    $api.fixStatusBar(header);
+    var headerH = $api.offset(header).h;
+    api.openFrame({
+        name: 'publish_wojieshoude_frame',
+        url: 'publish_wojieshoude_frame.html',
+        rect: {
+            x: 0,
+            y: headerH + 44,
+            w: 'auto',
+            h: 'auto'
+        },
+        pageParam: {
+            name: 'test'
+        },
+        bounces: true,
+        bgColor: 'rgba(0,0,0,0)',
+        vScrollBarEnabled: true,
+        hScrollBarEnabled: true
     });
-    apiready = function() {
-        var header = $api.byId('header');
-        $api.fixStatusBar(header);
-        var headerH = $api.offset(header).h;
-        api.openFrame({
-            name: 'publish_daijiedan_frame',
-            url: 'publish_daijiedan_frame.html',
-            rect: {
-                x: 0,
-                y: headerH + 44,
-                w: 'auto',
-                h: 'auto'
-            },
-            pageParam: {
-                name: 'test'
-            },
-            bounces: true,
-            bgColor: 'rgba(0,0,0,0)',
-            vScrollBarEnabled: true,
-            hScrollBarEnabled: true
-        });
 
-    };
-    function closewofabiaode() {
-  		api.closeWin({
-  		});
+};
+function closewojieshoude() {
+  api.closeWin({
+  });
 
 
-  	}
+}
 </script>
 
 </html>
