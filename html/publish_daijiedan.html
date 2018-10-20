@@ -134,9 +134,9 @@
 <body>
     <header class="aui-bar aui-bar-nav" id="header">
         <a class="aui-pull-left aui-btn">
-            <span class="aui-iconfont aui-icon-left"></span>
+            <span class="aui-iconfont aui-icon-left" onclick="closewofabiaode()"></span>
         </a>
-        <div class="aui-title">我发表的悬赏</div>
+        <div class="aui-title">我发起的</div>
     </header>
     <div class="aui-tab" id="tab">
         <div class="aui-tab-item aui-active">待接单</div>
@@ -178,6 +178,12 @@
         });
 
     };
+    function closewofabiaode() {
+  		api.closeWin({
+  		});
+
+
+  	}
 </script>
 
 </html>
