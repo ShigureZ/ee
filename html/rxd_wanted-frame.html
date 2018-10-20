@@ -160,6 +160,11 @@
             height: 5.5625rem;
         }
 
+        .content ul li {
+            float: right;
+            margin-right: 10px;
+        }
+
         .content2 {
             width: 100%;
         }
@@ -246,11 +251,11 @@
     <div class="spinner">
         <div class="spinner_type">
             <select>
-                <option value="0">全部悬赏</option>
-                <option value="1">学习交流</option>
-                <option value="2">代取快递</option>
-                <option value="3">帮忙带饭</option>
-                <option value="4">二手交易</option>
+                <option value="0" onclick="allreward()">全部悬赏</option>
+                <option value="1" onclick="allstudy()">学习交流</option>
+                <option value="2" onclick="allexpress()">代取快递</option>
+                <option value="3" onclick="allmale()">帮忙带饭</option>
+                <option value="4" onclick="alldeal()">二手交易</option>
             </select>
         </div>
         <div class="spinner_select">
@@ -275,6 +280,7 @@
 <script type="text/javascript" src="../script/APICloud-rest-SHA1.js"></script>
 <script type="text/javascript" src="../script/jquery-1.11.0.min.js"></script>
 <script src="../script/aui-pull-refresh.js"></script>
+<script type="text/javascript" src="../script/aui-dialog.js" ></script>
 <script type="text/javascript" src="../script/doT.js"></script>
 
 <!-- 模板 -->
@@ -325,21 +331,7 @@
                 alert(JSON.stringify(err));
             } else {
                 //处理数据 ret
-                // switch (ret.type) {
-                //     case 1:
-                //         ret.type = "学习交流";
-                //         break;
-                //     case 2:
-                //         ret.type = "代取快递";
-                //         break;
-                //     case 3:
-                //         ret.type = "帮忙取饭";
-                //         break;
-                //     case 4:
-                //         ret.type = "二手交易";
-                //         break;
-                // }
-                alert(JSON.stringify(ret));
+                // alert(JSON.stringify(ret));
                 //编译模版
                 var interation = doT.template($('#articleTemp').html());
                 //将数据显示到网页中
@@ -419,6 +411,37 @@
         var d = c.Format(fmt);
         return d;
     }
+
+    function allstudy() {
+        var client = new Resource("A6076425356783", "751FE5FD-0553-E755-CB71-4B935B5E8B84");
+        var Model = client.Factory("main_reward");
+        Model.query({
+                    filter: {
+                      fields: {
+                            "id": true,
+                            "type": true,
+                            "reward": true,
+                            "createdAt":true
+                        } ,//或者["id","make","model"]
+                        order: "createdAt DESC"
+                }
+            },
+            function(ret, err) {
+                if (err) {
+                    //处理错误 err
+                    alert(JSON.stringify(err));
+                } else {
+                    //处理数据 ret
+                    alert(JSON.stringify(ret));
+
+                    var interation = doT.template($('#articleTemp').html());
+                    //将数据显示到网页中
+                    $('#list').html(interation(ret));
+                }
+            })
+    }
+
+
 </script>
 
 </html>
