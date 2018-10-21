@@ -112,14 +112,15 @@
 
     .main-left-h {
         width: 3.8rem;
+        background:white;
         text-align:center;
         font-family: '微软雅黑';
-        color: #48b9fd;
-        margin-top: 3.2rem;
-        font-size: 0.7rem;
+        color:#48b9fd;
+        margin-top:3.0rem;
+        font-size: 0.6rem;
         border: 1px solid #48b9fd;
         border-radius: 4px;
-        float: right
+        float: right;
     }
     </style>
 </head>
@@ -150,8 +151,8 @@
                 <div class="aui-main-m2">
                     2018-05-21/12:34
                 </div>
-                <div class="main-left-h">
-                    取消该任务
+                <div class="aui-btn main-left-h" tapmode onclick="openDialog('text')">
+                    取消任务
                 </div>
             </div>
         </div>
@@ -181,8 +182,8 @@
                 <div class="aui-main-m2">
                     2018-05-21/12:34
                 </div>
-                <div class="main-left-h">
-                    取消该任务
+                <div class="aui-btn main-left-h" tapmode onclick="openDialog('text')">
+                    取消任务
                 </div>
             </div>
         </div>
@@ -191,8 +192,22 @@
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript" src="../script/aui-tab.js"></script>
+<script type="text/javascript" src="../script/aui-dialog.js" ></script>
 <script type="text/javascript">
-    
+var dialog = new auiDialog({})
+function openDialog(type){
+  switch (type) {
+      case "text":
+          dialog.alert({
+              title:"提示",
+              msg:'确定要取该任务吗？',
+              buttons:['取消','确定']
+          },function(ret){
+              console.log(ret)
+          })
+          break;
+        }
+      }
 </script>
 
 </html>
