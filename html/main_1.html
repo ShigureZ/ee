@@ -61,21 +61,6 @@
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
-    var dialog = new auiDialog({})
-
-    function openDialog(type) {
-        switch (type) {
-            case "text":
-                dialog.alert({
-                    title: "提示",
-                    msg: '确定退出？',
-                    buttons: ['取消', '确定']
-                }, function(ret) {
-                    console.log(ret)
-                })
-                break;
-        }
-    }
     apiready = function() {
         var header = $api.byId('header');
         $api.fixStatusBar(header);
